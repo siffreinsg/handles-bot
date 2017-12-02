@@ -59,9 +59,9 @@ export default class Config {
         var value = this.config[key]
         if (this.keys[key]) {
             if (this.keys[key] === 'string') {
-                if (typeof value !== 'string') { throw '"'+key+'" property must be a doublequoted text.' }
+                if (typeof value !== 'string') { throw '"' + key + '" property must be a doublequoted text.' }
             } else if (this.keys[key] === 'array') {
-                if (!(value instanceof Array)) { throw '"'+key+'" property must be an unordered list.' }
+                if (!(value instanceof Array)) { throw '"' + key + '" property must be an unordered list.' }
             } else throw '"' + key + '" is not a valid property.'
         } else throw '"' + key + '" is not a valid property.'
     }

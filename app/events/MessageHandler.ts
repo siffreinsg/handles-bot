@@ -46,7 +46,7 @@ export default class MessageHandler {
         switch (answer) {
             case 'notfound':
                 let recommended = didYouMean(executedCommand, app.commands.list, {returnType: 'first-closest-match'})
-                this.message.channel.send(app.translator._('/errors/unknownCommand')+ (recommended ? app.translator._('/errors/didyoumean').replace('{prefix}', app.config.prefix).replace('{command}', recommended) : '') +'\n'+ app.translator._('/errors/useHelpCMD').replace('{prefix}', app.config.prefix))
+                this.message.channel.send(app.translator._('/errors/unknownCommand') + (recommended ? app.translator._('/errors/didyoumean').replace('{prefix}', app.config.prefix).replace('{command}', recommended) : '') + '\n' + app.translator._('/errors/useHelpCMD').replace('{prefix}', app.config.prefix))
                 console.log(author.username + ' (@' + author.id + ') failed the following command: ' + content)
                 break
             case 'badargs':

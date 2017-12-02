@@ -5,8 +5,7 @@ export default class Translator {
     langContent : any = {}
 
     constructor(lang) {
-        this.langContent = require(path.resolve(__dirname, this.langsPath, lang +'.json'))
-        console.log(this.langContent)
+        this.langContent = require(path.resolve(__dirname, this.langsPath, lang + '.json'))
     }
 
     translate(path: string) {

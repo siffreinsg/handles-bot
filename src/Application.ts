@@ -40,7 +40,7 @@ export default class Application {
    * Prepare the bot to be run.
    */
   prepareBot(){
-    console.log(' -- '+ this.config.botname +' ' + this.config.version + ' - powered by Gus Inc. -- \n')
+    console.log(' -- ' + this.config.botname + ' ' + this.config.version + ' - powered by Gus Inc. -- \n')
     this.client = new Discord.Client({
       restTimeOffset: 1000,
       // disabledEvents: ['GUILD_CREATE', 'GUILD_DELETE', 'CHANNEL_PINS_UPDATE', 'USER_NOTE_UPDATE', 'TYPING_START', 'VOICE_SERVER_UPDATE', 'VOICE_STATE_UPDATE']
