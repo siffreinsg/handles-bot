@@ -7,7 +7,8 @@ export default class Config {
         'botname': 'string',
         'version': 'string',
         'prefix': 'string',
-        'lang': 'string'
+        'lang': 'string',
+        'status': 'string'
     }
 
     /**
