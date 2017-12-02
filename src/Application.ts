@@ -57,7 +57,7 @@ export default class Application {
 
     console.log(Object.keys(this.commands.list).length + ' commands loaded.')
     console.log('\nInvite me on a server by using this link: ' + this.invite_url + ' \n')
-    this.client.user.setGame('|| /help ||')
+    this.client.user.setGame(this.config.status.replace('{prefix}', this.config.prefix))
   }
 
   /**

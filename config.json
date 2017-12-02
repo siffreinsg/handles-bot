@@ -2,6 +2,7 @@
     "discordAPItoken": "[Insert the Discord API Token here]",
     "botname": "Gus",
     "version": "1.0.0",
-    "prefix": "/",
-    "lang": "en_US"
+    "prefix": "?",
+    "lang": "en_US",
+    "status": "callmegus.xyz | {prefix}help"
 }
