@@ -1,0 +1,14 @@
+{
+    "commands": {
+        "helloworld": {
+            "hello": "Bonjour {who} !",
+            "world": "à tous"
+        }
+    },
+    "errors": {
+        "unknownCommand": "Commande inconnue !",
+        "didyoumean": "Vouliez-vous dire `{prefix}{command}` ?",
+        "useHelpCMD": "Découvrez les commandes disponibles avec `{prefix}help`.",
+        "badargs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`."
+    }
+}
