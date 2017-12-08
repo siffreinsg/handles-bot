@@ -38,21 +38,6 @@ export default class Commands {
     execute(message : Discord.Message, command : string, args : any){
         command = command.toLowerCase()
         if (this.list.indexOf(command) !== -1) {
-            let availableArgs = this.cmds[command].args
-            
-            /* ROAD TO SOMETHING AHAH
-            availableArgs.forEach(function (arg, index) {
-                switch (arg.type){
-                    case 'text':
-                        if (typeof args._[index] != 'string') {
-                            return 'error'
-                        }
-                        break;
-                    case 'number':
-                        break;
-                }
-            })*/
-
             return this.cmds[command].execute(args, message)
         } else {
             return 'notfound'
@@ -75,7 +60,8 @@ export default class Commands {
     load(filename : string){
         if (filename.length > 4 && filename.indexOf('.js') > 0) {
             let command = require(filename).default
-            this.cmds[command.command] = new command()
+            command = new command()
+            this.cmds[command.command] = command
             this.list.push(command.command)
         }
     }

@@ -2,9 +2,8 @@ import * as Discord from 'discord.js'
 
 declare var app
 export default class HelloWorld {
-    static command : string = 'hello'
-    static desc : string = 'Simple test command.'
-    
+    public command : string = 'hello'
+    public desc : string = 'Simple test command.'
     public args = [
         {type: 'text', required: false, usage: 'nom'}
     ]
