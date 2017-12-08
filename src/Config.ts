@@ -45,8 +45,8 @@ export default class Config {
                 this.checkKey(key)
             }
         } catch (ex) {
-        	console.error('Configuration error: ' + ex)
-        	process.abort()
+            console.error('Configuration error: ' + ex)
+            process.abort()
         }
     }
 

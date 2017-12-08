@@ -32,15 +32,40 @@ export default class Commands {
      * @param message Discord Message object of command
      * @param command Command name
      * @param args Arguments of command
+     * 
+     *
      */
-    execute(message : Discord.Message, command : string, args : Array<string>){
+    execute(message : Discord.Message, command : string, args : any){
         command = command.toLowerCase()
         if (this.list.indexOf(command) !== -1) {
+            let availableArgs = this.cmds[command].args
+            
+            /* ROAD TO SOMETHING AHAH
+            availableArgs.forEach(function (arg, index) {
+                switch (arg.type){
+                    case 'text':
+                        if (typeof args._[index] != 'string') {
+                            return 'error'
+                        }
+                        break;
+                    case 'number':
+                        break;
+                }
+            })*/
+
             return this.cmds[command].execute(args, message)
         } else {
             return 'notfound'
         }
     }
+
+    filterFloat(value : any) {
+        if (/^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
+          .test(value))
+          return Number(value)
+      return NaN
+    }
+    
 
     /**
      * Load a command from file.

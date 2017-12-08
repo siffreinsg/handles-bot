@@ -31,7 +31,7 @@ export default class MessageHandler {
     isCommand(command){
         if (command.indexOf(app.config.prefix) === 0) {
             command = command.split(' ')[0].substring(1)
-            if (app.commands.list.indexOf(command) !== -1) return true
+            return true
         }
         return false
     }
@@ -46,7 +46,7 @@ export default class MessageHandler {
         switch (answer) {
             case 'notfound':
                 let recommended = didYouMean(executedCommand, app.commands.list, {returnType: 'first-closest-match'})
-                this.message.channel.send(app.translator._('/errors/unknownCommand') + (recommended ? app.translator._('/errors/didyoumean').replace('{prefix}', app.config.prefix).replace('{command}', recommended) : '') + '\n' + app.translator._('/errors/useHelpCMD').replace('{prefix}', app.config.prefix))
+                this.message.channel.send(app.translator._('/errors/unknownCommand') + (recommended ? app.translator._('/errors/didyoumean').replace('{command}', recommended) : '') + '\n' + app.translator._('/errors/useHelpCMD'))
                 console.log(author.username + ' (@' + author.id + ') failed the following command: ' + content)
                 break
             case 'badargs':

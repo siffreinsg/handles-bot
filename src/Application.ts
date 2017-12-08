@@ -1,7 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Discord from 'discord.js'
-import * as JsonDB from 'node-json-db'
 import * as ora from 'ora'
 import Config from './Config'
 import Commands from './Commands'
@@ -11,7 +10,6 @@ import Translator from './Translator'
 declare var global
 export default class Application {
   config : any
-  db: JsonDB
   commands : Commands
   client : Discord.Client
   translator : Translator
@@ -32,7 +30,6 @@ export default class Application {
    */
   load(){
     this.config = new Config()
-    this.db = new JsonDB('GusDB', true, false)
     this.translator = new Translator(this.config.lang)
   }
 

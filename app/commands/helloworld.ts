@@ -3,12 +3,14 @@ import * as Discord from 'discord.js'
 declare var app
 export default class HelloWorld {
     static command : string = 'hello'
-    static desc : string = ''
-    static args = [
-        {type: 'text', required: true, usage: 'nom'} 
+    static desc : string = 'Simple test command.'
+    
+    public args = [
+        {type: 'text', required: false, usage: 'nom'}
     ]
     
     execute(args, message){
+        console.log(args)
         message.channel.send(this.textToSay(args))
     }
     
