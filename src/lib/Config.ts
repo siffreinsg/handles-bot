@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import path = require('path')
 
 export default class Config {
     config : any = {}
@@ -26,13 +27,12 @@ export default class Config {
     loadConfig(){
         try {
             try {
-                this.config = require('../config.dev.json')
+                this.config = require('./../../config.dev.json')
             } catch (ex) {
-                this.config = require('../config.json')
+                this.config = require('./../../config.json')
             }
         } catch (ex) {
-            console.error('Configuration error: ' + ex)
-            process.abort()
+            throw new Error('Configuration error: ' + ex)
         }
     }
 
@@ -45,8 +45,7 @@ export default class Config {
                 this.checkKey(key)
             }
         } catch (ex) {
-            console.error('Configuration error: ' + ex)
-            process.abort()
+            throw new Error('Configuration error: ' + ex)
         }
     }
 
@@ -59,10 +58,10 @@ export default class Config {
         var value = this.config[key]
         if (this.keys[key]) {
             if (this.keys[key] === 'string') {
-                if (typeof value !== 'string') { throw '"' + key + '" property must be a doublequoted text.' }
+                if (typeof value !== 'string') { throw '"' + key + '" property must be a doublequoted text' }
             } else if (this.keys[key] === 'array') {
-                if (!(value instanceof Array)) { throw '"' + key + '" property must be an unordered list.' }
-            } else throw '"' + key + '" is not a valid property.'
-        } else throw '"' + key + '" is not a valid property.'
+                if (!(value instanceof Array)) { throw '"' + key + '" property must be an unordered list' }
+            } else throw '"' + key + '" is not a valid property'
+        } else throw '"' + key + '" is not a valid property'
     }
 }

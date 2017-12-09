@@ -61,3 +61,4 @@ typings/
 GusDB.json
 config.dev.json
 *.js
+out

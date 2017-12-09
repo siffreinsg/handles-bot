@@ -1,6 +1,7 @@
 import * as minimist from 'minimist'
 import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
+var colors = require('colors')
 
 declare var global, app
 export default class MessageHandler {
@@ -47,13 +48,13 @@ export default class MessageHandler {
             case 'notfound':
                 let recommended = didYouMean(executedCommand, app.commands.list, {returnType: 'first-closest-match'})
                 this.message.channel.send(app.translator._('/errors/unknownCommand') + (recommended ? app.translator._('/errors/didyoumean').replace('{command}', recommended) : '') + '\n' + app.translator._('/errors/useHelpCMD'))
-                console.log(author.username + ' (@' + author.id + ') failed the following command: ' + content)
+                console.log(colors.grey(author.username + ' (@' + author.id + ') failed the following command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')'))
                 break
             case 'badargs':
                 channel.sendMessage(app.translator._('/errors/badargs'))
                 break
             default:
-                console.log(author.username + ' (@' + author.id + ') executed the command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')')
+                console.log(colors.gray(author.username + ' (@' + author.id + ') executed the command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')'))
                 break
         }
     }

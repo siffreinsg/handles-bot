@@ -1,6 +1,5 @@
 import * as Discord from 'discord.js'
 
-declare var app
 export default class HelloWorld {
     public command : string = 'hello'
     public desc : string = 'Simple test command.'

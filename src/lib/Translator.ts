@@ -11,8 +11,7 @@ export default class Translator {
         try {
             this.langContent = require(path.resolve(__dirname, this.langsPath, lang + '.json'))
         } catch (ex) {
-            console.error('/!\ Unreachable language file (' + lang + ').\n' + ex)
-            process.abort()
+            throw new Error('Unreachable language file (' + lang + ')')
         }
     }
 
@@ -32,8 +31,7 @@ export default class Translator {
                 .replace(new RegExp('{invite_url}', 'g'), app.invite_url)
 
         } catch (ex) {
-            console.error('/!\ Unable to access translation ! Lang: ' + this.lang + ', Path: ' + path + '.\n' + ex)
-            process.abort()
+            throw new Error('Unable to access translation! Lang: ' + this.lang + ', Path: ' + path)
         }
     }
 

@@ -1,6 +1,5 @@
 import * as Discord from 'discord.js'
 
-declare var app
 export default class Help {
     public command : string = 'help'
     public desc : string = ''
