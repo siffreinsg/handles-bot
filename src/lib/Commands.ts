@@ -37,10 +37,12 @@ export default class Commands {
      */
     execute(message : Discord.Message, command : string, args : any){
         command = command.toLowerCase()
-        if (this.list.indexOf(command) !== -1) {
-            return this.cmds[command].execute(args, message)
-        } else {
-            return 'notfound'
+        if (command !== '') {
+            if (this.list.indexOf(command) !== -1) {
+                return this.cmds[command].execute(args, message)
+            } else {
+                return 'notfound'
+            }
         }
     }
 
