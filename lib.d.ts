@@ -1,4 +1,4 @@
-import Application from './src/lib/Application'
+import Application from './src/lib/Gus/Kernel/Application'
 
 declare global {
     

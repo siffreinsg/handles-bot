@@ -1,8 +1,7 @@
 import * as path from 'path'
 
-declare var app
 export default class Translator {
-    langsPath : string = '../app/langs/'
+    langsPath : string = '../../../app/langs/'
     langContent : any = {}
     lang : string
 

@@ -2,16 +2,16 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as Discord from 'discord.js'
 import { Observable } from 'rxjs/Observable'
-import Config from './Config'
-import Commands from './Commands'
-import MessageHandler from '../app/events/MessageHandler'
 import Translator from './Translator'
+import Config from './Loaders/Config'
+import Commands from './Loaders/Commands'
+import MessageHandler from '../../../app/events/MessageHandler'
 import Listr = require('listr')
-var colors = require('colors')
+import 'colors'
 
-declare var global
 export default class Application {
   config : any
+  package: any
   commands : Commands
   client : Discord.Client
   translator : Translator
@@ -27,7 +27,7 @@ export default class Application {
       this.initBot()
     })
     .catch((err) => {
-      this.apologizeForFail(err)
+      this.apologizeForFailure(err)
     })
 
   }
@@ -68,6 +68,14 @@ export default class Application {
         title: 'Initialize Gus',
         task: (ctx_, task_) => {
           return new Listr([
+
+            {
+              title: 'Retrieving package informations',
+              task: (ctx, task) => {
+                this.package = require('../../../../package.json')
+                task.title = 'Retrieved package informations'
+              }
+            },
 
             {
               title: 'Loading configuration',
@@ -149,29 +157,30 @@ export default class Application {
    */
   initBot(){
 
-    var logo = `
-                 ,......                                   
-              ,+:::::::::+                          
-            ;:::'+++++++;::'  :; '''':+             
-           +::+++#++,,,,,''::++:+'''''',:'          
-          ;::+++#+',,,,,,,,+::::''''';+   +         
-          +::++#+,,,,,,,,,,+::+,'         +         
-          +::++;,,,,,,,,,,,+::;           '         
-           ;:;+,,,,,,,,,,,+::+           +          
-            '::++,,,,,,,;+::+           +           
-              ':::;'+'::::'            ;            
-                 '''''''               '            
-                                       +         +  
-                                        '       +   
-                                         +.  .+,    
-                                           ''       `
+    var logo =
+    (`
+                   ,......                                   
+                ,+:::::::::+                          
+              ;:::'+++++++;::'  :; '''':+             
+             +::+++#++,,,,,''::++:+'''''',:'          
+            ;::+++#+',,,,,,,,+::::''''';+   +         
+            +::++#+,,,,,,,,,,+::+,'         +         
+            +::++;,,,,,,,,,,,+::;           '         
+             ;:;+,,,,,,,,,,,+::+           +          
+              '::++,,,,,,,;+::+           +           
+                ':::;'+'::::'            ;            
+                   '''''''               '            
+                                         +         +  
+                                          '       +   
+                                           +.  .+,    
+                                             ''       `)
     // End of logo
 
 
     console.log(
       '\n' + logo.blue +
-      '\n' + (' ').repeat(11) +
-      `-- ${this.config.botname} ${this.config.version} - powered by Gus Inc. --\n`.bold
+      '\n' + (' ').repeat(16 - this.package.version.length) +
+      `-- Gus ${this.package.version} - Proudly maintained by Gus Project --\n`.bold
     )
     
     
@@ -189,7 +198,7 @@ export default class Application {
    * Apologize if there is an error.
    * @param err Error
    */
-  apologizeForFail(err){
+  apologizeForFailure(err){
 
     console.error(`\nCall me Gus. I'm afraid the starting process didn't worked as expected. We apologize for any distress you may have just experienced.\n`.red)
   

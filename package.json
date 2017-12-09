@@ -1,13 +1,13 @@
 {
     "name": "gus-bot",
-    "version": "1.0.0",
+    "version": "1.0.0-alpha.1",
     "description": "A multi-function discord bot.",
-    "main": "index.js",
+    "main": "out/index.js",
     "scripts": {
         "dev": "npm run compile && node out/index.js",
         "compile": "gulp dev"
     },
-    "author": "Gus Inc.",
+    "author": "Gus Project",
     "license": "Apache-2.0",
     "dependencies": {
         "colors": "^1.1.2",

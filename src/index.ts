@@ -1,3 +1,3 @@
-import Application from './lib/Application'
+import Application from './lib/Gus/Kernel/Application'
 
 global.app = new Application()

@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import fs = require('fs')
 import path = require('path')
 
 export default class Config {
@@ -27,9 +27,9 @@ export default class Config {
     loadConfig(){
         try {
             try {
-                this.config = require('./../../config.dev.json')
+                this.config = require('../../../../../config.dev.json')
             } catch (ex) {
-                this.config = require('./../../config.json')
+                this.config = require('../../../../../config.json')
             }
         } catch (ex) {
             throw new Error('Configuration error: ' + ex)
