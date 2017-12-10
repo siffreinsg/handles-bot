@@ -58,8 +58,10 @@ typings/
 .env
 
 # Gus files
+!src/node_modules/
 GusDB.json
 config.dev.json
 *.js
 !gulpfile.js
 out
+\.vscode/

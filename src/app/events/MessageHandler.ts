@@ -1,6 +1,7 @@
 import * as minimist from 'minimist'
 import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
+import * as Command from 'Gus/Utils/Command'
 import 'colors'
 
 export default class MessageHandler {
@@ -37,7 +38,7 @@ export default class MessageHandler {
     }
     
     executeCommand(message, command, args){
-        return app.commands.executeCommand(message, command, args)
+        return Command.execute(message, command, args)
     }
     
     checkAnswer(answer, executedCommand){

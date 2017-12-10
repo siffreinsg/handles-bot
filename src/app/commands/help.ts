@@ -1,25 +1,31 @@
 import * as Discord from 'discord.js'
+import Command from 'Gus/Command/CommandHandler'
+import Context from 'Gus/Command/CommandContext'
+import Arguments from 'Gus/Utils/Arguments'
+import Argument = Gus.CommandArgument
+import Permission = Gus.CommandPermission
 
-export default class Help {
+export default class Help extends Command
+{
     public command : string = 'help'
     public desc : string = ''
-    public args = [
-        {type: 'text', required: true, usage: 'nom'} 
+    public args : Argument[] = [
+        {name: 'command', type: 'text', required: false, usage: 'command name'} 
     ]
     
-    execute(args, message){
-        if (args._[0] !== 'list') {
-            message.channel.send(app.translator._('/commands/help/message'))
+    execute(context, args){
+        if (args.get(0) !== 'list') {
+            context.answer(app.translator._('/commands/help/message'))
         } else {
             let toSend = app.translator._('/commands/help/available')
-            app.commands.list.forEach(function (cmd) {
-                if (cmd !== 'help') {
-                    cmd = app.commands.cmds[cmd]
+            app.commands.list.forEach(function (cmd_name) {
+                if (cmd_name !== 'help') {
+                    var cmd = app.commands.cmds[cmd_name]
                     toSend += '\n    - `' + app.config.prefix + cmd.command + '` • ' + cmd.desc 
                 }
             })
             toSend += '\n\n' + app.translator._('/commands/help/fullist')
-            message.channel.send(toSend + '\.')
+            context.answer(toSend + '\.')
         }
     }
 }

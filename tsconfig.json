@@ -9,5 +9,10 @@
         "noImplicitAny": false,
 
         "allowSyntheticDefaultImports": true
-    }
+    },
+    "include": [
+        "src/**/*",
+        "src/index.ts",
+        "src/node_modules/**/*"
+    ]
 }
