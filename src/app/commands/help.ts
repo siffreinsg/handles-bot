@@ -7,9 +7,9 @@ import Permission = Gus.CommandPermission
 
 export default class Help extends Command
 {
-    public command : string = 'help'
-    public desc : string = ''
-    public args : Argument[] = [
+    command : string = 'help'
+    desc : string = ''
+    args : Argument[] = [
         {name: 'command', type: 'text', required: false, usage: 'command name'} 
     ]
     
