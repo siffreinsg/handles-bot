@@ -47,11 +47,11 @@ export default class MessageHandler {
         switch (answer) {
             case 'notfound':
                 let recommended = didYouMean(executedCommand, app.commands.list, {returnType: 'first-closest-match'})
-                this.message.channel.send(app.translator._('/errors/unknownCommand') + (recommended ? app.translator._('/errors/didyoumean').replace('{command}', recommended) : '') + '\n' + app.translator._('/errors/useHelpCMD'))
+                this.message.channel.send(app.translate('/errors/unknownCommand') + (recommended ? app.translate('/errors/didyoumean', {command: recommended}) : '') + '\n' + app.translate('/errors/useHelpCMD'))
                 console.log((author.username + ' (@' + author.id + ') tried the inexistent command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')').grey)
                 break
             case 'badargs':
-                channel.sendMessage(app.translator._('/errors/badargs'))
+                channel.sendMessage(app.translate('/errors/badargs'))
                 break
             default:
                 console.log((author.username + ' (@' + author.id + ') executed the command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')').gray)

@@ -13,13 +13,8 @@ export default class Hello extends Command
     ]
     
     execute(context : Context, args: Arguments){
-        console.log(args)
-        context.answer(this.textToSay(args))
-    }
-    
-    textToSay(args: Arguments) {
-        var name = args.getAll().join(' ') || app.translator._('/commands/helloworld/world')
-        return app.translator._('/commands/helloworld/hello').replace('{who}', name)
+        var who = args.getAll().join(' ') || app.translate('/commands/helloworld/world')
+        context.reply(app.translate('/commands/helloworld/hello', {who}))
     }
     
 }

@@ -15,17 +15,17 @@ export default class Help extends Command
     
     execute(context, args){
         if (args.get(0) !== 'list') {
-            context.answer(app.translator._('/commands/help/message'))
+            context.reply(app.translate('/commands/help/message'))
         } else {
-            let toSend = app.translator._('/commands/help/available')
+            let toSend = app.translate('/commands/help/available')
             app.commands.list.forEach(function (cmd_name) {
                 if (cmd_name !== 'help') {
                     var cmd = app.commands.cmds[cmd_name]
                     toSend += '\n    - `' + app.config.prefix + cmd.command + '` • ' + cmd.desc 
                 }
             })
-            toSend += '\n\n' + app.translator._('/commands/help/fullist')
-            context.answer(toSend + '\.')
+            toSend += '\n\n' + app.translate('/commands/help/fullist')
+            context.reply(toSend + '\.')
         }
     }
 }
