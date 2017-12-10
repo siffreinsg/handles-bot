@@ -175,6 +175,7 @@ export default class Application {
                                            +.  .+,    
                                              ''       `)
     // End of logo
+    // Please don't destroy this, it took us hours to do.
 
 
     console.log(
