@@ -61,4 +61,5 @@ typings/
 GusDB.json
 config.dev.json
 *.js
+!gulpfile.js
 out
