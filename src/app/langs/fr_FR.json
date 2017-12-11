@@ -1,19 +1,19 @@
 {
     "commands": {
-        "helloworld": {
+        "hello": {
             "hello": "Bonjour {who} !",
-            "world": "à tous"
+            "defaultPeople": "à tous"
         },
-        "help":  {
-            "message": "Comment m'utiliser ? Quelles commandes sont disponibles ? Que faire de moi ? Toutes ces questions ont une réponse ici : https://callmegus.xyz/helpme.\n\nSinon vous pouvez executer `{prefix}help list` pour avoir un résumé des commandes.",
-            "available": "Liste des commandes disponibles:",
-            "fullist": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
+        "help": {
+            "availableCommands": "Liste des commandes disponibles:",
+            "message": "Comment m'utiliser ? Quelles commandes sont disponibles ? Que faire de moi ? Toutes ces questions ont une réponse ici : https://callmegus.xyz/helpme.\n\nSinon vous pouvez exécuter `{prefix}help list` pour avoir un résumé des commandes.",
+            "fullList": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
         }
     },
     "errors": {
         "unknownCommand": "Commande inconnue !",
-        "didyoumean": "Vouliez-vous dire `{prefix}{command}` ?",
-        "useHelpCMD": "Découvrez les commandes disponibles avec `{prefix}help`.",
-        "badargs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`."
+        "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
+        "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
+        "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`."
     }
 }

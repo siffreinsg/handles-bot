@@ -17,14 +17,14 @@ export default class Help extends Command
         if (args.get(0) !== 'list') {
             context.reply(app.translate('/commands/help/message'))
         } else {
-            let toSend = app.translate('/commands/help/available')
+            let toSend = app.translate('/commands/help/availableCommands')
             app.commands.list.forEach(function (cmd_name) {
                 if (cmd_name !== 'help') {
                     var cmd = app.commands.cmds[cmd_name]
                     toSend += '\n    - `' + app.config.prefix + cmd.command + '` • ' + cmd.desc 
                 }
             })
-            toSend += '\n\n' + app.translate('/commands/help/fullist')
+            toSend += '\n\n' + app.translate('/commands/help/fullList')
             context.reply(toSend + '\.')
         }
     }

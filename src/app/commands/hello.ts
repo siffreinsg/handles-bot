@@ -13,8 +13,8 @@ export default class Hello extends Command
     ]
     
     execute(context : Context, args: Arguments){
-        var who = args.getAll().join(' ') || app.translate('/commands/helloworld/world')
-        context.reply(app.translate('/commands/helloworld/hello', {who}))
+        var who = args.getAll().join(' ') || app.translate('/commands/hello/defaultPeople')
+        context.reply(app.translate('/commands/hello/hello', {who}))
     }
     
 }
