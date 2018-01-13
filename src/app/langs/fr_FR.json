@@ -2,7 +2,11 @@
     "commands": {
         "hello": {
             "hello": "Bonjour {who} !",
-            "defaultPeople": "à tous"
+            "default": "à tous"
+        },
+        "advice": {
+            "autoTranslation": "Traduction automatique",
+            "translationsWarn": "Les traductions peuvent être inexactes."
         },
         "help": {
             "availableCommands": "Liste des commandes disponibles:",
@@ -14,6 +18,7 @@
         "unknownCommand": "Commande inconnue !",
         "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
         "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
-        "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`."
+        "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`.",
+        "basicError": "Erreur lors de l'exécution de la commande. Veuillez contacter un administrateur"
     }
 }

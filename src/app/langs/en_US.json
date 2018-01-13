@@ -2,7 +2,11 @@
     "commands": {
         "hello": {
             "hello": "Hello {who}!",
-            "defaultPeople": "world"
+            "default": "world"
+        },
+        "advice": {
+            "autoTranslation": "Automatic translation",
+            "translationsWarn": "Translations might be inaccurate."
         },
         "help": {
             "availableCommands": "Available commands:",
@@ -14,6 +18,7 @@
         "unknownCommand": "Unknown command!",
         "didYouMean": "Did you mean`{prefix}{command}`?",
         "useHelpCommand": "To get the list of the commandes, use `{prefix}help`.",
-        "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`."
+        "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`.",
+        "basicError": "Error while executing the command. Please contact an administrator"
     }
 }
