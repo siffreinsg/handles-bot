@@ -4,5 +4,6 @@
     "prefix": "?",
     "lang": "en_US",
     "status": "callmegus.xyz | {prefix}help",
-    "translate": "true"
+    "translate": "true",
+    "dbPath": "./GusDB.json"
 }
