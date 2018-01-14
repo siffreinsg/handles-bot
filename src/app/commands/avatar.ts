@@ -15,7 +15,7 @@ export default class Avatar extends Command
     
     execute(context : Context, args: Arguments){
         let mention = context.message.mentions.users.first(),
-            user = mention ? mention : context.executor,
+            user = mention ? mention : context.executor.user,
             message = 'Avatar de ' + user.username
 
         if (!user.avatarURL) return context.replyError(app.translate('/commands/avatar/noAvatar'), {})
