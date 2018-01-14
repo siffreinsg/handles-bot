@@ -8,6 +8,9 @@
             "autoTranslation": "Traduction automatique",
             "translationsWarn": "Les traductions peuvent être inexactes."
         },
+        "avatar": {
+            "noAvatar": "Cet utilisateur ne possède pas d'avatar."
+        },
         "help": {
             "availableCommands": "Liste des commandes disponibles:",
             "message": "Comment m'utiliser ? Quelles commandes sont disponibles ? Que faire de moi ? Toutes ces questions ont une réponse ici : https://callmegus.xyz/helpme.\n\nSinon vous pouvez exécuter `{prefix}help list` pour avoir un résumé des commandes.",

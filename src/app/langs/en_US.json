@@ -8,6 +8,9 @@
             "autoTranslation": "Automatic translation",
             "translationsWarn": "Translations might be inaccurate."
         },
+        "avatar": {
+            "noAvatar": "This user does not have an avatar."
+        },
         "help": {
             "availableCommands": "Available commands:",
             "message": "How to use me? Which commands are availables? What to do with me? All of these questions have an answer here: https://callmegus.xyz/helpme.\n\nOtherwise you can run `{prefix}help list` to get a summmary of the commands.",
