@@ -17,6 +17,11 @@
             "fullList": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
         }
     },
+    "events": {
+      "MessageHandler": {
+          "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o"  
+      }
+    },
     "errors": {
         "unknownCommand": "Commande inconnue !",
         "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",

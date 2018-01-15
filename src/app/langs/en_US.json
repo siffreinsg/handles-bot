@@ -17,6 +17,11 @@
             "fullList": "Get a full list and usages of the commands on https://callmegus.xyz"
         }
     },
+    "events": {
+      "MessageHandler": {
+          "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o"  
+      }
+    },
     "errors": {
         "unknownCommand": "Unknown command!",
         "didYouMean": "Did you mean`{prefix}{command}`?",
