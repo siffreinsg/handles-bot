@@ -19,6 +19,8 @@ export default class MessageHandler {
             var answer = this.executeCommand(this.message, command, args)
 
             this.checkAnswer(answer, command)
+        } else {
+            //TODO: Rank system
         }
     }
 	    
