@@ -1,9 +1,9 @@
-import Command from 'Gus/Command/CommandHandler'
-import Context from 'Gus/Command/CommandContext'
-import Arguments from 'Gus/Utils/Arguments'
-import Argument = Gus.CommandArgument
-import Permission = Gus.CommandPermission
-import User from 'Gus/DB/User'
+import Command from 'Handles/Command/CommandHandler'
+import Context from 'Handles/Command/CommandContext'
+import Arguments from 'Handles/Utils/Arguments'
+import Argument = Handles.CommandArgument
+import Permission = Handles.CommandPermission
+import User from 'Handles/DB/User'
 import { RichEmbed } from 'discord.js'
 
 export default class Rank extends Command
@@ -23,9 +23,7 @@ export default class Rank extends Command
         let users = app.db.getUsers(askedUser.guild.id).value()
 
         users.sort(function(a, b){
-            let LevelA = Math.floor(Math.floor(25 + Math.sqrt(625 + 100 * a.xp)) / 50),
-                LevelB = Math.floor(Math.floor(25 + Math.sqrt(625 + 100 * b.xp)) / 50)
-            return a.level - b.level
+            return a.xp - b.xp
         })
         users.reverse()
 

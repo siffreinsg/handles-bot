@@ -1,10 +1,10 @@
 {
     "discordAPItoken": "[Insert the Discord API Token here]",
-    "botname": "Gus",
+    "botname": "Handles",
     "prefix": "?",
     "lang": "en_US",
     "status": "callmegus.xyz | {prefix}help",
-    "translate": "true",
-    "dbPath": "./GusDB.json",
+    "translate": false,
+    "dbPath": "./HandlesDB.json",
     "XPgived": [1, 10]
 }

@@ -1,10 +1,10 @@
-import ConsoleOutput from './src/node_modules/Gus/Kernel/Output/ConsoleOutput'
-import Application from './src/node_modules/Gus/Kernel/Application'
+import ConsoleOutput from './src/node_modules/Handles/Kernel/Output/ConsoleOutput'
+import Application from './src/node_modules/Handles/Kernel/Application'
 import * as Discord from 'discord.js'
 
 declare global {
     
-    namespace Gus {
+    namespace Handles {
         interface CommandArgument {
             name: string
             type: 'text',
