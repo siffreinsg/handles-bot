@@ -1,26 +1,27 @@
-# Gus
+# Handles
 
-> Call me Gus. I'm afraid this door can only be opened by executive order. We apologize for any distress you may have just experienced. Grief counselling is available on request.
+> Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information.
 
 # Try me ! Join the community [here](https://discord.gg/aYcxRR6) !
 
 
 ## What is it ?
 
-Gus is a multifunction Discord bot which comes with sets of features and commands made for you. Written in [Node.js](https://nodejs.org/) using the [Discord.js](https://discord.js.org/) library.
+Handles (formerly known as Gus) is a multifunction Discord bot which comes with sets of features and commands made for you. Written in [TypeScript](https://www.typescriptlang.org/) using the [Discord.js](https://discord.js.org/) library.
 
 The default set of modules includes:
-* Search and music features
-* Moderation features (includes channels creation, report functions, and more)
-* An complete economy system
-* Some games and awesome useless commands
-* And much more !
+* Smart moderation features (includes channels creation, messages deleting, automatic bans & kick, ...)
+* Amazing music features like an soundbox who is able to block anything that is harmful to us ~~(like Jul)~~
+* An complete trading & economy virtual platform across all the servers
+* A lot of games and some awesome useless commands
+* And so much more !
 
 
 ## How to install it ?
 
-At the moment, you can't use Gus outside of the closed alpha phases.
-To use the bot, you need to host it on your own server. A ready-to-use docker image will be available for download when the developement of the bot is completed. In the meantime, you can install nodejs and all its dependencies manually if you want to use the bot.
+At the moment, you can't use Handles outside of the closed alpha phases. You can nevertheless test it without limits on our official Discord server, Handles is always available and ready to help you here!
+
+To use the bot, you will need to host it on your own server. A ready-to-use docker image is going to be available for download when the development of the bot is completed. In the meantime, you will be able to install it and all its dependencies manually if you want to use the bot.
 
 
 ## About the license
@@ -31,4 +32,4 @@ Released under the [Apache 2 LICENCE](LICENSE).
 
 "Discord" and any associated logos are registered trademarks of Hammer & Chisel, Inc.
 
-"Gus" is the name of the automated computer system which appear in the famous BBC's series "Doctor Who" in the episode "Mummy on the  Orient Express". "Gus" and any associated logos are registered trademarks of Doctor Who, BBC.
+"Handles" is the name of the automated computer assistant which appear in the famous BBC's series "Doctor Who" in the episode "The Time of the Doctor". "Handles" and any associated logos are registered trademarks of Doctor Who, BBC.
