@@ -1,9 +1,9 @@
 import * as minimist from 'minimist'
 import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
-import * as Command from 'Gus/Utils/Command'
-import User from 'Gus/DB/User'
-import Stats from 'Gus/DB/Global'
+import * as Command from 'Handles/Utils/Command'
+import User from 'Handles/DB/User'
+import Stats from 'Handles/DB/Global'
 import 'colors'
 
 

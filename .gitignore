@@ -59,7 +59,7 @@ typings/
 
 # Gus files
 !src/node_modules/
-GusDB.json
+HandlesDB.json
 config.dev.json
 *.js
 !gulpfile.js

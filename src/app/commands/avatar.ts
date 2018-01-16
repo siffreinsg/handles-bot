@@ -1,8 +1,8 @@
-import Command from 'Gus/Command/CommandHandler'
-import Context from 'Gus/Command/CommandContext'
-import Arguments from 'Gus/Utils/Arguments'
-import Argument = Gus.CommandArgument
-import Permission = Gus.CommandPermission
+import Command from 'Handles/Command/CommandHandler'
+import Context from 'Handles/Command/CommandContext'
+import Arguments from 'Handles/Utils/Arguments'
+import Argument = Handles.CommandArgument
+import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 
 export default class Avatar extends Command
