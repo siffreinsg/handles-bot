@@ -3,5 +3,8 @@
     "botname": "Gus",
     "prefix": "?",
     "lang": "en_US",
-    "status": "callmegus.xyz | {prefix}help"
+    "status": "callmegus.xyz | {prefix}help",
+    "translate": "true",
+    "dbPath": "./GusDB.json",
+    "XPgived": [1, 10]
 }

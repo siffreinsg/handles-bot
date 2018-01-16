@@ -2,7 +2,14 @@
     "commands": {
         "hello": {
             "hello": "Hello {who}!",
-            "defaultPeople": "world"
+            "default": "world"
+        },
+        "advice": {
+            "autoTranslation": "Automatic translation",
+            "translationsWarn": "Translations might be inaccurate."
+        },
+        "avatar": {
+            "noAvatar": "This user does not have an avatar."
         },
         "help": {
             "availableCommands": "Available commands:",
@@ -10,10 +17,16 @@
             "fullList": "Get a full list and usages of the commands on https://callmegus.xyz"
         }
     },
+    "events": {
+      "MessageHandler": {
+          "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o"  
+      }
+    },
     "errors": {
         "unknownCommand": "Unknown command!",
         "didYouMean": "Did you mean`{prefix}{command}`?",
         "useHelpCommand": "To get the list of the commandes, use `{prefix}help`.",
-        "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`."
+        "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`.",
+        "basicError": "Error while executing the command. Please contact an administrator"
     }
 }

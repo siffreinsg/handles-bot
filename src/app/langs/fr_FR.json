@@ -2,7 +2,14 @@
     "commands": {
         "hello": {
             "hello": "Bonjour {who} !",
-            "defaultPeople": "à tous"
+            "default": "à tous"
+        },
+        "advice": {
+            "autoTranslation": "Traduction automatique",
+            "translationsWarn": "Les traductions peuvent être inexactes."
+        },
+        "avatar": {
+            "noAvatar": "Cet utilisateur ne possède pas d'avatar."
         },
         "help": {
             "availableCommands": "Liste des commandes disponibles:",
@@ -10,10 +17,16 @@
             "fullList": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
         }
     },
+    "events": {
+      "MessageHandler": {
+          "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o"  
+      }
+    },
     "errors": {
         "unknownCommand": "Commande inconnue !",
         "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
         "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
-        "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`."
+        "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`.",
+        "basicError": "Erreur lors de l'exécution de la commande. Veuillez contacter un administrateur"
     }
 }
