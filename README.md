@@ -1,8 +1,7 @@
 # Handles
+[![Build Status](https://travis-ci.org/callmegus/handles-bot.svg?branch=dev)](https://travis-ci.org/callmegus/handles-bot)
 
 > Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information.
-
-# Try me ! Join the community [here](https://discord.gg/aYcxRR6) !
 
 
 ## What is it ?
@@ -15,6 +14,8 @@ The default set of modules includes:
 * An complete trading & economy virtual platform across all the servers
 * A lot of games and some awesome useless commands
 * And so much more !
+
+You may join our community just [here](https://discord.gg/aYcxRR6) to discover Handles !
 
 
 ## How to install it ?
