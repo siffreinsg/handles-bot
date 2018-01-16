@@ -8,7 +8,7 @@ import * as cool from 'cool-ascii-faces'
 export default class Face extends Command
 {
     command: string = 'face'
-    desc: string = '¯\_(ツ)_/¯'
+    desc: string = '¯\\_(ツ)\_/¯'
     args : Argument[] = []
     
     execute(context : Context, args: Arguments){

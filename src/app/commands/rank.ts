@@ -19,14 +19,24 @@ export default class Rank extends Command
         let firstMention = context.message.mentions.members.first(),
             askedUser = firstMention ? firstMention : context.executor,
             user = new User(askedUser)
-        
+
+        let users = app.db.getUsers(askedUser.guild.id).value()
+
+        users.sort(function(a, b){
+            let LevelA = Math.floor(Math.floor(25 + Math.sqrt(625 + 100 * a.xp)) / 50),
+                LevelB = Math.floor(Math.floor(25 + Math.sqrt(625 + 100 * b.xp)) / 50)
+            return a.level - b.level
+        })
+        users.reverse()
+
+        let position = users.findIndex(x => x.id === askedUser.id)
+
         let embed = new RichEmbed()
             .setColor(askedUser.displayHexColor)
-            .setAuthor(askedUser.displayName, askedUser.user.avatarURL)
-            .addField('Level', user.getLevel(), true)
-            .addField('XP', user.getXP(), true)
-            .addField('Total XP', user.xp, true)
-
+            .setAuthor(askedUser.displayName + ' - @' + askedUser.user.tag, askedUser.user.avatarURL)
+            .addField('Rank', (position + 1) + '/' + users.length, true)
+            .addField('Level', user.getLevel() + ' (Tot. XP: ' + user.xp + ')', true)
+            .addField('XP', user.getXP() + '/' + (user.getLevelRequiredXP(user.getLevel() + 1) - user.getLevelRequiredXP()), true)
         context.replyEmbed('', embed)
     }
     

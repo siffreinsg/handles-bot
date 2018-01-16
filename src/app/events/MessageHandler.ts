@@ -3,6 +3,7 @@ import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
 import * as Command from 'Gus/Utils/Command'
 import User from 'Gus/DB/User'
+import Stats from 'Gus/DB/Global'
 import 'colors'
 
 
@@ -15,28 +16,29 @@ export default class MessageHandler {
     constructor(message: any){
         this.message = message
         var message = message.content.toString()
+        let stats = app.db.getStats(this.message.guild.id)
 
         if (this.isCommand(message)) {
             var {command, args} = this.parseCommand(message)
             var answer = this.executeCommand(this.message, command, args)
 
             this.checkAnswer(answer, command)
-        } else if (!this.message.author.bot) {
-            /*
-            Equations :
-            X = 25 * lvl * lvl - 25 * lvl
-            L = Math.floor(25 + Math.sqrt(625 + 100 * xp)) / 50
-            */
 
+            let commandsExecuted = stats.get('commandsExecuted').value()
+            stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1)
+        } else if (!this.message.author.bot) {
             let user = new User(this.message.member),
                 oldLevel = user.getLevel(),
-                newXP = user.incrementXp(Math.floor(Math.random() * 10) + 0),
+                newXP = user.incrementXp(Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]),
                 newLevel = user.getLevel()
             user.push()
 
             if (newLevel > oldLevel) {
                 this.message.channel.send(app.translate('/events/MessageHandler/levelup', {who: '<@' + this.message.author.id + '>', level: '' + newLevel}))
             }
+
+            let messagesSent = stats.get('messagesSent').value()
+            stats.set('messagesSent', (messagesSent ? messagesSent : 0) + 1)
         }
     }
 	    
