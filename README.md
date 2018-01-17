@@ -1,4 +1,6 @@
 # Handles
+[![Patreon](http://ionicabizau.github.io/badges/patreon.svg)](https://www.patreon.com/callmegus)
+[![Discord](https://discordapp.com/api/guilds/337648434603491330/embed.png)](https://discord.gg/aYcxRR6)
 [![Build Status](https://travis-ci.org/callmegus/handles-bot.svg?branch=dev)](https://travis-ci.org/callmegus/handles-bot)
 
 > Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information.
@@ -6,7 +8,7 @@
 
 ## What is it ?
 
-Handles (formerly known as Gus) is a multifunction Discord bot which comes with sets of features and commands made for you. Written in [TypeScript](https://www.typescriptlang.org/) using the [Discord.js](https://discord.js.org/) library.
+Handles (formerly known as Gus) is a multifunction Discord bot which comes with sets of features and commands made for you. Written in [TypeScript](https://www.typescriptlang.org) for [NodeJS](https://nodejs.org) using some powerful libraries like [Discord.js](https://discord.js.org), [LowDB](https://github.com/typicode/lowdb), [Express](http://expressjs.com), and [Listr](https://github.com/SamVerschueren/listr).
 
 The default set of modules includes:
 * Smart moderation features (includes channels creation, messages deleting, automatic bans & kick, ...)
