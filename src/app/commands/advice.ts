@@ -17,7 +17,6 @@ export default class Advice extends Command
         request('http://api.adviceslip.com/advice', function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 let advice = JSON.parse(body)
-
                     if (app.config.translate) {
                         deepl(advice.slip.advice, 'EN', app.config.lang.split('_')[1], (err, res) => {
                             if (err) {
@@ -27,9 +26,9 @@ export default class Advice extends Command
                             } else {
                                 let embed = new Discord.RichEmbed()
                                     .setColor('#042d48')
-                                    .setTitle(app.translate('/commands/advice/autoTranslation'))
+                                    .setTitle(app.translate('/translations/autoTranslation', context.server.id))
                                     .setDescription('\n```\n' + res + '\n```')
-                                    .setFooter(app.translate('/commands/advice/translationsWarn'))
+                                    .setFooter(app.translate('/translations/translationsWarn', context.server.id))
                                 context.replyEmbed(advice.slip.advice, embed)
                             }
                         })

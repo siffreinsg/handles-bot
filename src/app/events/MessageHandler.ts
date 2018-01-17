@@ -34,7 +34,7 @@ export default class MessageHandler {
             user.push()
 
             if (newLevel > oldLevel) {
-                this.message.channel.send(app.translate('/events/MessageHandler/levelup', {who: '<@' + this.message.author.id + '>', level: '' + newLevel}))
+                this.message.channel.send(app.translate('/events/MessageHandler/levelup', this.message.guild.id, {who: '<@' + this.message.author.id + '>', level: '' + newLevel}))
             }
 
             let messagesSent = stats.get('messagesSent').value()
@@ -67,11 +67,11 @@ export default class MessageHandler {
         switch (answer) {
             case 'notfound':
                 let recommended = didYouMean(executedCommand, app.commands.list, {returnType: 'first-closest-match'})
-                this.message.channel.send(app.translate('/errors/unknownCommand') + (recommended ? app.translate('/errors/didYouMean', {command: recommended}) : '') + '\n' + app.translate('/errors/useHelpCommand'))
+                this.message.channel.send(app.translate('/errors/unknownCommand', this.message.guild.id) + (recommended ? app.translate('/errors/didYouMean', this.message.guild.id, {command: recommended}) : '') + '\n' + app.translate('/errors/useHelpCommand', this.message.guild.id))
                 console.log((author.username + ' (@' + author.id + ') tried the inexistent command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')').grey)
                 break
             case 'badargs':
-                channel.sendMessage(app.translate('/errors/badArgs'))
+                channel.sendMessage(app.translate('/errors/badArgs', this.message.guild.id))
                 break
             default:
                 console.log((author.username + ' (@' + author.id + ') executed the command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')').gray)

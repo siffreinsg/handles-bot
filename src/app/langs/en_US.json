@@ -4,10 +4,6 @@
             "hello": "Hello {who}!",
             "default": "world"
         },
-        "advice": {
-            "autoTranslation": "Automatic translation",
-            "translationsWarn": "Translations might be inaccurate."
-        },
         "avatar": {
             "noAvatar": "This user does not have an avatar."
         },
@@ -15,6 +11,10 @@
             "availableCommands": "Available commands:",
             "message": "How to use me? Which commands are availables? What to do with me? All of these questions have an answer here: https://callmegus.xyz/helpme.\n\nOtherwise you can run `{prefix}help list` to get a summmary of the commands.",
             "fullList": "Get a full list and usages of the commands on https://callmegus.xyz"
+        },
+        "langs": {
+            "langSet": "Server lang set to {lang} with success !",
+            "unknown": "Lang \"{lang}\" unknown ! Available langs: {availables}."
         }
     },
     "events": {
@@ -28,5 +28,9 @@
         "useHelpCommand": "To get the list of the commandes, use `{prefix}help`.",
         "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`.",
         "basicError": "Error while executing the command. Please contact an administrator"
+    },
+    "translations": {
+        "autoTranslation": "Automatic translation",
+        "translationsWarn": "Translations might be inaccurate."
     }
 }

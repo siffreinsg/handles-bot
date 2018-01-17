@@ -18,7 +18,7 @@ export default class Avatar extends Command
             user = mention ? mention : context.executor.user,
             message = 'Avatar de ' + user.username
 
-        if (!user.avatarURL) return context.replyError(app.translate('/commands/avatar/noAvatar'), {})
+        if (!user.avatarURL) return context.replyError(app.translate('/commands/avatar/noAvatar', context.server.id), {})
 
         let embed = new Discord.RichEmbed()
             .setAuthor(user.username, user.avatarURL)
