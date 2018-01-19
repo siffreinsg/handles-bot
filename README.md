@@ -12,8 +12,8 @@ Handles (formerly known as Gus) is a multifunction Discord bot which comes with 
 
 The default set of modules includes:
 * Smart moderation features (includes channels creation, messages deleting, automatic bans & kick, ...)
-* Amazing music features like an soundbox who is able to block anything that is harmful to us ~~(like Jul)~~
-* An complete trading & economy virtual platform across all the servers
+* Amazing music features like a soundbox who is able to block anything that is harmful to us ~~(like Jul)~~
+* A complete trading & economy virtual platform across all the servers
 * A lot of games and some awesome useless commands
 * And so much more !
 
