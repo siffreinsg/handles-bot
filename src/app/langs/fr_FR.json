@@ -15,6 +15,11 @@
         "langs": {
             "langSet": "Langue du serveur paramétrée à {lang} avec succès !",
             "unknown": "Langue \"{lang}\" inconnue ! Liste des langues disponibles: {availables}."
+        },
+        "stats": {
+            "msgSent": "Messages envoyés",
+            "cmdExed": "Commandes executées",
+            "figuresFormat": "Format des données: dernières 24h/depuis le début"
         }
     },
     "events": {
