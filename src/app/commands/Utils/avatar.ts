@@ -8,6 +8,7 @@ import * as Discord from 'discord.js'
 export default class Avatar extends Command {
     command: string = 'avatar'
     desc: string = 'Get avatars from anyone'
+    permissions: Permission[] = []
     args: Argument[] = [
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]

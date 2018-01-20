@@ -7,6 +7,9 @@ import Permission = Handles.CommandPermission
 export default class Error extends Command {
     command: string = 'error'
     desc: string = 'Generate an error of your choice.'
+    permissions: Permission[] = [
+        'MANAGE_MESSAGES'
+    ]
     args: Argument[] = [
         { name: 'error', type: 'text', required: true, usage: 'error' },
         { name: 'title', type: 'text', required: false, usage: 'title' },

@@ -3,7 +3,7 @@ import Application from './src/node_modules/Handles/Kernel/Application'
 import * as Discord from 'discord.js'
 
 declare global {
-    
+
     namespace Handles {
         interface CommandArgument {
             name: string
@@ -26,5 +26,5 @@ declare global {
             consoleOutput: ConsoleOutput
         }
     }
-    
+
 }

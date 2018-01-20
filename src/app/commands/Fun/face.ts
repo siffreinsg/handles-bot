@@ -5,13 +5,13 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import * as cool from 'cool-ascii-faces'
 
-export default class Face extends Command
-{
+export default class Face extends Command {
     command: string = 'face'
     desc: string = '¯\\_(ツ)\_/¯'
-    args : Argument[] = []
-    
-    execute(context : Context, args: Arguments){
+    permissions: Permission[] = []
+    args: Argument[] = []
+
+    execute(context: Context, args: Arguments) {
         context.message.delete().then(m => context.reply(cool()))
     }
 }

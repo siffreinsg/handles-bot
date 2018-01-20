@@ -30,6 +30,8 @@
         }
     },
     "errors": {
+        "noPermError": "Permission error",
+        "noPerm": "You don't have the right permissions to execute this command !",
         "requestedBy": "Requested by {user}",
         "unknownErr": "Unknown error",
         "unknownCommand": "Unknown command!",

@@ -10,6 +10,7 @@ import * as deepl from 'node-deepl'
 export default class Advice extends Command {
     command: string = 'advice'
     desc: string = 'Improve your life !'
+    permissions: Permission[] = []
     args: Argument[] = []
 
     execute(context: Context, args: Arguments) {

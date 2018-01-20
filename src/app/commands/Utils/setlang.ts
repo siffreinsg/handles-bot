@@ -7,6 +7,10 @@ import Permission = Handles.CommandPermission
 export default class SetLang extends Command {
     command: string = 'setlang'
     desc: string = 'Change server lang'
+    permissions: Permission[] = [
+        'MANAGE_GUILD',
+        'MANAGE_CHANNELS'
+    ]
     args: Argument[] = [
         { name: 'lang', type: 'text', required: true, usage: 'lang' }
     ]

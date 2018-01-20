@@ -10,6 +10,7 @@ import { RichEmbed } from 'discord.js'
 export default class Ping extends Command {
     command: string = 'joke'
     desc: string = 'You\'re so funny'
+    permissions: Permission[] = []
     args: Argument[] = []
 
 

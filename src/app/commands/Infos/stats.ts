@@ -8,6 +8,7 @@ import { RichEmbed } from 'discord.js'
 export default class Stats extends Command {
     command: string = 'stats'
     desc: string = 'NUMBERS ! Best thing of my life :3'
+    permissions: Permission[] = []
     args: Argument[] = []
 
     execute(context: Context, args: Arguments) {

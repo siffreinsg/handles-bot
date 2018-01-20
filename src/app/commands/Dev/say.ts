@@ -7,6 +7,9 @@ import Permission = Handles.CommandPermission
 export default class Say extends Command {
     command: string = 'say'
     desc: string = 'Let me speak'
+    permissions: Permission[] = [
+        'MANAGE_MESSAGES'
+    ]
     args: Argument[] = [
         { name: 'message', type: 'text', required: true, usage: 'text to say' },
         { name: 'options', type: 'text', required: false, usage: 'options' }

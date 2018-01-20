@@ -5,17 +5,16 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 
-export default class Ping extends Command
-{
+export default class Ping extends Command {
     command: string = 'ping'
     desc: string = 'What time is it ?'
-    args : Argument[] = []
-    
-    
-    async execute(context : Context, args: Arguments){
-        let m : any = await context.message.channel.send('Pong!')
+    permissions: Permission[] = []
+    args: Argument[] = []
+
+
+    async execute(context: Context, args: Arguments) {
+        let m: any = await context.message.channel.send('Pong!')
         m.edit(`Pong! \`${m.createdTimestamp - context.message.createdTimestamp}ms\` :watch:`)
     }
-    
-}
 
+}
