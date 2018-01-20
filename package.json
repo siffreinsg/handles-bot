@@ -1,13 +1,13 @@
 {
-    "name": "gus-bot",
+    "name": "handles-bot",
     "version": "1.0.0-alpha.1",
-    "description": "A multi-function discord bot.",
+    "description": "Handles is a multifunction Discord bot which comes with sets of features and commands made for you.",
     "main": "out/index.js",
     "scripts": {
         "dev": "npm run compile && node out/index.js",
         "compile": "gulp dev"
     },
-    "author": "Gus Project",
+    "author": "The Orient Express Project",
     "license": "Apache-2.0",
     "dependencies": {
         "colors": "^1.1.2",

@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# package-lock file
+package-lock.json
+
 # Gus files
 !src/node_modules/
 HandlesDB.json

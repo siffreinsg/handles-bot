@@ -27,9 +27,16 @@ At the moment, you can't use Handles outside of the closed alpha phases. You can
 To use the bot, you will need to host it on your own server. A ready-to-use docker image is going to be available for download when the development of the bot is completed. In the meantime, you will be able to install it and all its dependencies manually if you want to use the bot.
 
 
+## Contributing
+
+How awesome is that! Thanks for your interest in contributing! There are many ways to contribute to this project. Fortunally, a complete documentation is available on this repo. Get started [here](CONTRIBUTING.md).
+
+
 ## About the license
 
 Released under the [Apache 2 LICENCE](LICENSE).
+
+Unless required by applicable law or agreed to in writing, software distributed under the license is distributed on an "as is" basis, without warranties or conditions of any kind, either express or implied. See the license for the specific language governing permissions and limitations.
 
 ---
 
