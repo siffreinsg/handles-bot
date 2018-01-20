@@ -17,6 +17,7 @@ export default class MessageHandler {
         this.message = message
         var message = message.content.toString()
         let stats = app.db.getStats(this.message.guild.id)
+        let user = new User(this.message.member)
 
         if (this.isCommand(message)) {
             var { command, args } = this.parseCommand(message)
@@ -24,13 +25,15 @@ export default class MessageHandler {
 
             this.checkAnswer(answer, command)
 
+            user.incrementCmdExed()
+            user.push()
             let commandsExecuted = stats.get('commandsExecuted').value()
             stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
-        } else if (!this.message.author.bot) {
-            let user = new User(this.message.member),
-                oldLevel = user.getLevel(),
+        } else {
+            let oldLevel = user.getLevel(),
                 newXP = user.incrementXp(Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]),
                 newLevel = user.getLevel()
+            user.incrementMsgSent()
             user.push()
 
             if (newLevel > oldLevel) {
