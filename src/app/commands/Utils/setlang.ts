@@ -23,7 +23,7 @@ export default class SetLang extends Command {
             let availables = ''
             langs.forEach(lang => { availables += lang + ', ' })
             availables += 'default (en_US)'
-            context.reply(app.translate('/commands/langs/unknown', context.server.id, { lang, availables }))
+            context.replyError('custom', app.translate('/commands/langs/unknown', context.server.id, { lang }), app.translate('/commands/langs/availables', context.server.id, { availables }))
         }
     }
 

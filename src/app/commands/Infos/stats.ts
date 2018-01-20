@@ -19,7 +19,7 @@ export default class Stats extends Command {
             .addField(app.translate('/commands/stats/msgSent', context.server.id), stats.get('messagesSent').value() + '/' + stats.get('messagesSent').value(), true)
             .addField(app.translate('/commands/stats/cmdExed', context.server.id), stats.get('commandsExecuted').value() + '/' + stats.get('commandsExecuted').value(), true)
             .setFooter(app.translate('/commands/stats/figuresFormat', context.server.id))
-        context.replyEmbed('', embed)
+        context.reply('', embed)
     }
 
 }

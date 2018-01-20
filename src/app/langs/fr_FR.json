@@ -5,6 +5,7 @@
             "default": "à tous"
         },
         "avatar": {
+            "error": "Aucun avatar",
             "noAvatar": "Cet utilisateur ne possède pas d'avatar."
         },
         "help": {
@@ -13,8 +14,9 @@
             "fullList": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
         },
         "langs": {
-            "langSet": "Langue du serveur paramétrée à {lang} avec succès !",
-            "unknown": "Langue \"{lang}\" inconnue ! Liste des langues disponibles: {availables}."
+            "langSet": "Langue du serveur paramétrée à `{lang}` avec succès !",
+            "unknown": "Langue \"{lang}\" inconnue",
+            "availables": "Liste des langues disponibles: `{availables}`."
         },
         "stats": {
             "msgSent": "Messages envoyés",
@@ -28,10 +30,13 @@
         }
     },
     "errors": {
+        "unknownErr": "Erreur inconnue",
+        "requestedBy": "Executé par {user}",
         "unknownCommand": "Commande inconnue !",
         "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
         "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
-        "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`.",
+        "badArgs": "Arguments de commande incorrects",
+        "learnCMD": " Découvrez la syntaxe de la commande avec `{prefix}help`.",
         "basicError": "Erreur lors de l'exécution de la commande. Veuillez contacter un administrateur",
         "sayception": "Vous ne devriez pas faire cela si vous ne voulez pas être responsable de l'implosion quantique du cœur de Handles, cela créerait un trou noir interdimensionnel mortel.. :c"
     },

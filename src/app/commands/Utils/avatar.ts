@@ -5,25 +5,24 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 
-export default class Avatar extends Command
-{
+export default class Avatar extends Command {
     command: string = 'avatar'
     desc: string = 'Get avatars from anyone'
-    args : Argument[] = [
-        {name: 'user', type: 'text', required: false, usage: '@user'}
+    args: Argument[] = [
+        { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
-    
-    execute(context : Context, args: Arguments){
+
+    execute(context: Context, args: Arguments) {
         let mention = context.message.mentions.users.first(),
             user = mention ? mention : context.executor.user,
             message = 'Avatar de ' + user.username
 
-        if (!user.avatarURL) return context.replyError(app.translate('/commands/avatar/noAvatar', context.server.id), {})
+        if (!user.avatarURL) return context.replyError('custom', '/commands/avatar/error', '/commands/avatar/noAvatar')
 
         let embed = new Discord.RichEmbed()
             .setAuthor(user.username, user.avatarURL)
             .setImage(user.avatarURL)
-        context.replyEmbed(message, embed)
+        context.reply(message, embed)
     }
-    
+
 }

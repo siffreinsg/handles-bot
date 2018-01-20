@@ -28,7 +28,7 @@ export default class Advice extends Command {
                                 .setTitle(app.translate('/translations/autoTranslation', context.server.id))
                                 .setDescription('\n```\n' + res + '\n```')
                                 .setFooter(app.translate('/translations/translationsWarn', context.server.id))
-                            context.replyEmbed(advice.slip.advice, embed)
+                            context.reply(advice.slip.advice, embed)
                         }
                     })
                 } else {

@@ -7,14 +7,13 @@ import * as request from 'request'
 import * as deepl from 'node-deepl'
 import { RichEmbed } from 'discord.js'
 
-export default class Ping extends Command
-{
+export default class Ping extends Command {
     command: string = 'joke'
     desc: string = 'You\'re so funny'
-    args : Argument[] = []
-    
-    
-    execute(context : Context, args: Arguments){
+    args: Argument[] = []
+
+
+    execute(context: Context, args: Arguments) {
         let options = {
             url: 'https://icanhazdadjoke.com/',
             headers: {
@@ -38,7 +37,7 @@ export default class Ping extends Command
                                 .setTitle(app.translate('/translations/autoTranslation', context.server.id))
                                 .setDescription('\n```\n' + res + '\n```')
                                 .setFooter(app.translate('/translations/translationsWarn', context.server.id))
-                            context.replyEmbed(data.joke, embed)
+                            context.reply(data.joke, embed)
                         }
                     })
                 } else {
@@ -50,6 +49,5 @@ export default class Ping extends Command
             }
         })
     }
-    
-}
 
+}

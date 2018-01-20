@@ -5,6 +5,7 @@
             "default": "world"
         },
         "avatar": {
+            "error": "No avatar",
             "noAvatar": "This user does not have an avatar."
         },
         "help": {
@@ -13,8 +14,9 @@
             "fullList": "Get a full list and usages of the commands on https://callmegus.xyz"
         },
         "langs": {
-            "langSet": "Server lang set to {lang} with success !",
-            "unknown": "Lang \"{lang}\" unknown ! Available langs: {availables}."
+            "langSet": "Server lang set to `{lang}` with success !",
+            "unknown": "Lang \"{lang}\" unknown",
+            "availables": "Available langs: `{availables}`."
         },
         "stats": {
             "msgSent": "Messages sent",
@@ -28,10 +30,13 @@
         }
     },
     "errors": {
+        "requestedBy": "Requested by {user}",
+        "unknownErr": "Unknown error",
         "unknownCommand": "Unknown command!",
-        "didYouMean": "Did you mean`{prefix}{command}`?",
+        "didYouMean": "Did you mean `{prefix}{command}`?",
         "useHelpCommand": "To get the list of the commandes, use `{prefix}help`.",
-        "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`.",
+        "badArgs": "Bad arguments !",
+        "learnCMD": "Learn how the command works using `{prefix}help`.",
         "basicError": "Error while executing the command. Please contact an administrator",
         "sayception": "You shouldn't do this if you don't want to be responsible for the quantum implosion of Handles' heart, that would create a deadly interdimensional black hole... Please don't :c"
     },
