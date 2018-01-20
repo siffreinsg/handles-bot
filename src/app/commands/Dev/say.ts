@@ -17,7 +17,12 @@ export default class Say extends Command {
             let toSend = args.getAll().join(' ').split('|'),
                 message = toSend[0],
                 options = toSend[1] ? toSend[1] : {}
-            context.reply(message, options)
+
+            if (!message.includes('?say')) {
+                context.reply(message, options)
+            } else {
+                context.reply(app.translate('/errors/sayception', context.server.id))
+            }
         })
 
     }

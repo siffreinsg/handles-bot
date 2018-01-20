@@ -18,16 +18,17 @@
         }
     },
     "events": {
-      "MessageHandler": {
-          "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o"  
-      }
+        "MessageHandler": {
+            "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o"
+        }
     },
     "errors": {
         "unknownCommand": "Commande inconnue !",
         "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
         "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
         "badArgs": "Arguments de commande incorrects ! Découvrez la syntaxe de la commande avec `{prefix}help`.",
-        "basicError": "Erreur lors de l'exécution de la commande. Veuillez contacter un administrateur"
+        "basicError": "Erreur lors de l'exécution de la commande. Veuillez contacter un administrateur",
+        "sayception": "Vous ne devriez pas faire cela si vous ne voulez pas être responsable de l'implosion quantique du cœur de Handles, cela créerait un trou noir interdimensionnel mortel.. :c"
     },
     "translations": {
         "autoTranslation": "Traduction automatique",

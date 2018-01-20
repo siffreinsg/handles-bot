@@ -18,16 +18,17 @@
         }
     },
     "events": {
-      "MessageHandler": {
-          "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o"  
-      }
+        "MessageHandler": {
+            "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o"
+        }
     },
     "errors": {
         "unknownCommand": "Unknown command!",
         "didYouMean": "Did you mean`{prefix}{command}`?",
         "useHelpCommand": "To get the list of the commandes, use `{prefix}help`.",
         "badArgs": "Bad arguments ! Learn how the command works using `{prefix}help`.",
-        "basicError": "Error while executing the command. Please contact an administrator"
+        "basicError": "Error while executing the command. Please contact an administrator",
+        "sayception": "You shouldn't do this if you don't want to be responsible for the quantum implosion of Handles' heart, that would create a deadly interdimensional black hole... Please don't :c"
     },
     "translations": {
         "autoTranslation": "Automatic translation",
