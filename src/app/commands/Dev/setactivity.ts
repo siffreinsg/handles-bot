@@ -13,6 +13,7 @@ export default class Setactivity extends Command {
     args: Argument[] = [
         { name: 'activity', type: 'text', required: true, usage: 'activity' }
     ]
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         let status = args.getAll().join(' ')

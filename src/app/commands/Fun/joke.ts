@@ -12,6 +12,7 @@ export default class Joke extends Command {
     desc: string = 'You\'re so funny'
     permissions: Permission[] = []
     args: Argument[] = []
+    allowDM: boolean = true
 
 
     execute(context: Context, args: Arguments) {

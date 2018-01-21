@@ -15,6 +15,7 @@ export default class Purge extends Command {
     args: Argument[] = [
         { name: 'quantity', type: 'text', required: true, usage: 'quantity' }
     ]
+    allowDM: boolean = false
 
     execute(context: Context, args: Arguments) {
         let quantity = parseInt('' + args.get(0))

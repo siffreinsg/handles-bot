@@ -8,9 +8,10 @@ export default class Halt extends Command {
     command: string = 'halt'
     desc: string = 'Shutdown the bot'
     permissions: Permission[] = [
-        'ADMINISTRATOR'
+        'SUPER_ADMIN'
     ]
     args: Argument[] = []
+    allowDM: boolean = true
 
     async execute(context: Context, args: Arguments) {
         await context.reply(app.translate('/commands/halt', context.server.id))

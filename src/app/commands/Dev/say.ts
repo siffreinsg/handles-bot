@@ -14,10 +14,11 @@ export default class Say extends Command {
         { name: 'message', type: 'text', required: true, usage: 'text to say' },
         { name: 'options', type: 'text', required: false, usage: 'options' }
     ]
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         context.message.delete().then(msg => {
-            let toSend = args.getAll().join(' ').split('|'),
+            let toSend = args.getAll().join(' ').split('|options:'),
                 message = toSend[0],
                 options = toSend[1] ? toSend[1] : {}
 

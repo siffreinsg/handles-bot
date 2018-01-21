@@ -14,6 +14,7 @@ export default class Shorturl extends Command {
     args: Argument[] = [
         { name: 'url', type: 'text', required: true, usage: 'url' }
     ]
+    allowDM: boolean = false
 
     async execute(context: Context, args: Arguments) {
         let url = '' + args.get(0)

@@ -13,6 +13,7 @@ export default class Rank extends Command {
     args: Argument[] = [
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
+    allowDM: boolean = false
 
     execute(context: Context, args: Arguments) {
         let firstMention = context.message.mentions.members.first(),

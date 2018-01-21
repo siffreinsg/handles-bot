@@ -11,6 +11,7 @@ export default class Hello extends Command {
     args: Argument[] = [
         { name: 'name', type: 'text', required: false, usage: 'Paul' }
     ]
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         var who = args.getAll().join(' ') || app.translate('/commands/hello/default', context.server.id)

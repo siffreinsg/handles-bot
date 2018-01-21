@@ -13,6 +13,7 @@ export default class Userinfos extends Command {
     args: Argument[] = [
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
+    allowDM: boolean = false
 
     execute(context: Context, args: Arguments) {
         let firstMention = context.message.mentions.members.first(),
@@ -28,8 +29,8 @@ export default class Userinfos extends Command {
             .setAuthor(askedUser.displayName + ' - @' + askedUser.user.tag, askedUser.user.avatarURL)
             .addField(app.translate('/commands/userinfos/status', context.server.id), app.translate('/misc/status/' + askedUser.presence.status, context.server.id), true)
             .addField(app.translate('/commands/userinfos/game', context.server.id), (askedUser.presence.game && askedUser.presence.game && askedUser.presence.game.name) || app.translate('/commands/userinfos/notPlaying', context.server.id), true)
-            .addField(app.translate('/commands/userinfos/registeredOn', context.server.id), dateFormat(registeredOn, app.translate('/misc/dateFormat', context.server.id)))
-            .addField(app.translate('/commands/userinfos/joinedOn', context.server.id), dateFormat(joinedOn, app.translate('/misc/dateFormat', context.server.id)))
+            .addField(app.translate('/commands/userinfos/registeredOn', context.server.id), dateFormat(registeredOn, app.translate('/misc/dateFormat', context.server.id)), true)
+            .addField(app.translate('/commands/userinfos/joinedOn', context.server.id), dateFormat(joinedOn, app.translate('/misc/dateFormat', context.server.id)), true)
             .addField(app.translate('/commands/userinfos/roles', context.server.id), roles.join(', '), true)
             .addField(app.translate('/commands/userinfos/userID', context.server.id), askedUser.id, true)
             .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.tag }), context.executor.displayAvatarURL)

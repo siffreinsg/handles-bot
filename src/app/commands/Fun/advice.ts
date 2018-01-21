@@ -12,6 +12,7 @@ export default class Advice extends Command {
     desc: string = 'Improve your life !'
     permissions: Permission[] = []
     args: Argument[] = []
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         got('http://api.adviceslip.com/advice').then(res => {

@@ -13,14 +13,14 @@ export default class MessageHandler {
     /**
      * Initialize the bot.
      */
-    constructor(message: any) {
+    constructor(message: Discord.Message) {
         this.message = message
-        var message = message.content.toString()
-        var stats = app.db.getStats(this.message.guild.id)
-        var user = new User(this.message.member)
+        var msg = message.content.toString()
+        var stats = app.db.getStats(message.guild.id)
+        var user = new User(message.member)
 
-        if (this.isCommand(message)) {
-            var { command, args } = this.parseCommand(message)
+        if (this.isCommand(msg)) {
+            var { command, args } = this.parseCommand(msg)
             var answer = this.executeCommand(this.message, command, args)
 
             this.checkAnswer(answer, command)

@@ -10,6 +10,7 @@ export default class Stats extends Command {
     desc: string = 'NUMBERS ! Best thing of my life :3'
     permissions: Permission[] = []
     args: Argument[] = []
+    allowDM: boolean = false
 
     execute(context: Context, args: Arguments) {
         let stats = app.db.getStats(context.server.id)

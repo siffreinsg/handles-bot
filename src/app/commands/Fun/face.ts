@@ -10,6 +10,7 @@ export default class Face extends Command {
     desc: string = '¯\\_(ツ)\_/¯'
     permissions: Permission[] = []
     args: Argument[] = []
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         context.message.delete().then(m => context.reply(cool()))

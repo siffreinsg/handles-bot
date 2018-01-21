@@ -12,6 +12,7 @@ export default class Help extends Command {
     args: Argument[] = [
         { name: 'command', type: 'text', required: false, usage: 'command name' }
     ]
+    allowDM: boolean = true
 
     execute(context, args) {
         if (args.get(0) !== 'list') {

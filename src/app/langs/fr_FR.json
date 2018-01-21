@@ -47,6 +47,17 @@
             "joinedOn": "Rejoint le",
             "roles": "Rôles",
             "userID": "ID d'utilisateur"
+        },
+        "serverinfos": {
+            "createdAt": "Créé le",
+            "owner": "Possesseur",
+            "region": "Region",
+            "defaultChannel": "Channel par défaut",
+            "textChannel": "Channels textuels",
+            "voiceChannel": "Channels vocaux",
+            "roles": "Rôles",
+            "emojis": "Emojis",
+            "members": "Membres"
         }
     },
     "events": {
@@ -55,6 +66,8 @@
         }
     },
     "errors": {
+        "noDmError": "Serveur uniquement",
+        "noDm": "Vous ne pouvez pas executer cette commande en dehors d'un serveur.",
         "noPermError": "Erreur de permission",
         "noPerm": "Vous n'avez pas les bonnes permissions pour executer cette commande !",
         "unknownErr": "Erreur inconnue",

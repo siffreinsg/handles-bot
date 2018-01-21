@@ -13,6 +13,7 @@ export default class Calculate extends Command {
     args: Argument[] = [
         { name: 'equation', type: 'text', required: true, usage: 'equation' }
     ]
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         let equation = args.getAll().join(' ')

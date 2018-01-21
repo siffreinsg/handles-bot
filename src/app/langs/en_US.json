@@ -47,6 +47,17 @@
             "joinedOn": "Joined on",
             "roles": "Roles",
             "userID": "User ID"
+        },
+        "serverinfos": {
+            "createdAt": "Created at",
+            "owner": "Owner",
+            "region": "Region",
+            "defaultChannel": "Default channel",
+            "textChannel": "Text channels",
+            "voiceChannel": "Voice channels",
+            "roles": "Rôles",
+            "emojis": "Emojis",
+            "members": "Membres"
         }
     },
     "events": {
@@ -55,6 +66,8 @@
         }
     },
     "errors": {
+        "noDmError": "Server only",
+        "noDm": "You can't execute this command outside a server.",
         "noPermError": "Permission error",
         "noPerm": "You don't have the right permissions to execute this command !",
         "unknownErr": "Unknown error",
