@@ -16,8 +16,8 @@ export default class MessageHandler {
     constructor(message: any) {
         this.message = message
         var message = message.content.toString()
-        let stats = app.db.getStats(this.message.guild.id)
-        let user = new User(this.message.member)
+        var stats = app.db.getStats(this.message.guild.id)
+        var user = new User(this.message.member)
 
         if (this.isCommand(message)) {
             var { command, args } = this.parseCommand(message)
