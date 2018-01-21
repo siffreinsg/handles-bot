@@ -28,7 +28,8 @@
             "mustBeInRange": "You must provide at least 2 and at most 100 messages to delete.",
             "deleting": "Deleting, please wait...",
             "msgDeleted": "Messages deleted with success !"
-        }
+        },
+        "halt": ":wave: Shutting down... Bye!"
     },
     "events": {
         "MessageHandler": {
@@ -38,7 +39,6 @@
     "errors": {
         "noPermError": "Permission error",
         "noPerm": "You don't have the right permissions to execute this command !",
-        "requestedBy": "Requested by {user}",
         "unknownErr": "Unknown error",
         "unknownCommand": "Unknown command!",
         "didYouMean": "Did you mean `{prefix}{command}`?",
@@ -51,5 +51,8 @@
     "translations": {
         "autoTranslation": "Automatic translation",
         "translationsWarn": "Translations might be inaccurate."
+    },
+    "misc": {
+        "requestedBy": "Requested by {user}"
     }
 }

@@ -28,7 +28,8 @@
             "mustBeInRange": "Vous devez fournir entre 2 et 100 messages à supprimer.",
             "deleting": "Suppression en cours...",
             "msgDeleted": "Messages supprimés avec succès !"
-        }
+        },
+        "halt": ":wave: Extinction en cours. Adios amigos!"
     },
     "events": {
         "MessageHandler": {
@@ -39,7 +40,6 @@
         "noPermError": "Erreur de permission",
         "noPerm": "Vous n'avez pas les bonnes permissions pour executer cette commande !",
         "unknownErr": "Erreur inconnue",
-        "requestedBy": "Executé par {user}",
         "unknownCommand": "Commande inconnue !",
         "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
         "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
@@ -51,5 +51,8 @@
     "translations": {
         "autoTranslation": "Traduction automatique",
         "translationsWarn": "Les traductions peuvent être inexactes."
+    },
+    "misc": {
+        "requestedBy": "Executé par {user}"
     }
 }
