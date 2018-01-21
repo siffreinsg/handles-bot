@@ -20,8 +20,8 @@ export default class Calculate extends Command {
         try {
             let result = math.eval(equation),
                 embed = new RichEmbed()
-                    .setColor(context.executor.displayHexColor)
-                    .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.user.tag }), context.executor.user.avatarURL)
+                    .setColor(context.server.member(context.executor).displayHexColor)
+                    .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.tag }), context.executor.displayAvatarURL)
                     .addField(app.translate('/commands/calculate/equation', context.server.id), '```' + equation + '```')
                     .addField(app.translate('/commands/calculate/result', context.server.id), '```' + result + '```')
             context.reply('', embed)

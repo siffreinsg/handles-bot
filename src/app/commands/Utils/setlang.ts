@@ -24,9 +24,7 @@ export default class SetLang extends Command {
             app.db.getConfig(context.server.id).set('lang', lang).write()
             context.reply(app.translate('/commands/langs/langSet', context.server.id, { lang }))
         } else {
-            let availables = ''
-            langs.forEach(lang => { availables += lang + ', ' })
-            availables += 'default (en_US)'
+            let availables = langs.join(', ') + ', default (en_US)'
             context.replyError('custom', app.translate('/commands/langs/unknown', context.server.id, { lang }), app.translate('/commands/langs/availables', context.server.id, { availables }))
         }
     }

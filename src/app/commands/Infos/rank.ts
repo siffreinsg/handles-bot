@@ -16,7 +16,7 @@ export default class Rank extends Command {
 
     execute(context: Context, args: Arguments) {
         let firstMention = context.message.mentions.members.first(),
-            askedUser = firstMention ? firstMention : context.executor,
+            askedUser = firstMention ? firstMention : context.server.member(context.executor),
             user = new User(askedUser)
 
         let users = app.db.getUsers(askedUser.guild.id).value()
@@ -30,7 +30,7 @@ export default class Rank extends Command {
 
         let embed = new RichEmbed()
             .setColor(askedUser.displayHexColor)
-            .setAuthor(askedUser.displayName + ' - @' + askedUser.user.tag, askedUser.user.avatarURL)
+            .setAuthor(askedUser.displayName + ' - @' + askedUser.user.tag, askedUser.user.displayAvatarURL)
             .addField('Rank', (position + 1) + '/' + users.length, true)
             .addField('Level', user.getLevel() + ' (Tot. XP: ' + user.xp + ')', true)
             .addField('XP', user.getXP() + '/' + (user.getLevelRequiredXP(user.getLevel() + 1) - user.getLevelRequiredXP()), true)

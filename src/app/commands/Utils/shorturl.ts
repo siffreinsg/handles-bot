@@ -21,8 +21,8 @@ export default class Shorturl extends Command {
         if (validUrl.isUri(url)) {
             let response = await got('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url)),
                 embed = new RichEmbed()
-                    .setColor(context.executor.displayHexColor)
-                    .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.user.tag }), context.executor.user.avatarURL)
+                    .setColor(context.server.member(context.executor).displayHexColor)
+                    .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.tag }), context.executor.displayAvatarURL)
                     .addField(app.translate('/commands/shorturl/original', context.server.id), url)
                     .addField(app.translate('/commands/shorturl/shortened', context.server.id), response.body)
             context.reply('', embed)

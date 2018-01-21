@@ -38,6 +38,15 @@
         "calculate": {
             "equation": "Equation",
             "result": "Result"
+        },
+        "userinfos": {
+            "status": "Status",
+            "game": "Game",
+            "notPlaying": "Not playing a game",
+            "registeredOn": "Registered on",
+            "joinedOn": "Joined on",
+            "roles": "Roles",
+            "userID": "User ID"
         }
     },
     "events": {
@@ -62,6 +71,36 @@
         "translationsWarn": "Translations might be inaccurate."
     },
     "misc": {
-        "requestedBy": "Requested by {user}"
+        "requestedBy": "Requested by {user}",
+        "status": {
+            "online": "Online",
+            "offline": "Offline",
+            "idle": "Idle",
+            "dnd": "Do not disturb"
+        },
+        "days": {
+            "sun": "Sunday",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday"
+        },
+        "months": {
+            "jan": "January",
+            "feb": "February",
+            "mar": "March",
+            "apr": "April",
+            "may": "May",
+            "jun": "June",
+            "jul": "July",
+            "aug": "August",
+            "sep": "September",
+            "oct": "October",
+            "nov": "November",
+            "dec": "December"
+        },
+        "dateFormat": "mmmm dS, yyyy"
     }
 }
