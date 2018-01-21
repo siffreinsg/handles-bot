@@ -22,6 +22,12 @@
             "msgSent": "Messages sent",
             "cmdExed": "Executed commands",
             "figuresFormat": "Figures formatting: last 24h/from the beginning"
+        },
+        "purge": {
+            "incorrectNumber": "Invalid quantity !",
+            "mustBeInRange": "You must provide at least 2 and at most 100 messages to delete.",
+            "deleting": "Deleting, please wait...",
+            "msgDeleted": "Messages deleted with success !"
         }
     },
     "events": {

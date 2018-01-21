@@ -11,10 +11,9 @@ export default class Ping extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
 
-
     async execute(context: Context, args: Arguments) {
         let m: any = await context.message.channel.send('Pong!')
-        m.edit(`Pong! \`${m.createdTimestamp - context.message.createdTimestamp}ms\` :watch:`)
+        m.edit(`Pong! \`${m.createdTimestamp - context.message.createdTimestamp}ms\` :watch:` + ' (Your ping + Discord ping + bot ping)')
     }
 
 }
