@@ -3,7 +3,7 @@ import Context from 'Handles/Command/CommandContext'
 import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
-import * as request from 'request'
+import * as got from 'got'
 import * as Discord from 'discord.js'
 import * as deepl from 'node-deepl'
 
@@ -14,16 +14,14 @@ export default class Advice extends Command {
     args: Argument[] = []
 
     execute(context: Context, args: Arguments) {
-        request('http://api.adviceslip.com/advice', function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-                let advice = JSON.parse(body)
+        got('http://api.adviceslip.com/advice').then(res => {
+            if (res.statusCode === 200) {
+                let advice = JSON.parse(res.body)
+
                 if (app.config.translate) {
                     deepl(advice.slip.advice, 'EN', app.config.lang.split('_')[1], (err, res) => {
-                        if (err) {
-                            console.log(err)
-                            context.reply(app.translate('/errors/basicError'))
-                            return
-                        } else {
+                        if (err) { context.replyError() }
+                        else {
                             let embed = new Discord.RichEmbed()
                                 .setColor('#042d48')
                                 .setTitle(app.translate('/translations/autoTranslation', context.server.id))
@@ -32,13 +30,8 @@ export default class Advice extends Command {
                             context.reply(advice.slip.advice, embed)
                         }
                     })
-                } else {
-                    context.reply(advice.slip.advice)
-                }
-            } else {
-                console.log(error)
-                context.reply(app.translate('/errors/basicError'))
-            }
+                } else context.reply(advice.slip.advice)
+            } else context.replyError()
         })
 
     }
