@@ -13,7 +13,7 @@ export default class Halt extends Command {
     args: Argument[] = []
 
     async execute(context: Context, args: Arguments) {
-        await context.reply(app.translate('/commands/halt'))
+        await context.reply(app.translate('/commands/halt', context.server.id))
         process.exit(0)
     }
 }

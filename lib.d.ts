@@ -15,7 +15,7 @@ declare global {
             nameField: string,
             requiredField: string,
         }
-        type CommandPermission = Discord.PermissionString
+        type CommandPermission = Discord.PermissionString | 'SUPER_ADMIN'
     }
 
     var app: Application

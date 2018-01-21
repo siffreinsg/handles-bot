@@ -29,7 +29,16 @@
             "deleting": "Suppression en cours...",
             "msgDeleted": "Messages supprimés avec succès !"
         },
-        "halt": ":wave: Extinction en cours. Adios amigos!"
+        "halt": ":wave: Extinction en cours. Adios amigos!",
+        "setactivity": "Status du bot mise à jour !",
+        "shorturl": {
+            "original": "URL original",
+            "shortened": "URL raccourcie"
+        },
+        "calculate": {
+            "equation": "Equation",
+            "result": "Resultat"
+        }
     },
     "events": {
         "MessageHandler": {

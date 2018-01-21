@@ -6,5 +6,13 @@
     "status": "callmegus.xyz | {prefix}help",
     "translate": false,
     "dbPath": "./HandlesDB.json",
-    "XPgived": [1, 10]
+    "XPgived": [
+        1,
+        10
+    ],
+    "superadmins": [
+        "USER ID",
+        "USER ID",
+        "USER ID"
+    ]
 }

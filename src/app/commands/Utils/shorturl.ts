@@ -23,8 +23,8 @@ export default class Shorturl extends Command {
                 embed = new RichEmbed()
                     .setColor(context.executor.displayHexColor)
                     .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.user.tag }), context.executor.user.avatarURL)
-                    .addField('Original URL', url)
-                    .addField('Shortened URL', response.body)
+                    .addField(app.translate('/commands/shorturl/original', context.server.id), url)
+                    .addField(app.translate('/commands/shorturl/shortened', context.server.id), response.body)
             context.reply('', embed)
         } else context.replyError('badArgs')
     }
