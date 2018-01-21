@@ -15,9 +15,11 @@ export default class MessageHandler {
      */
     constructor(message: Discord.Message) {
         this.message = message
-        var msg = message.content.toString()
-        var stats = app.db.getStats(message.guild.id)
-        var user = new User(message.member)
+        var msg = message.content.toString(), user, stats
+        if (this.message.channel.type === 'text') {
+            stats = app.db.getStats(message.guild.id)
+            user = new User(message.member)
+        }
 
         if (this.isCommand(msg)) {
             var { command, args } = this.parseCommand(msg)
@@ -25,11 +27,13 @@ export default class MessageHandler {
 
             this.checkAnswer(answer, command)
 
-            user.incrementCmdExed()
-            user.push()
-            let commandsExecuted = stats.get('commandsExecuted').value()
-            stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
-        } else {
+            if (this.message.channel.type === 'text') {
+                user.incrementCmdExed()
+                user.push()
+                let commandsExecuted = stats.get('commandsExecuted').value()
+                stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
+            }
+        } else if (this.message.channel.type === 'text') {
             let oldLevel = user.getLevel(),
                 newXP = user.incrementXp(Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]),
                 newLevel = user.getLevel()
