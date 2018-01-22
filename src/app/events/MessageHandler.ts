@@ -16,9 +16,9 @@ export default class MessageHandler {
     constructor(message: Discord.Message) {
         this.message = message
         var msg = message.content.toString(), user, stats
-        if (this.message.channel.type === 'text') {
-            stats = app.db.getStats(message.guild.id)
-            user = new User(message.member)
+        if (this.message.channel.type === 'text' && this.message) {
+            stats = app.db.getStats(this.message.guild.id)
+            user = new User(this.message.member)
         }
 
         if (this.isCommand(msg)) {

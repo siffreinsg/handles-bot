@@ -5,7 +5,6 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import { RichEmbed } from 'discord.js'
 
-
 export default class Uptime extends Command {
     command: string = 'uptime'
     desc: string = 'Am I on time ?'
@@ -16,20 +15,18 @@ export default class Uptime extends Command {
 
     execute(context: Context, args: Arguments) {
         let msec = Date.now() - this.startTime,
-            days = Math.floor(msec / 1000 / 60 / 60 / 24),
-            hours = Math.floor(msec / 1000 / 60 / 60),
-            mins = Math.floor(msec / 1000 / 60),
-            secs = Math.floor(msec / 1000),
-            toReply = ':clock1: '
+            seconds: any = parseInt('' + (msec / 1000) % 60),
+            minutes: any = parseInt('' + (msec / (1000 * 60)) % 60),
+            hours: any = parseInt('' + (msec / (1000 * 60 * 60)) % 24)
 
-        if (days > 0) toReply += days + ' days '
-        if (hours > 0) toReply += hours + ' hours '
-        if (mins > 0) toReply += mins + ' minutes '
-        if (secs > 0) toReply += secs + ' seconds '
+        hours = (hours < 10) ? '0' + hours : hours
+        minutes = (minutes < 10) ? '0' + minutes : minutes
+        seconds = (seconds < 10) ? '0' + seconds : seconds
 
-        let embed = new RichEmbed()
-            .setColor(context.server.member(app.client.user.id).displayHexColor)
-            .addField(':calendar: Uptime', toReply)
+        let reply = hours + ':' + minutes + ':' + seconds,
+            embed = new RichEmbed()
+                .setColor(context.server.member(app.client.user.id).displayHexColor)
+                .addField(':calendar: Uptime', ':clock1: ' + reply)
         context.reply('', embed)
     }
 
