@@ -21,10 +21,10 @@ export default class Calculate extends Command {
         try {
             let result = math.eval(equation),
                 embed = new RichEmbed()
-                    .setColor(context.server.member(context.executor).displayHexColor)
-                    .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.tag }), context.executor.displayAvatarURL)
-                    .addField(app.translate('/commands/calculate/equation', context.server.id), '```' + equation + '```')
-                    .addField(app.translate('/commands/calculate/result', context.server.id), '```' + result + '```')
+                    .setColor(context.getUserColor())
+                    .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
+                    .addField(context.translate('/commands/calculate/equation'), '```' + equation + '```')
+                    .addField(context.translate('/commands/calculate/result'), '```' + result + '```')
             context.reply('', embed)
         } catch (err) {
             return context.replyError('badArgs')

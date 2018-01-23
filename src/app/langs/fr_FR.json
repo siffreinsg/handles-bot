@@ -5,6 +5,7 @@
             "default": "à tous"
         },
         "avatar": {
+            "userAvatar": "Avatar de {user}",
             "error": "Aucun avatar",
             "noAvatar": "Cet utilisateur ne possède pas d'avatar."
         },

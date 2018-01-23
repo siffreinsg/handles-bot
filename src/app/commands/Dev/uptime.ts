@@ -25,7 +25,7 @@ export default class Uptime extends Command {
 
         let reply = hours + ':' + minutes + ':' + seconds,
             embed = new RichEmbed()
-                .setColor(context.server.member(app.client.user.id).displayHexColor)
+                .setColor(context.getUserColor())
                 .addField(':calendar: Uptime', ':clock1: ' + reply)
         context.reply('', embed)
     }

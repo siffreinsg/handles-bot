@@ -22,10 +22,10 @@ export default class Shorturl extends Command {
         if (validUrl.isUri(url)) {
             let response = await got('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url)),
                 embed = new RichEmbed()
-                    .setColor(context.server.member(context.executor).displayHexColor)
-                    .setFooter(app.translate('/misc/requestedBy', context.server.id, { user: context.executor.tag }), context.executor.displayAvatarURL)
-                    .addField(app.translate('/commands/shorturl/original', context.server.id), url)
-                    .addField(app.translate('/commands/shorturl/shortened', context.server.id), response.body)
+                    .setColor(context.getUserColor())
+                    .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
+                    .addField(context.translate('/commands/shorturl/original'), url)
+                    .addField(context.translate('/commands/shorturl/shortened'), response.body)
             context.reply('', embed)
         } else context.replyError('badArgs')
     }

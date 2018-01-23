@@ -14,7 +14,8 @@ export default class Halt extends Command {
     allowDM: boolean = true
 
     async execute(context: Context, args: Arguments) {
-        await context.reply(app.translate('/commands/halt', context.server.id))
+        await context.reply(context.translate('/commands/halt'))
+        console.log('Shutting down !')
         process.exit(0)
     }
 }

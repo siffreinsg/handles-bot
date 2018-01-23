@@ -3,7 +3,7 @@
     "botname": "Handles",
     "prefix": "?",
     "lang": "en_US",
-    "status": "callmegus.xyz | {prefix}help",
+    "activity": " {prefix}help | callmegus.xyz",
     "translate": false,
     "dbPath": "./HandlesDB.json",
     "XPgived": [

@@ -16,11 +16,11 @@ export default class Stats extends Command {
         let stats = app.db.getStats(context.server.id)
 
         let embed = new RichEmbed()
-            .setColor(context.server.member(context.executor).displayHexColor)
+            .setColor(context.getUserColor())
             .setAuthor(context.server.name, context.server.iconURL)
-            .addField(app.translate('/commands/stats/msgSent', context.server.id), stats.get('messagesSent').value() + '/' + stats.get('messagesSent').value(), true)
-            .addField(app.translate('/commands/stats/cmdExed', context.server.id), stats.get('commandsExecuted').value() + '/' + stats.get('commandsExecuted').value(), true)
-            .setFooter(app.translate('/commands/stats/figuresFormat', context.server.id))
+            .addField(context.translate('/commands/stats/msgSent'), stats.get('messagesSent').value() + '/' + stats.get('messagesSent').value(), true)
+            .addField(context.translate('/commands/stats/cmdExed'), stats.get('commandsExecuted').value() + '/' + stats.get('commandsExecuted').value(), true)
+            .setFooter(context.translate('/commands/stats/figuresFormat'))
         context.reply('', embed)
     }
 

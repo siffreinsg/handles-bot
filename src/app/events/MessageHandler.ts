@@ -27,7 +27,7 @@ export default class MessageHandler {
 
             this.checkAnswer(answer, command)
 
-            if (this.message.channel.type === 'text') {
+            if (this.message.channel.type === 'text' && !this.message.author.bot) {
                 user.incrementCmdExed()
                 user.push()
                 let commandsExecuted = stats.get('commandsExecuted').value()
@@ -41,7 +41,10 @@ export default class MessageHandler {
             user.push()
 
             if (newLevel > oldLevel) {
-                this.message.channel.send(app.translate('/events/MessageHandler/levelup', this.message.guild.id, { who: '<@' + this.message.author.id + '>', level: '' + newLevel }))
+                let lang = app.translator.defaultLang
+                if (this.message.guild && this.message.guild.id) lang = app.translator.getServerLang(this.message.guild.id)
+
+                this.message.channel.send(app.translator.translate('/events/MessageHandler/levelup', lang, { who: '<@' + this.message.author.id + '>', level: '' + newLevel }))
             }
 
             let messagesSent = stats.get('messagesSent').value()
@@ -69,19 +72,18 @@ export default class MessageHandler {
     }
 
     checkAnswer(answer, executedCommand) {
-        let { author, channel, content } = this.message
+        let { author, guild, channel, content } = this.message,
+            lang = app.translator.defaultLang
+        if (guild && guild.id) lang = app.translator.getServerLang(guild.id)
 
         switch (answer) {
             case 'notfound':
                 let recommended = didYouMean(executedCommand, app.commands.list, { returnType: 'first-closest-match' })
-                this.message.channel.send(app.translate('/errors/unknownCommand', this.message.guild.id) + (recommended ? app.translate('/errors/didYouMean', this.message.guild.id, { command: recommended }) : '') + '\n' + app.translate('/errors/useHelpCommand', this.message.guild.id))
+                this.message.channel.send(app.translator.translate('/errors/unknownCommand', lang) + (recommended ? app.translator.translate('/errors/didYouMean', lang, { command: recommended }) : '') + '\n' + app.translator.translate('/errors/useHelpCommand', lang))
                 console.log((author.username + ' (@' + author.id + ') tried the inexistent command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')').grey)
                 break
-            case 'badargs':
-                channel.sendMessage(app.translate('/errors/badArgs', this.message.guild.id))
-                break
             default:
-                console.log((author.username + ' (@' + author.id + ') executed the command "' + content + '" in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')').gray)
+                console.log((author.username + ' (@' + author.id + ') executed the command "' + content + '"' + (this.message.guild ? ' in the server "' + this.message.guild.name + '" (ID:' + this.message.guild.id + ')' : ' in DMs.')).gray)
                 break
         }
     }

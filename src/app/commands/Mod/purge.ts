@@ -22,14 +22,14 @@ export default class Purge extends Command {
         if (quantity >= 2 && quantity <= 500) {
             context.channel.fetchMessages({ limit: quantity })
                 .then(messages => {
-                    context.reply(app.translate('/commands/purge/deleting', context.server.id)).then(function (msg: any) {
+                    context.reply(context.translate('/commands/purge/deleting')).then(function (msg: any) {
                         messages.deleteAll().forEach(promise => promise.catch(console.log))
-                        msg.edit(app.translate('/commands/purge/msgDeleted', context.server.id))
+                        msg.edit(context.translate('/commands/purge/msgDeleted'))
                     })
                 })
                 .catch(console.log)
         } else {
-            context.replyError('custom', app.translate('/commands/purge/incorrectNumber', context.server.id), app.translate('/commands/purge/mustBeInRange', context.server.id))
+            context.replyError('custom', context.translate('/commands/purge/incorrectNumber'), context.translate('/commands/purge/mustBeInRange'))
         }
     }
 

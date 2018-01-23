@@ -17,11 +17,12 @@ export default class Avatar extends Command {
     execute(context: Context, args: Arguments) {
         let mention = context.message.mentions.users.first(),
             user = mention ? mention : context.executor,
-            message = 'Avatar de ' + user.username
+            message = context.translate('/commands/avatar/userAvatar', { user: user.username })
 
         if (!user.avatarURL) return context.replyError('custom', '/commands/avatar/error', '/commands/avatar/noAvatar')
 
         let embed = new Discord.RichEmbed()
+            .setColor(context.getUserColor(user.id))
             .setAuthor(user.username, user.displayAvatarURL)
             .setImage(user.displayAvatarURL)
         context.reply(message, embed)

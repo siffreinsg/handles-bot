@@ -5,6 +5,7 @@
             "default": "world"
         },
         "avatar": {
+            "userAvatar": "{user}'s avatar",
             "error": "No avatar",
             "noAvatar": "This user does not have an avatar."
         },

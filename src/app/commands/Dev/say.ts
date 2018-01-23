@@ -12,22 +12,21 @@ export default class Say extends Command {
     ]
     args: Argument[] = [
         { name: 'message', type: 'text', required: true, usage: 'text to say' },
-        { name: 'options', type: 'text', required: false, usage: 'options' }
+        { name: 'options', type: 'text', required: false, usage: '|options:{}' }
     ]
-    allowDM: boolean = true
+    allowDM: boolean = false
 
     execute(context: Context, args: Arguments) {
-        context.message.delete().then(msg => {
-            let toSend = args.getAll().join(' ').split('|options:'),
-                message = toSend[0],
-                options = toSend[1] ? toSend[1] : {}
+        context.delete()
+        let toSend = args.getAll().join(' ').split('|options='),
+            message = toSend[0],
+            options = toSend[1] ? toSend[1] : '{}'
 
-            if (!message.includes('?say')) {
-                context.reply(message, options)
-            } else {
-                context.reply(app.translate('/errors/sayception', context.server.id))
-            }
-        })
+        if (!message.includes('?say')) {
+            context.reply(message, JSON.parse(options))
+        } else {
+            context.reply(context.translate('/errors/sayception'))
+        }
 
     }
 }

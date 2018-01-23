@@ -30,7 +30,7 @@ export default class Rank extends Command {
         let position = users.findIndex(x => x.id === askedUser.id)
 
         let embed = new RichEmbed()
-            .setColor(askedUser.displayHexColor)
+            .setColor(context.getUserColor(askedUser.id))
             .setAuthor(askedUser.displayName + ' - @' + askedUser.user.tag, askedUser.user.displayAvatarURL)
             .addField('Rank', (position + 1) + '/' + users.length, true)
             .addField('Level', user.getLevel() + ' (Tot. XP: ' + user.xp + ')', true)
