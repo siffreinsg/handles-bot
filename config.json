@@ -15,5 +15,6 @@
         "USER ID",
         "USER ID"
     ],
-    "cleverbotAPIkey": "I AM A KEY"
+    "cleverbotAPIkey": "I AM A KEY",
+    "debug": false
 }

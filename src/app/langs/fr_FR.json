@@ -84,8 +84,29 @@
         "autoTranslation": "Traduction automatique",
         "translationsWarn": "Les traductions peuvent être inexactes."
     },
+    "music": {
+        "errors": {
+            "noVoiceChan": "Aucun channel vocal",
+            "joinVoiceChan": "Rejoignez un channel vocal pour écouter de la musique.",
+            "musicPlayerOff": "Lecteur de musique inactif",
+            "noMusic": "Aucune musique en cours de lecture ! Ajoutez des musiques avec la commande {prefix}play <url>"
+        },
+        "resp": {
+            "queueFormat": "\n> [{title}]({url}) \\~\\~ `{duration}`",
+            "musics": "**Musiques:**: \n",
+            "skippingMusic": "Musiques sautées !",
+            "addedQueue": "Ajouté à la liste de lecture",
+            "author": "Auteur",
+            "duration": "Durée",
+            "position": "Position",
+            "current": "Actuelle",
+            "desc": "Description",
+            "playing": "En écoute"
+        }
+    },
     "misc": {
         "requestedBy": "Executé par {user}",
+        "processing": "Traitement des données...",
         "status": {
             "online": "En ligne",
             "offline": "Hors ligne",

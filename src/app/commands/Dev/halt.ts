@@ -15,7 +15,6 @@ export default class Halt extends Command {
 
     async execute(context: Context, args: Arguments) {
         await context.reply(context.translate('/commands/halt'))
-        console.log('Shutting down !')
         process.exit(0)
     }
 }

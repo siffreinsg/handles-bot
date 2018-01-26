@@ -14,20 +14,21 @@ export default class Uptime extends Command {
     startTime = Date.now()
 
     execute(context: Context, args: Arguments) {
-        let msec = Date.now() - this.startTime,
-            seconds: any = parseInt('' + (msec / 1000) % 60),
-            minutes: any = parseInt('' + (msec / (1000 * 60)) % 60),
-            hours: any = parseInt('' + (msec / (1000 * 60 * 60)) % 24)
-
-        hours = (hours < 10) ? '0' + hours : hours
-        minutes = (minutes < 10) ? '0' + minutes : minutes
-        seconds = (seconds < 10) ? '0' + seconds : seconds
-
-        let reply = hours + ':' + minutes + ':' + seconds,
-            embed = new RichEmbed()
-                .setColor(context.getUserColor())
-                .addField(':calendar: Uptime', ':clock1: ' + reply)
+        let embed = new RichEmbed()
+            .setColor(context.getUserColor())
+            .addField(':calendar: Uptime', ':clock1: ' + this.fancyTimeFormat(Math.floor((Date.now() - this.startTime) / 1000)))
         context.reply('', embed)
+    }
+
+    fancyTimeFormat(secs: number): string {
+        let hours = ~~(secs / 3600),
+            minutes = ~~((secs % 3600) / 60),
+            seconds = secs % 60,
+            ret = ''
+
+        if (hours > 0) ret += '' + hours + ':' + (minutes < 10 ? '0' : '')
+        ret += '' + minutes + ':' + (seconds < 10 ? '0' : '') + '' + seconds
+        return ret
     }
 
 }

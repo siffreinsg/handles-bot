@@ -24,7 +24,7 @@ export default class Avatar extends Command {
         let embed = new Discord.RichEmbed()
             .setColor(context.getUserColor(user.id))
             .setAuthor(user.username, user.displayAvatarURL)
-            .setImage(user.displayAvatarURL)
+            .setImage(user.avatarURL)
         context.reply(message, embed)
     }
 

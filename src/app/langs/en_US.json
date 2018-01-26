@@ -84,7 +84,28 @@
         "autoTranslation": "Automatic translation",
         "translationsWarn": "Translations might be inaccurate."
     },
+    "music": {
+        "errors": {
+            "noVoiceChan": "No voice channel",
+            "joinVoiceChan": "Please join a voice channel.",
+            "musicPlayerOff": "Music player off",
+            "noMusic": "There is no music to skip ! Add musics with `{prefix}play <url>`"
+        },
+        "resp": {
+            "queueFormat": "\n> [{title}]({url}) \\~\\~ `{duration}`",
+            "musics": "**Musics:**: \n",
+            "skippingMusic": "Music skipped!",
+            "addedQueue": "Added to queue",
+            "author": "Author",
+            "duration": "Duration",
+            "position": "Position",
+            "current": "Current",
+            "desc": "Description",
+            "playing": "Playing"
+        }
+    },
     "misc": {
+        "processing": "Processing",
         "requestedBy": "Requested by {user}",
         "status": {
             "online": "Online",

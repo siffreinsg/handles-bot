@@ -16,18 +16,20 @@ export default class Shorturl extends Command {
     ]
     allowDM: boolean = false
 
-    async execute(context: Context, args: Arguments) {
-        let url = '' + args.get(0)
+    execute(context: Context, args: Arguments) {
+        context.processing().then((msg: any) => {
+            let url = '' + args.get(0)
 
-        if (validUrl.isUri(url)) {
-            let response = await got('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url)),
-                embed = new RichEmbed()
-                    .setColor(context.getUserColor())
-                    .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
-                    .addField(context.translate('/commands/shorturl/original'), url)
-                    .addField(context.translate('/commands/shorturl/shortened'), response.body)
-            context.reply('', embed)
-        } else context.replyError('badArgs')
+            if (validUrl.isUri(url)) {
+                let response = got('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url)),
+                    embed = new RichEmbed()
+                        .setColor(context.getUserColor())
+                        .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
+                        .addField(context.translate('/commands/shorturl/original'), url)
+                        .addField(context.translate('/commands/shorturl/shortened'), response.body)
+                msg.edit('', embed)
+            } else { if (msg.deletable) { msg.delete() } context.replyError('badArgs') }
+        })
     }
 
 }
