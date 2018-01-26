@@ -2,7 +2,7 @@ import * as minimist from 'minimist'
 import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
 import * as Command from 'Handles/Utils/Command'
-import User from 'Handles/DB/User'
+// import User from 'Handles/DB/User'
 import Stats from 'Handles/DB/Global'
 import 'colors'
 
@@ -16,10 +16,10 @@ export default class MessageHandler {
     constructor(message: Discord.Message) {
         this.message = message
         var msg = message.content.toString(), user, stats
-        if (this.message.channel.type === 'text' && this.message) {
+        /* if (this.message.channel.type === 'text' && this.message.guild) {
             stats = app.db.getStats(this.message.guild.id)
             user = new User(this.message.member)
-        }
+        } */
 
         if (this.isCommand(msg)) {
             var { command, args } = this.parseCommand(msg)
@@ -27,12 +27,12 @@ export default class MessageHandler {
 
             this.checkAnswer(answer, command)
 
-            if (this.message.channel.type === 'text' && !this.message.author.bot) {
-                user.incrementCmdExed()
-                let commandsExecuted = stats.get('commandsExecuted').value()
-                stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
-            }
-        } else if (this.message.channel.type === 'text') {
+            /* if (this.message.channel.type === 'text' && !this.message.author.bot) {
+                 user.incrementCmdExed()
+                 let commandsExecuted = stats.get('commandsExecuted').value()
+                 stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
+             } */
+        } /* else if (this.message.channel.type === 'text') {
             let oldLevel = user.getLevel(),
                 newXP = user.incrementXp(Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]),
                 newLevel = user.getLevel()
@@ -46,7 +46,7 @@ export default class MessageHandler {
 
             let messagesSent = stats.get('messagesSent').value()
             stats.set('messagesSent', (messagesSent ? messagesSent : 0) + 1).write()
-        }
+        } */
     }
 
     parseCommand(command) {

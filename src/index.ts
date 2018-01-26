@@ -1,3 +1,7 @@
 import Application from 'Handles/Kernel/Application'
 
-global.app = new Application()
+try {
+    global.app = new Application()
+} catch (ex) {
+    console.error(ex)
+}
