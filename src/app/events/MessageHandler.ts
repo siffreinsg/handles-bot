@@ -29,7 +29,6 @@ export default class MessageHandler {
 
             if (this.message.channel.type === 'text' && !this.message.author.bot) {
                 user.incrementCmdExed()
-                user.push()
                 let commandsExecuted = stats.get('commandsExecuted').value()
                 stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
             }
@@ -38,12 +37,10 @@ export default class MessageHandler {
                 newXP = user.incrementXp(Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]),
                 newLevel = user.getLevel()
             user.incrementMsgSent()
-            user.push()
 
             if (newLevel > oldLevel) {
                 let lang = app.translator.defaultLang
                 if (this.message.guild && this.message.guild.id) lang = app.translator.getServerLang(this.message.guild.id)
-
                 this.message.channel.send(app.translator.translate('/events/MessageHandler/levelup', lang, { who: '<@' + this.message.author.id + '>', level: '' + newLevel }))
             }
 

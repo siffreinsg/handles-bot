@@ -67,6 +67,8 @@
         }
     },
     "errors": {
+        "adminOnly": "Admin only",
+        "needAdmin": "You need to be an administrator in order to run this command !",
         "noDmError": "Server only",
         "noDm": "You can't execute this command outside a server.",
         "noPermError": "Permission error",
