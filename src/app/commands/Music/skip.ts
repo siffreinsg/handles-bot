@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Skip extends Command {
+    static activated: boolean = true
     command: string = 'skip'
     desc: string = 'Skip current music.'
     permissions: Permission[] = [

@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class SetLang extends Command {
+    static activated: boolean = true
     command: string = 'setlang'
     desc: string = 'Change server lang'
     permissions: Permission[] = [

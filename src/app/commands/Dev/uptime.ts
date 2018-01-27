@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import { RichEmbed } from 'discord.js'
 
 export default class Uptime extends Command {
+    static activated: boolean = true
     command: string = 'uptime'
     desc: string = 'Am I on time ?'
     permissions: Permission[] = []

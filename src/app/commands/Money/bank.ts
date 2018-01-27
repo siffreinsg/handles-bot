@@ -7,6 +7,7 @@ import * as Discord from 'discord.js'
 import * as Levels from 'Handles/Utils/Levels'
 
 export default class Bank extends Command {
+    static activated: boolean = true
     command: string = 'bank'
     desc: string = 'Money power'
     permissions: Permission[] = []

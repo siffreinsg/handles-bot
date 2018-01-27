@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Balance extends Command {
+    static activated: boolean = true
     command: string = 'balance'
     desc: string = 'View your balance.'
     permissions: Permission[] = []

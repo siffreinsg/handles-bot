@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Error extends Command {
+    static activated: boolean = true
     command: string = 'error'
     desc: string = 'Generate an error of your choice.'
     permissions: Permission[] = [

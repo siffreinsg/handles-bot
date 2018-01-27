@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import { RichEmbed, TextChannel } from 'discord.js'
 
 export default class Play extends Command {
+    static activated: boolean = true
     command: string = 'play'
     desc: string = 'Play command.'
     permissions: Permission[] = []

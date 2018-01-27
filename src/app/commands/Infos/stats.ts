@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import { RichEmbed } from 'discord.js'
 
 export default class Stats extends Command {
+    static activated: boolean = true
     command: string = 'stats'
     desc: string = 'NUMBERS ! Best thing of my life :3'
     permissions: Permission[] = []

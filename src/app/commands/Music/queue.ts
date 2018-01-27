@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import { RichEmbed } from 'discord.js'
 
 export default class Queue extends Command {
+    static activated: boolean = true
     command: string = 'queue'
     desc: string = 'Get musics listed in server\'s queue.'
     permissions: Permission[] = []

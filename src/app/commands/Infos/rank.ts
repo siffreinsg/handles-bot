@@ -8,6 +8,7 @@ import { RichEmbed } from 'discord.js'
 import { xpToLVL } from 'Handles/Utils/Levels'
 
 export default class Rank extends Command {
+    static activated: boolean = true
     command: string = 'rank'
     desc: string = 'Check a user\'s level in the server.'
     permissions: Permission[] = []

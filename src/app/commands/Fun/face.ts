@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import * as cool from 'cool-ascii-faces'
 
 export default class Face extends Command {
+    static activated: boolean = true
     command: string = 'face'
     desc: string = '¯\\_(ツ)\_/¯'
     permissions: Permission[] = []

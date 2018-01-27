@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Setactivity extends Command {
+    static activated: boolean = true
     command: string = 'setactivity'
     desc: string = 'Set bot\'s activity'
     permissions: Permission[] = [

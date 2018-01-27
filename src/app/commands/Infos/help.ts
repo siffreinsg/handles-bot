@@ -6,6 +6,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Help extends Command {
+    static activated: boolean = true
     command: string = 'help'
     desc: string = ''
     permissions: Permission[] = []

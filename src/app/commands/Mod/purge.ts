@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import { Message } from 'discord.js'
 
 export default class Purge extends Command {
+    static activated: boolean = true
     command: string = 'purge'
     desc: string = 'Delete a lot of messages (/!\ dangerous /!\)'
     permissions: Permission[] = [

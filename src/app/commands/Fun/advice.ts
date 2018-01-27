@@ -8,6 +8,7 @@ import * as Discord from 'discord.js'
 import * as deepl from 'node-deepl'
 
 export default class Advice extends Command {
+    static activated: boolean = true
     command: string = 'advice'
     desc: string = 'Improve your life !'
     permissions: Permission[] = []

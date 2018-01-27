@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 
 export default class Avatar extends Command {
+    static activated: boolean = true
     command: string = 'avatar'
     desc: string = 'Get avatars from anyone'
     permissions: Permission[] = []

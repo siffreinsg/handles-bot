@@ -8,6 +8,7 @@ import { RichEmbed } from 'discord.js'
 import * as validUrl from 'valid-url'
 
 export default class Shorturl extends Command {
+    static activated: boolean = true
     command: string = 'shorturl'
     desc: string = 'URL Shortener'
     permissions: Permission[] = []

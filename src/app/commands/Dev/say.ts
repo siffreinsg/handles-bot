@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Say extends Command {
+    static activated: boolean = true
     command: string = 'say'
     desc: string = 'Let me speak'
     permissions: Permission[] = [

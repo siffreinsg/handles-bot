@@ -6,6 +6,7 @@ import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 
 export default class Ping extends Command {
+    static activated: boolean = true
     command: string = 'ping'
     desc: string = 'What time is it ?'
     permissions: Permission[] = []

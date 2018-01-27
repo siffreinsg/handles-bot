@@ -7,6 +7,7 @@ import { RichEmbed } from 'discord.js'
 import * as dateFormat from 'dateformat'
 
 export default class Userinfos extends Command {
+    static activated: boolean = true
     command: string = 'userinfos'
     desc: string = 'Get infos on an user.'
     permissions: Permission[] = []

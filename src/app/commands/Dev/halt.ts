@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
 export default class Halt extends Command {
+    static activated: boolean = true
     command: string = 'halt'
     desc: string = 'Shutdown the bot'
     permissions: Permission[] = [

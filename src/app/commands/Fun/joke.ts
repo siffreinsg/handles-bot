@@ -8,6 +8,7 @@ import * as deepl from 'node-deepl'
 import { RichEmbed } from 'discord.js'
 
 export default class Joke extends Command {
+    static activated: boolean = true
     command: string = 'joke'
     desc: string = 'You\'re so funny'
     permissions: Permission[] = []
