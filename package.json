@@ -4,6 +4,7 @@
     "description": "Handles is a multifunction Discord bot which comes with sets of features and commands made for you.",
     "main": "out/index.js",
     "scripts": {
+        "start": "node out/index.js",
         "dev": "npm run compile && node out/index.js",
         "compile": "gulp dev"
     },
