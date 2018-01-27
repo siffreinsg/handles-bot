@@ -2,8 +2,7 @@ import * as minimist from 'minimist'
 import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
 import * as Command from 'Handles/Utils/Command'
-// import User from 'Handles/DB/User'
-import Stats from 'Handles/DB/Global'
+import * as Levels from 'Handles/Utils/Levels'
 import 'colors'
 
 
@@ -15,38 +14,44 @@ export default class MessageHandler {
      */
     constructor(message: Discord.Message) {
         this.message = message
-        var msg = message.content.toString(), user, stats
-        /* if (this.message.channel.type === 'text' && this.message.guild) {
-            stats = app.db.getStats(this.message.guild.id)
-            user = new User(this.message.member)
-        } */
+        let msg = message.content.toString(),
+            isCommand = this.isCommand(msg)
 
-        if (this.isCommand(msg)) {
+        if (isCommand) {
             var { command, args } = this.parseCommand(msg)
             var answer = this.executeCommand(this.message, command, args)
 
             this.checkAnswer(answer, command)
+        }
+        if (!this.message.author.bot) {
+            let toIncrement = isCommand ? 'cmdExed' : 'msgSent'
 
-            /* if (this.message.channel.type === 'text' && !this.message.author.bot) {
-                 user.incrementCmdExed()
-                 let commandsExecuted = stats.get('commandsExecuted').value()
-                 stats.set('commandsExecuted', (commandsExecuted ? commandsExecuted : 0) + 1).write()
-             } */
-        } /* else if (this.message.channel.type === 'text') {
-            let oldLevel = user.getLevel(),
-                newXP = user.incrementXp(Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]),
-                newLevel = user.getLevel()
-            user.incrementMsgSent()
+            if (this.message.guild && this.message.guild.id) {
+                let user = app.db.getUser(this.message.guild.id, this.message.author.id),
+                    stats = app.db.getStats(this.message.guild.id),
+                    res1 = stats.get(toIncrement, 0).value(),
+                    res2 = user.get('stats.' + toIncrement, 0).value()
 
-            if (newLevel > oldLevel) {
-                let lang = app.translator.defaultLang
-                if (this.message.guild && this.message.guild.id) lang = app.translator.getServerLang(this.message.guild.id)
-                this.message.channel.send(app.translator.translate('/events/MessageHandler/levelup', lang, { who: '<@' + this.message.author.id + '>', level: '' + newLevel }))
+                stats.set(toIncrement, res1 + 1).write()
+                user.set('stats.' + toIncrement, res2 + 1).write()
+
+                if (!isCommand) {
+                    let oldXP = user.get('xp', 0).value(),
+                        oldLevel = Levels.xpToLVL(oldXP),
+                        xpToGive = Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0],
+                        newLevel = Levels.xpToLVL(oldXP + xpToGive)
+
+                    user.set('xp', parseInt(oldXP) + parseInt(xpToGive)).write()
+                    if (newLevel > oldLevel) {
+                        let lang = app.translator.getServerLang(this.message.guild.id)
+                        this.message.channel.send(app.translator.translate('/events/MessageHandler/levelup', lang, { who: '<@' + this.message.author.id + '>', level: '' + newLevel }))
+                    }
+                }
             }
-
-            let messagesSent = stats.get('messagesSent').value()
-            stats.set('messagesSent', (messagesSent ? messagesSent : 0) + 1).write()
-        } */
+            let globalStats = app.db.getGlobalStats(),
+                res = globalStats.get(toIncrement).value()
+            globalStats.set(toIncrement, res + 1).write()
+        }
     }
 
     parseCommand(command) {
