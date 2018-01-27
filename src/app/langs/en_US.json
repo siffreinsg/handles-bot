@@ -64,7 +64,21 @@
             "balance": "Balance of {user}: {balance}€",
             "givedFaucet": "{gived}€ added to your account ! New balance: {newBalance}€",
             "givedMoney": "{quantity} gived to user! New balance of {user}: {newBalance}€",
-            "removedMoney": "{quantity} removed from user! New balance of {user}: {newBalance}€"
+            "removedMoney": "{quantity} removed from user! New balance of {user}: {newBalance}€",
+            "cantBeNegative": "Balance cannot be negative.",
+            "cooldownErr": "You're too fast !",
+            "cooldown": "You have to wait {minutes}min between every execution of this command (unless you have a TARDIS).\n\nRemaining: {remaining}"
+        },
+        "slot": {
+            "amountError": "Insufficient betting",
+            "mustBeAmount": "Bet must be greater than 10€",
+            "notEnoughMoney": "Not enough money",
+            "drawn": "Drawn:",
+            "threeNums": "Three identicals numbers ! Multiplier x2.5",
+            "lucky": "Lucky number ! Multiplier +1.5",
+            "seriesOfNums": "Sequence of numbers ! Multiplier x3.5",
+            "goodresult": "Starting bet: {amount}\nMultiplier: {multiplier}\nEarnings: {earnings}\nNew balance: {newBalance}",
+            "noEarnings": "Missed! Maybe next time..."
         }
     },
     "events": {

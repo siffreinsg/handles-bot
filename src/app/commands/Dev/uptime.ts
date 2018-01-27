@@ -4,6 +4,7 @@ import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import { RichEmbed } from 'discord.js'
+import { fancyTimeFormat } from 'Handles/Utils/Misc'
 
 export default class Uptime extends Command {
     static activated: boolean = true
@@ -17,19 +18,7 @@ export default class Uptime extends Command {
     execute(context: Context, args: Arguments) {
         let embed = new RichEmbed()
             .setColor(context.getUserColor())
-            .addField(':calendar: Uptime', ':clock1: ' + this.fancyTimeFormat(Math.floor((Date.now() - this.startTime) / 1000)))
+            .addField(':calendar: Uptime', ':clock1: ' + fancyTimeFormat(Math.floor((Date.now() - this.startTime) / 1000)))
         context.reply('', embed)
     }
-
-    fancyTimeFormat(secs: number): string {
-        let hours = ~~(secs / 3600),
-            minutes = ~~((secs % 3600) / 60),
-            seconds = secs % 60,
-            ret = ''
-
-        if (hours > 0) ret += '' + hours + ':' + (minutes < 10 ? '0' : '')
-        ret += '' + minutes + ':' + (seconds < 10 ? '0' : '') + '' + seconds
-        return ret
-    }
-
 }

@@ -5,6 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 import * as Levels from 'Handles/Utils/Levels'
+import { fancyTimeFormat } from 'Handles/Utils/Misc'
 
 export default class Bank extends Command {
     static activated: boolean = true
@@ -25,13 +26,19 @@ export default class Bank extends Command {
         else user = context.server.member(context.executor.id)
 
         let userdb = app.db.getUser(user.guild.id, user.id),
-            currentBalance = userdb.get('balance', 0).value()
+            currentBalance = userdb.get('balance', 0).value(),
+            timestamps = userdb.get('timestamps', { faucet: 0 }),
+            timestamp = timestamps.get('faucet', 0).value()
 
         switch (action) {
             case 'faucet':
+                let remaining = Date.now() - timestamp
+                if (remaining < app.config.faucetCooldown * 60000) return context.replyError('custom', context.translate('/commands/money/cooldownErr'), context.translate('/commands/money/cooldown', { minutes: app.config.faucetCooldown, remaining: fancyTimeFormat((app.config.faucetCooldown * 60) - Math.floor(remaining / 1000)) }))
+
                 gived = Math.floor(75 * ((100 + 2 * Levels.xpToLVL(userdb.get('xp', 0).value())) / 100))
                 newBalance = currentBalance + gived
                 userdb.set('balance', newBalance).write()
+                timestamps.set('faucet', Date.now()).write()
                 context.reply(context.translate('/commands/money/givedFaucet', { gived, newBalance }))
                 break
             case 'give':

@@ -6,15 +6,16 @@
     "activity": " {prefix}help | callmegus.xyz",
     "translate": false,
     "dbPath": "./HandlesDB.json",
-    "XPgived": [
-        1,
-        10
-    ],
     "superadmins": [
         "USER ID",
         "USER ID",
         "USER ID"
     ],
     "cleverbotAPIkey": "I AM A KEY",
-    "debug": false
+    "debug": false,
+    "XPgived": [
+        1,
+        10
+    ],
+    "faucetCooldown": 60
 }
