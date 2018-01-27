@@ -1,0 +1,163 @@
+{
+    "commands": {
+        "hello": {
+            "hello": "Hello {who}!",
+            "default": "world"
+        },
+        "avatar": {
+            "userAvatar": "{user}'s avatar",
+            "error": "No avatar",
+            "noAvatar": "This user does not have an avatar."
+        },
+        "help": {
+            "availableCommands": "Available commands:",
+            "message": "How to use me? Which commands are availables? What to do with me? All of these questions have an answer here: https://callmegus.xyz/helpme.\n\nOtherwise you can run `{prefix}help list` to get a summmary of the commands.",
+            "fullList": "Get a full list and usages of the commands on https://callmegus.xyz"
+        },
+        "langs": {
+            "langSet": "Server lang set to `{lang}` with success !",
+            "unknown": "Lang \"{lang}\" unknown",
+            "availables": "Available langs: `{availables}`."
+        },
+        "stats": {
+            "msgSent": "Messages sent",
+            "cmdExed": "Executed commands",
+            "figuresFormat": "Figures formatting: last 24h/from the beginning"
+        },
+        "purge": {
+            "incorrectNumber": "Invalid quantity",
+            "mustBeInRange": "You must provide at least 2 and at most 100 messages to delete.",
+            "deleting": "Deleting, please wait...",
+            "msgDeleted": "Messages deleted with success !"
+        },
+        "halt": ":wave: Shutting down... Bye!",
+        "setactivity": "Bot's activity updated !",
+        "shorturl": {
+            "original": "Original URL",
+            "shortened": "Shortened URL"
+        },
+        "calculate": {
+            "equation": "Equation",
+            "result": "Result"
+        },
+        "userinfos": {
+            "status": "Status",
+            "game": "Game",
+            "notPlaying": "Not playing a game",
+            "registeredOn": "Registered on",
+            "joinedOn": "Joined on",
+            "roles": "Roles",
+            "userID": "User ID"
+        },
+        "serverinfos": {
+            "createdAt": "Created at",
+            "owner": "Owner",
+            "region": "Region",
+            "defaultChannel": "Default channel",
+            "textChannel": "Text channels",
+            "voiceChannel": "Voice channels",
+            "roles": "Rôles",
+            "emojis": "Emojis",
+            "members": "Membres"
+        },
+        "money": {
+            "balance": "Balance of {user}: {balance}€",
+            "givedFaucet": "{gived}€ added to your account ! New balance: {newBalance}€",
+            "givedMoney": "{quantity} gived to user! New balance of {user}: {newBalance}€",
+            "removedMoney": "{quantity} removed from user! New balance of {user}: {newBalance}€",
+            "cantBeNegative": "Balance cannot be negative.",
+            "cooldownErr": "You're too fast !",
+            "cooldown": "You have to wait {minutes}min between every execution of this command (unless you have a TARDIS).\n\nRemaining: {remaining}"
+        },
+        "slot": {
+            "amountError": "Insufficient betting",
+            "mustBeAmount": "Bet must be greater than 10€",
+            "notEnoughMoney": "Not enough money",
+            "drawn": "Drawn:",
+            "threeNums": "Three identicals numbers ! Multiplier x2.5",
+            "lucky": "Lucky number ! Multiplier +1.5",
+            "seriesOfNums": "Sequence of numbers ! Multiplier x3.5",
+            "goodresult": "Starting bet: {amount}\nMultiplier: {multiplier}\nEarnings: {earnings}\nNew balance: {newBalance}",
+            "noEarnings": "Missed! Maybe next time..."
+        }
+    },
+    "events": {
+        "MessageHandler": {
+            "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o"
+        }
+    },
+    "errors": {
+        "adminOnly": "Admin only",
+        "needAdmin": "You need to be an administrator in order to run this command !",
+        "noDmError": "Server only",
+        "noDm": "You can't execute this command outside a server.",
+        "noPermError": "Permission error",
+        "noPerm": "You don't have the right permissions to execute this command !",
+        "unknownErr": "Unknown error",
+        "unknownCommand": "Unknown command!",
+        "didYouMean": "Did you mean `{prefix}{command}`?",
+        "useHelpCommand": "To get the list of the commandes, use `{prefix}help`.",
+        "badArgs": "Bad arguments !",
+        "learnCMD": "Learn how the command works using `{prefix}help`.",
+        "basicError": "Error while executing the command. Please contact an administrator",
+        "sayception": "You shouldn't do this if you don't want to be responsible for the quantum implosion of Handles' heart, that would create a deadly interdimensional black hole... Please don't :c"
+    },
+    "translations": {
+        "autoTranslation": "Automatic translation",
+        "translationsWarn": "Translations might be inaccurate."
+    },
+    "music": {
+        "errors": {
+            "noVoiceChan": "No voice channel",
+            "joinVoiceChan": "Please join a voice channel.",
+            "musicPlayerOff": "Music player off",
+            "noMusic": "There is no music to skip ! Add musics with `{prefix}play <url>`"
+        },
+        "resp": {
+            "queueFormat": "\n> [{title}]({url}) \\~\\~ `{duration}`",
+            "musics": "**Musics:**: \n",
+            "skippingMusic": "Music skipped!",
+            "addedQueue": "Added to queue",
+            "author": "Author",
+            "duration": "Duration",
+            "position": "Position",
+            "current": "Current",
+            "desc": "Description",
+            "playing": "Playing"
+        }
+    },
+    "misc": {
+        "processing": "Processing",
+        "requestedBy": "Requested by {user}",
+        "status": {
+            "online": "Online",
+            "offline": "Offline",
+            "idle": "Idle",
+            "dnd": "Do not disturb"
+        },
+        "days": {
+            "sun": "Sunday",
+            "mon": "Monday",
+            "tue": "Tuesday",
+            "wed": "Wednesday",
+            "thu": "Thursday",
+            "fri": "Friday",
+            "sat": "Saturday"
+        },
+        "months": {
+            "jan": "January",
+            "feb": "February",
+            "mar": "March",
+            "apr": "April",
+            "may": "May",
+            "jun": "June",
+            "jul": "July",
+            "aug": "August",
+            "sep": "September",
+            "oct": "October",
+            "nov": "November",
+            "dec": "December"
+        },
+        "dateFormat": "mmmm dS, yyyy"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "discordAPItoken": "[Insert the Discord API Token here]",
+    "botname": "Handles",
+    "prefix": "?",
+    "lang": "en_US",
+    "activity": " {prefix}help | callmegus.xyz",
+    "translate": false,
+    "dbPath": "./HandlesDB.json",
+    "superadmins": [
+        "USER ID",
+        "USER ID",
+        "USER ID"
+    ],
+    "cleverbotAPIkey": "I AM A KEY",
+    "debug": false,
+    "XPgived": [
+        1,
+        10
+    ],
+    "faucetCooldown": 60
+}

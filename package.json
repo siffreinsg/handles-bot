@@ -1,0 +1,49 @@
+{
+    "name": "handles-bot",
+    "version": "1.0.0-alpha.1",
+    "description": "Handles is a multifunction Discord bot which comes with sets of features and commands made for you.",
+    "main": "out/index.js",
+    "scripts": {
+        "start": "node out/index.js",
+        "dev": "npm run compile && node out/index.js",
+        "compile": "gulp dev"
+    },
+    "author": "The Orient Express Project",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cleverbot-api": "^1.0.3",
+        "colors": "^1.1.2",
+        "cool-ascii-faces": "^1.3.4",
+        "dateformat": "^3.0.2",
+        "didyoumean2": "^1.3.0",
+        "discord.js": "^11.3.0",
+        "fluent-ffmpeg": "^2.1.2",
+        "got": "^8.0.3",
+        "listr": "^0.13.0",
+        "lowdb": "^1.0.0",
+        "math-expression-evaluator": "^1.2.17",
+        "minimist": "^1.2.0",
+        "node-deepl": "^1.0.0",
+        "opusscript": "0.0.6",
+        "ora": "^1.3.0",
+        "rxjs": "^5.5.5",
+        "valid-url": "^1.0.9",
+        "ytdl-core": "^0.19.0"
+    },
+    "devDependencies": {
+        "@types/colors": "^1.1.3",
+        "@types/node": "^8.5.9",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "gulp-rename": "^1.2.2",
+        "gulp-run-command": "0.0.9",
+        "gulp-wait": "0.0.2",
+        "standardts": "^1.0.0",
+        "typescript": "^2.6.2"
+    },
+    "optionalDependencies": {
+        "zlib-sync": "^0.1.4",
+        "bufferutil": "^3.0.3",
+        "erlpack": "github:discordapp/erlpack"
+    }
+}

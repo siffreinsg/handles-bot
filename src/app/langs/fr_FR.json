@@ -1,0 +1,161 @@
+{
+    "commands": {
+        "hello": {
+            "hello": "Bonjour {who} !",
+            "default": "à tous"
+        },
+        "avatar": {
+            "userAvatar": "Avatar de {user}",
+            "error": "Aucun avatar",
+            "noAvatar": "Cet utilisateur ne possède pas d'avatar."
+        },
+        "help": {
+            "availableCommands": "Liste des commandes disponibles:",
+            "message": "Comment m'utiliser ? Quelles commandes sont disponibles ? Que faire de moi ? Toutes ces questions ont une réponse ici : https://callmegus.xyz/helpme.\n\nSinon vous pouvez exécuter `{prefix}help list` pour avoir un résumé des commandes.",
+            "fullList": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
+        },
+        "langs": {
+            "langSet": "Langue du serveur paramétrée à `{lang}` avec succès !",
+            "unknown": "Langue \"{lang}\" inconnue",
+            "availables": "Liste des langues disponibles: `{availables}`."
+        },
+        "stats": {
+            "msgSent": "Messages envoyés",
+            "cmdExed": "Commandes executées",
+            "figuresFormat": "Format des données: dernières 24h/depuis le début"
+        },
+        "purge": {
+            "incorrectNumber": "Quantité invalide !",
+            "mustBeInRange": "Vous devez fournir entre 2 et 100 messages à supprimer.",
+            "deleting": "Suppression en cours...",
+            "msgDeleted": "Messages supprimés avec succès !"
+        },
+        "halt": ":wave: Extinction en cours. Adios amigos!",
+        "setactivity": "Status du bot mise à jour !",
+        "shorturl": {
+            "original": "URL original",
+            "shortened": "URL raccourcie"
+        },
+        "calculate": {
+            "equation": "Equation",
+            "result": "Resultat"
+        },
+        "userinfos": {
+            "status": "Status",
+            "game": "Jeu",
+            "notPlaying": "Ne joue pas à un jeu",
+            "registeredOn": "Inscrit le",
+            "joinedOn": "Rejoint le",
+            "roles": "Rôles",
+            "userID": "ID d'utilisateur"
+        },
+        "serverinfos": {
+            "createdAt": "Créé le",
+            "owner": "Possesseur",
+            "region": "Region",
+            "defaultChannel": "Channel par défaut",
+            "textChannel": "Channels textuels",
+            "voiceChannel": "Channels vocaux",
+            "roles": "Rôles",
+            "emojis": "Emojis",
+            "members": "Membres"
+        },
+        "money": {
+            "balance": "Compte de {user}: {balance}€",
+            "givedFaucet": "{gived}€ credités à votre compte ! Nouveau solde: {newBalance}€",
+            "givedMoney": "{quantity} crédités au compte de {user} ! Nouveau solde: {newBalance}€",
+            "removedMoney": "{quantity} débités du compte de {user} ! Nouveau solde: {newBalance}€",
+            "cantBeNegative": "Un compte ne peut pas avoir de solde négatif.",
+            "cooldownErr": "Vous êtes trop rapide !",
+            "cooldown": "Vous devez attendre {minutes}min entre chaque execution de cette commande (sauf avec un TARDIS).\n\nRestant: {remaining}"
+        },
+        "slot": {
+            "amountError": "Mise insuffisante",
+            "mustBeAmount": "La mise doit être supérieur à 10€",
+            "notEnoughMoney": "Pas assez d'argent",
+            "drawn": "Tirage:",
+            "threeNums": "Trois nombres identiques ! Multiplicateur x2.5",
+            "lucky": "Tirage chanceux ! Multiplicateur +1.5",
+            "seriesOfNums": "Suite de nombres ! Multiplicateur x3.5",
+            "goodresult": "Mise de départ: {amount}\nMultiplicateur: {multiplier}\nGains: {earnings}\nNouveau solde: {newBalance}",
+            "noEarnings": "Raté ! Peut-être la prochaine fois..."
+        }
+    },
+    "events": {
+        "MessageHandler": {
+            "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o"
+        }
+    },
+    "errors": {
+        "noDmError": "Serveur uniquement",
+        "noDm": "Vous ne pouvez pas executer cette commande en dehors d'un serveur.",
+        "noPermError": "Erreur de permission",
+        "noPerm": "Vous n'avez pas les bonnes permissions pour executer cette commande !",
+        "unknownErr": "Erreur inconnue",
+        "unknownCommand": "Commande inconnue !",
+        "didYouMean": "Vouliez-vous dire `{prefix}{command}` ?",
+        "useHelpCommand": "Découvrez les commandes disponibles avec `{prefix}help`.",
+        "badArgs": "Arguments de commande incorrects",
+        "learnCMD": " Découvrez la syntaxe de la commande avec `{prefix}help`.",
+        "basicError": "Erreur lors de l'exécution de la commande. Veuillez contacter un administrateur",
+        "sayception": "Vous ne devriez pas faire cela si vous ne voulez pas être responsable de l'implosion quantique du cœur de Handles, cela créerait un trou noir interdimensionnel mortel.. :c"
+    },
+    "translations": {
+        "autoTranslation": "Traduction automatique",
+        "translationsWarn": "Les traductions peuvent être inexactes."
+    },
+    "music": {
+        "errors": {
+            "noVoiceChan": "Aucun channel vocal",
+            "joinVoiceChan": "Rejoignez un channel vocal pour écouter de la musique.",
+            "musicPlayerOff": "Lecteur de musique inactif",
+            "noMusic": "Aucune musique en cours de lecture ! Ajoutez des musiques avec la commande {prefix}play <url>"
+        },
+        "resp": {
+            "queueFormat": "\n> [{title}]({url}) \\~\\~ `{duration}`",
+            "musics": "**Musiques:**: \n",
+            "skippingMusic": "Musiques sautées !",
+            "addedQueue": "Ajouté à la liste de lecture",
+            "author": "Auteur",
+            "duration": "Durée",
+            "position": "Position",
+            "current": "Actuelle",
+            "desc": "Description",
+            "playing": "En écoute"
+        }
+    },
+    "misc": {
+        "requestedBy": "Executé par {user}",
+        "processing": "Traitement des données...",
+        "status": {
+            "online": "En ligne",
+            "offline": "Hors ligne",
+            "idle": "Absent",
+            "dnd": "Ne pas déranger"
+        },
+        "days": {
+            "sun": "Dimanche",
+            "mon": "Lundi",
+            "tue": "Mardi",
+            "wed": "Mercredi",
+            "thu": "Jeudi",
+            "fri": "Vendredi",
+            "sat": "Samedi"
+        },
+        "months": {
+            "jan": "Janvier",
+            "feb": "Février",
+            "mar": "Mars",
+            "apr": "Avril",
+            "may": "Mai",
+            "jun": "Juin",
+            "jul": "Juillet",
+            "aug": "Août",
+            "sep": "Septembre",
+            "oct": "Octobre",
+            "nov": "Novembre",
+            "dec": "Décembre"
+        },
+        "dateFormat": "dddd dd mmmm yyyy"
+    }
+}
