@@ -8,10 +8,10 @@
 
 ## What is it ?
 
-Handles (formerly known as Gus) is a multifunction Discord bot which comes with sets of features and commands made for you. Written in [TypeScript](https://www.typescriptlang.org) for [NodeJS](https://nodejs.org) using some powerful libraries like [Discord.js](https://discord.js.org), [LowDB](https://github.com/typicode/lowdb), [Express](http://expressjs.com), and [Listr](https://github.com/SamVerschueren/listr).
+Handles (formerly known as Gus) is a multifunction Discord bot which comes with sets of features and commands made for you. Written in [TypeScript](https://www.typescriptlang.org) for [Node.js](https://nodejs.org) using some powerful libraries like [Discord.js](https://discord.js.org), [LowDB](https://github.com/typicode/lowdb), [Express](http://expressjs.com), and [Listr](https://github.com/SamVerschueren/listr).
 
 The default set of modules includes:
-* Smart moderation features (includes channels creation, messages deleting, automatic bans & kick, ...)
+* **WIP** Smart moderation features (includes channels creation, messages deleting, automatic bans & kick, ...)
 * Amazing music features like a soundbox who is able to block anything that is harmful to us ~~(like Jul)~~
 * A complete trading & economy virtual platform across all the servers
 * A lot of games and some awesome useless commands
@@ -22,9 +22,11 @@ You may join our community just [here](https://discord.gg/aYcxRR6) to discover H
 
 ## How to install it ?
 
-At the moment, you can't use Handles outside of the closed alpha phases. You can nevertheless test it without limits on our official Discord server, Handles is always available and ready to help you here!
-
 To use the bot, you will need to host it on your own server. A ready-to-use docker image is going to be available for download when the development of the bot is completed. In the meantime, you will be able to install it and all its dependencies manually if you want to use the bot.
+
+At the moment, Handles is theoretically available on Windows, macOS, and most Linux distributions, but it has only been tested on Windows 10 and Debian 9 using Node 9. We do not guarantee support for other distributions or other versions of Node, however it should works.
+
+A complete guide to install and use the bot is available [on the wiki](https://github.com/callmegus/handles-bot/wiki).
 
 
 ## Contributing

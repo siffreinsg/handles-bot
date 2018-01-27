@@ -1,6 +1,6 @@
 # Contributing guide for Handles
 
-> By participating in this project, you agree to abide by the universal "Open Source Code of Conduct, which is accessible right here: https://thoughtbot.com/open-source-code-of-conduct. We expect everyone to follow the code of conduct anywhere in thoughtbot's project codebases, issue trackers, chatrooms, and mailing lists.
+> By participating in this project, you agree to abide by the universal "Contributor Covenant", a code of conduct for open source projects. We expect everyone to follow the code of conduct anywhere in every project codebases, issue trackers, chatrooms, and mailing lists. A copy of this code of conduct is available in this repo.
 
 Thank you for considering contributing to Handles. It's people like you that make it such a great bot!
 
@@ -20,9 +20,9 @@ When contributing to this repository, please first discuss the change you want t
 And you're done !
 
 
-## Make a pull request ?
+## Make a pull request
 
-All information to make a pull request is available [at this address](https://help.github.com/articles/creating-a-pull-request/).This is an article from the official online documentation of GitHub that will explain you step by step how to make a perfect pull request!
+All information to make a pull request is available [at this address](https://help.github.com/articles/creating-a-pull-request/). This is an article from the official online documentation of GitHub that will explain you step by step how to make a perfect pull request!
 
 
 ## About the license
