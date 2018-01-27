@@ -3,7 +3,6 @@ import Context from 'Handles/Command/CommandContext'
 import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
-import UserDB from 'Handles/DB/User'
 
 export default class Balance extends Command {
     command: string = 'balance'
@@ -17,9 +16,9 @@ export default class Balance extends Command {
     execute(context: Context, args: Arguments) {
         let mention = context.message.mentions.members.first(),
             asked = mention ? mention : context.server.member(context.executor.id),
-            user = new UserDB(asked)
+            balance = app.db.getUser(asked.guild.id, asked.id).get('balance').value()
 
-        context.reply('Balance of ' + asked.displayName + ': ' + user.balance + '€')
+        context.reply(context.translate('/commands/money/balance', { user: asked.displayName, balance }))
     }
 
 }

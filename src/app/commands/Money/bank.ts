@@ -4,7 +4,7 @@ import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
-import UserDB from 'Handles/DB/User'
+import * as Levels from 'Handles/Utils/Levels'
 
 export default class Bank extends Command {
     command: string = 'bank'
@@ -16,30 +16,38 @@ export default class Bank extends Command {
     allowDM: boolean = false
 
     execute(context: Context, args: Arguments) {
-        let mention = context.message.mentions.members.first(),
-            asked = mention ? mention : context.server.member(context.executor.id),
-            user = new UserDB(asked),
-            action = args.get(0),
-            newBalance, quantity
+        let action = args.get(0),
+            mention = context.message.mentions.members.first(),
+            newBalance, quantity, gived, user
+
+        if (action !== 'faucet') user = mention ? mention : context.server.member(context.executor.id)
+        else user = context.server.member(context.executor.id)
+
+        let userdb = app.db.getUser(user.guild.id, user.id),
+            currentBalance = userdb.get('balance', 0).value()
 
         switch (action) {
             case 'faucet':
-                newBalance = user.incrementBalance(Math.floor(75 * ((100 + 2 * user.getLevel()) / 100)))
-                context.reply('New balance of ' + asked.displayName + ': ' + newBalance + '€')
+                gived = Math.floor(75 * ((100 + 2 * Levels.xpToLVL(userdb.get('xp', 0).value())) / 100))
+                newBalance = currentBalance + gived
+                userdb.set('balance', newBalance).write()
+                context.reply(context.translate('/commands/money/givedFaucet', { gived, newBalance }))
                 break
             case 'give':
                 if (!context.isAdmin()) return context.replyError('notAdmin')
                 quantity = parseInt('' + args.get(1))
                 if (!quantity) return context.replyError('badArgs')
-                newBalance = user.incrementBalance(quantity)
-                context.reply('New balance of ' + asked.displayName + ': ' + newBalance + '€')
+                newBalance = currentBalance + quantity
+                userdb.set('balance', newBalance).write()
+                context.reply(context.translate('/commands/money/givedMoney', { user: user.displayName, quantity, newBalance }))
                 break
             case 'remove':
                 if (!context.isAdmin()) return context.replyError('notAdmin')
                 quantity = parseInt('' + args.get(1))
                 if (!quantity) return context.replyError('badArgs')
-                newBalance = user.incrementBalance(0 - quantity)
-                context.reply('New balance of ' + asked.displayName + ': ' + newBalance + '€')
+                newBalance = currentBalance - quantity
+                userdb.set('balance', newBalance).write()
+                context.reply(context.translate('/commands/money/removedMoney', { user: user.displayName, quantity, newBalance }))
                 break
             default:
                 context.replyError('badArgs')

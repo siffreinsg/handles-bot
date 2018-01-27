@@ -49,7 +49,7 @@ export default class MessageHandler {
                 }
             }
             let globalStats = app.db.getGlobalStats(),
-                res = globalStats.get(toIncrement).value()
+                res = globalStats.get(toIncrement, 0).value()
             globalStats.set(toIncrement, res + 1).write()
         }
     }

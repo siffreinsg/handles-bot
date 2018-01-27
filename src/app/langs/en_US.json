@@ -59,6 +59,12 @@
             "roles": "Rôles",
             "emojis": "Emojis",
             "members": "Membres"
+        },
+        "money": {
+            "balance": "Balance of {user}: {balance}€",
+            "givedFaucet": "{gived}€ added to your account ! New balance: {newBalance}€",
+            "givedMoney": "{quantity} gived to user! New balance of {user}: {newBalance}€",
+            "removedMoney": "{quantity} removed from user! New balance of {user}: {newBalance}€"
         }
     },
     "events": {
