@@ -43,6 +43,7 @@
     },
     "optionalDependencies": {
         "zlib-sync": "^0.1.4",
-        "bufferutil": "^3.0.3"
+        "bufferutil": "^3.0.3",
+        "erlpack": "github:discordapp/erlpack"
     }
 }
