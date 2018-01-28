@@ -27,7 +27,7 @@ export default class Help extends Command {
                 }
             })
             toSend += '\n\n' + context.translate('/commands/help/fullList')
-            context.reply(toSend + '\.')
+            context.reply(toSend + '\.', { split: true })
         }
     }
 }
