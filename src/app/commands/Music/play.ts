@@ -4,6 +4,8 @@ import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import { RichEmbed, TextChannel } from 'discord.js'
+import * as youtubeSearch from 'youtube-search'
+import { isUri } from 'valid-url'
 
 export default class Play extends Command {
     static activated: boolean = true
@@ -18,16 +20,24 @@ export default class Play extends Command {
     execute(context: Context, args: Arguments) {
         context.delete()
         context.processing().then((msg: any) => {
-
             let voiceChannel = context.server.member(context.executor.id).voiceChannel
-
             if (!voiceChannel) {
                 msg.delete()
                 return context.replyError('custom', context.translate('/music/errors/noVoiceChan'), context.translate('/music/errors/joinVoiceChan'))
             }
-            let urls
+
+            let urls: Array<any> = []
             if (!args.get(0)) urls = ['https://www.youtube.com/watch?v=Zr1hxCxtfdM']
-            else urls = args.getAll()
+            else if (!isUri(args.get(0))) {
+                let search = args.getAll().join(' ')
+
+                youtubeSearch(search, { maxResults: 1, key: app.config.ytAPIkey }, (err, results) => {
+                    if (err) return context.replyError()
+                    if (results && results[0]) urls.push(results[0].link)
+                    else return context.replyError('custom', context.translate('/music/notFound'), context.translate('/music/cannotFindSearch'))
+                })
+            } else urls = args.getAll()
+            urls.forEach(url => { if (!isUri(url)) return context.replyError('badArgs') })
 
             voiceChannel.join()
                 .then(connection => {
@@ -35,7 +45,7 @@ export default class Play extends Command {
                     urls.forEach((url: any) => {
                         app.music.addToQueue(url, context.server.id, err => {
                             if (err) {
-                                voiceChannel.leave()
+                                if (!app.music.isPlaying(context.server.id)) voiceChannel.leave()
                                 return context.replyError()
                             }
                             if (!app.music.isPlaying(context.server.id)) app.music.playMusic(url, connection, context)

@@ -128,7 +128,9 @@
             "position": "Position",
             "current": "Actuelle",
             "desc": "Description",
-            "playing": "En écoute"
+            "playing": "En écoute",
+            "notFound": "Musique introuvable",
+            "cannotFindSearch": "Aucune musique trouvée en utilisant les mots clés donnés."
         }
     },
     "misc": {

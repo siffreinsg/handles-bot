@@ -12,6 +12,7 @@
         "USER ID"
     ],
     "cleverbotAPIkey": "I AM A KEY",
+    "ytAPIkey": "I AM ALSO A KEY",
     "debug": false,
     "XPgived": [
         1,
