@@ -5,13 +5,14 @@ import * as Utils from 'Handles/Utils/Misc'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 
-export default class Slot extends Command {
+export default class Dice extends Command {
     static activated: boolean = true
-    command: string = 'slot'
-    desc: string = 'Slot game'
+    command: string = 'dice'
+    desc: string = 'Dice game'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'amount', type: 'text', required: true, usage: 'amount' }
+        { name: 'amount', type: 'text', required: true, usage: 'amount' },
+        { name: 'result', type: 'text', required: true, usage: 'result 1->6' }
     ]
     allowDM: boolean = false
 
@@ -19,37 +20,37 @@ export default class Slot extends Command {
         let user = context.server.member(context.executor.id),
             account = app.db.getUser(user.guild.id, user.id),
             oldBalance = account.get('balance', 0).value(),
-            amount = parseInt('' + args.get(0))
+            amount = parseInt('' + args.get(0)),
+            number = parseInt('' + args.get(1))
 
         if (amount < 10) return context.replyError('custom', context.translate('/commands/money/amountError'), context.translate('/commands/money/mustBeAmount'))
         if ((oldBalance - amount) < 0) return context.replyError('custom', context.translate('/commands/money/notEnoughMoney'), context.translate('/commands/money/cantBeNegative'))
+        if (number > 6 || number < 1) return context.replyError('badArgs')
 
         account.set('balance', oldBalance - amount).write()
 
-        let lucky = Utils.getRandomInt(1, 12),
-            tirage: Array<number> = [], i, toSend,
-            search = ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-            replacement = [':one:', ':two:', ':three:', ':four:', ':five:', ':six:', ':seven:', ':eight:', ':nine:']
+        let lucky = '' + Utils.getRandomInt(1, 6),
+            tirage = '' + Utils.getRandomInt(1, 6),
+            search = ['1', '2', '3', '4', '5', '6'],
+            replacement = [
+                '|       |\n|   o   |\n|       |\n',
+                '|     o |\n|       |\n| o     |\n',
+                '|     o |\n|   o   |\n| o     |\n',
+                '| o   o |\n|       |\n| o   o |\n',
+                '| o   o |\n|   o   |\n| o   o |\n',
+                '| o   o |\n| o   o |\n| o   o |\n'
+            ]
 
-        for (i = 0; i < 9; i++) tirage[i + 1] = Utils.getRandomInt(1, 9)
-
-        toSend = context.translate('/commands/games/drawn') + '\n\n        ' + tirage[1] + tirage[2] + tirage[3] + '\n:arrow_forward: ' + tirage[4] + (lucky === 12 ? ':four_leaf_clover:' : tirage[5]) + tirage[6] + ' :arrow_backward:\n        ' + tirage[7] + tirage[8] + tirage[9] + '\n\n'
-        toSend = Utils.replaceAll(toSend, search, replacement)
-        context.reply(toSend)
+        let toSend = '---------\n' + Utils.replaceAll(tirage, search, replacement) + '---------\n\nLucky number: ' + lucky
+        context.reply(toSend, { code: 'ldif' })
 
         toSend = ''
         let multiplier = 0
-        switch (true) {
-            case (Utils.areEqual(tirage[4], tirage[5], tirage[6])):
-                multiplier = 2.5
-                toSend += context.translate('/commands/games/threeNums') + '\n'
-                break
-            case (tirage[4] === (tirage[5] - 1) && tirage[5] === (tirage[6] - 1)):
-                multiplier = 3.5
-                toSend += context.translate('/commands/games/seriesOfNums') + '\n'
-                break
+        if (tirage === number + '') {
+            multiplier = 2.5
+            toSend += context.translate('/commands/games/goodDice') + '\n'
         }
-        if (lucky === 12) {
+        if (lucky === tirage) {
             multiplier += 1.5
             toSend += context.translate('/commands/games/lucky') + '\n'
         }
@@ -64,7 +65,6 @@ export default class Slot extends Command {
             toSend = context.translate('/commands/games/noEarnings')
         }
         context.reply(toSend, { code: 'ldif' })
-
     }
 
 

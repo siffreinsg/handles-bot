@@ -67,18 +67,20 @@
             "removedMoney": "{quantity} débités du compte de {user} ! Nouveau solde: {newBalance}€",
             "cantBeNegative": "Un compte ne peut pas avoir de solde négatif.",
             "cooldownErr": "Vous êtes trop rapide !",
-            "cooldown": "Vous devez attendre {minutes}min entre chaque execution de cette commande (sauf avec un TARDIS).\n\nRestant: {remaining}"
-        },
-        "slot": {
+            "cooldown": "Vous devez attendre {minutes}min entre chaque execution de cette commande (sauf avec un TARDIS).\n\nRestant: {remaining}",
             "amountError": "Mise insuffisante",
             "mustBeAmount": "La mise doit être supérieur à 10€",
-            "notEnoughMoney": "Pas assez d'argent",
+            "notEnoughMoney": "Pas assez d'argent"
+        },
+        "games": {
             "drawn": "Tirage:",
             "threeNums": "Trois nombres identiques ! Multiplicateur x2.5",
             "lucky": "Tirage chanceux ! Multiplicateur +1.5",
             "seriesOfNums": "Suite de nombres ! Multiplicateur x3.5",
             "goodresult": "Mise de départ: {amount}\nMultiplicateur: {multiplier}\nGains: {earnings}\nNouveau solde: {newBalance}",
-            "noEarnings": "Raté ! Peut-être la prochaine fois..."
+            "noEarnings": "Raté ! Peut-être la prochaine fois...",
+            "goodDice": "Très bon choix ! Multiplicateur x2.5",
+            "luckyNumber": "Nombre chanceux: "
         }
     },
     "events": {

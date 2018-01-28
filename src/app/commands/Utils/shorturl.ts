@@ -15,7 +15,7 @@ export default class Shorturl extends Command {
     args: Argument[] = [
         { name: 'url', type: 'text', required: true, usage: 'url' }
     ]
-    allowDM: boolean = false
+    allowDM: boolean = true
 
     execute(context: Context, args: Arguments) {
         context.processing().then((msg: any) => {
