@@ -81,6 +81,11 @@
             "noEarnings": "Missed! Maybe next time...",
             "goodDice": "Good choice ! Multiplier x2.5",
             "luckyNumber": "Lucky number: "
+        },
+        "feedback": {
+            "noChan": "No feedback channel",
+            "cantFindChan": "Sorry but we can't find the feedback channel. Contact an administrator for further informations.",
+            "thanksForFeedback": "Thank you for your feedback ! We really want to know what is good or bad about our bot. This is the only good way to improve our work :smile:"
         }
     },
     "events": {

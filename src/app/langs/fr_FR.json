@@ -81,6 +81,11 @@
             "noEarnings": "Raté ! Peut-être la prochaine fois...",
             "goodDice": "Très bon choix ! Multiplicateur x2.5",
             "luckyNumber": "Nombre chanceux: "
+        },
+        "feedback": {
+            "noChan": "Aucun channel",
+            "cantFindChan": "Aucun channel trouvé pour l'envoie de feedback. Contacter un administrateur pour plus d'informations.",
+            "thanksForFeedback": "Merci beaucoup pour votre retour ! Nous voulons vraiment savoir ce qui est bien ou pas bien dans notre bot. C'est le seul moyen d'améliorer efficacement notre travail :smile:"
         }
     },
     "events": {

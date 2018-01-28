@@ -3,7 +3,6 @@ import Context from 'Handles/Command/CommandContext'
 import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
-import { Message } from 'discord.js'
 
 export default class Purge extends Command {
     static activated: boolean = true
@@ -11,7 +10,8 @@ export default class Purge extends Command {
     desc: string = 'Delete a lot of messages (/!\ dangerous /!\)'
     permissions: Permission[] = [
         'MANAGE_GUILD',
-        'MANAGE_CHANNELS'
+        'MANAGE_CHANNELS',
+        'MANAGE_MESSAGES'
     ]
     args: Argument[] = [
         { name: 'quantity', type: 'text', required: true, usage: 'quantity' }
@@ -25,10 +25,9 @@ export default class Purge extends Command {
                 .then(messages => {
                     context.reply(context.translate('/commands/purge/deleting')).then(function (msg: any) {
                         messages.deleteAll().forEach(promise => promise.catch(console.log))
-                        msg.edit(context.translate('/commands/purge/msgDeleted'))
-                    })
-                })
-                .catch(console.log)
+                        msg.edit(context.translate('/commands/purge/msgDeleted')).then(m => m.delete(3000))
+                    }).catch(console.log)
+                }).catch(console.log)
         } else {
             context.replyError('custom', context.translate('/commands/purge/incorrectNumber'), context.translate('/commands/purge/mustBeInRange'))
         }

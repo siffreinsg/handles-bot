@@ -17,5 +17,6 @@
         1,
         10
     ],
-    "faucetCooldown": 60
+    "faucetCooldown": 60,
+    "feedbackChanID": "407167185849417768"
 }
