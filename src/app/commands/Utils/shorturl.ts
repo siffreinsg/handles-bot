@@ -29,7 +29,7 @@ export default class Shorturl extends Command {
                         .addField(context.translate('/commands/shorturl/original'), url)
                         .addField(context.translate('/commands/shorturl/shortened'), body.body)
                     msg.edit('', embed)
-                }    
+                })
             } else { if (msg.deletable) { msg.delete() } context.replyError('badArgs') }
         })
     }

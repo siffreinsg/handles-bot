@@ -11,7 +11,7 @@ export default class Play extends Command {
     desc: string = 'Play command.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'url', type: 'text', required: true, usage: 'url yt' }
+        { name: 'url', type: 'text', required: false, usage: 'url yt' }
     ]
     allowDM: boolean = false
 
@@ -25,11 +25,14 @@ export default class Play extends Command {
                 msg.delete()
                 return context.replyError('custom', context.translate('/music/errors/noVoiceChan'), context.translate('/music/errors/joinVoiceChan'))
             }
+            let urls
+            if (!args.get(0)) urls = ['https://www.youtube.com/watch?v=Zr1hxCxtfdM']
+            else urls = args.getAll()
 
             voiceChannel.join()
                 .then(connection => {
                     msg.delete()
-                    args.getAll().forEach((url: any) => {
+                    urls.forEach((url: any) => {
                         app.music.addToQueue(url, context.server.id, err => {
                             if (err) {
                                 voiceChannel.leave()
