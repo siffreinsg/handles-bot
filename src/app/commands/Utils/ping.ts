@@ -12,6 +12,7 @@ export default class Ping extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
+    aliases: String[] = ['speed']
 
     async execute(context: Context, args: Arguments) {
         let m: any = await context.message.channel.send('Pong!')

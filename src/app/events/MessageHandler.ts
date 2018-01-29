@@ -18,11 +18,11 @@ export default class MessageHandler {
             isCommand = this.isCommand(msg)
 
         if (isCommand) {
-            var { command, args } = this.parseCommand(msg)
-            var answer = this.executeCommand(this.message, command, args)
-
+            let { command, args } = this.parseCommand(msg)
+            let answer = this.executeCommand(this.message, command, args)
             this.checkAnswer(answer, command)
         }
+
         if (!this.message.author.bot) {
             let toIncrement = isCommand ? 'cmdExed' : 'msgSent'
 
@@ -35,15 +35,20 @@ export default class MessageHandler {
                 stats.set(toIncrement, res1 + 1).write()
                 user.set('stats.' + toIncrement, res2 + 1).write()
 
-                if (!isCommand) {
+                let lang = app.translator.getServerLang(this.message.guild.id), xpToGive = 0
+                if (res2 === 0) {
+                    this.message.channel.send(app.translator.translate('/events/MessageHandler/first_' + toIncrement, lang, { who: '<@' + this.message.author.id + '>' }))
+                    xpToGive += 100
+                }
+
+                if (!isCommand || xpToGive > 0) {
                     let oldXP = user.get('xp', 0).value(),
-                        oldLevel = Levels.xpToLVL(oldXP),
-                        xpToGive = Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0],
                         newLevel = Levels.xpToLVL(oldXP + xpToGive)
 
-                    user.set('xp', parseInt(oldXP) + parseInt(xpToGive)).write()
-                    if (newLevel > oldLevel) {
-                        let lang = app.translator.getServerLang(this.message.guild.id)
+                    if (!isCommand) xpToGive += Math.floor(Math.random() * app.config.XPgived[1]) + app.config.XPgived[0]
+
+                    user.set('xp', parseInt('' + oldXP) + xpToGive).write()
+                    if (newLevel > Levels.xpToLVL(oldXP)) {
                         this.message.channel.send(app.translator.translate('/events/MessageHandler/levelup', lang, { who: '<@' + this.message.author.id + '>', level: '' + newLevel }))
                     }
                 }
@@ -55,8 +60,8 @@ export default class MessageHandler {
     }
 
     parseCommand(command) {
-        var command = command.split(' ')
-        var args = minimist(command.slice(1))
+        command = command.split(' ')
+        let args = minimist(command.slice(1))
         command = command[0].substring(1)
         return { command, args }
     }

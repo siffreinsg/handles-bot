@@ -12,6 +12,7 @@ export default class Queue extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = false
+    aliases: String[] = ['playlist']
 
     execute(context: Context, args: Arguments) {
         if (app.music.isPlaying(context.server.id)) {

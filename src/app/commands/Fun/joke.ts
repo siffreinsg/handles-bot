@@ -14,7 +14,7 @@ export default class Joke extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
-
+    aliases: String[] = []
 
     execute(context: Context, args: Arguments) {
         context.processing().then((msg: any) => {

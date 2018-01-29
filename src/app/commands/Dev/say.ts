@@ -16,6 +16,7 @@ export default class Say extends Command {
         { name: 'options', type: 'text', required: false, usage: '|options:{}' }
     ]
     allowDM: boolean = false
+    aliases: String[] = ['echo']
 
     execute(context: Context, args: Arguments) {
         context.delete()

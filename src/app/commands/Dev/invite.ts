@@ -12,6 +12,7 @@ export default class Invite extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
+    aliases: String[] = []
 
     execute(context: Context, args: Arguments) {
         let embed = new RichEmbed()

@@ -86,11 +86,19 @@
             "noChan": "Aucun channel",
             "cantFindChan": "Aucun channel trouvé pour l'envoie de feedback. Contacter un administrateur pour plus d'informations.",
             "thanksForFeedback": "Merci beaucoup pour votre retour ! Nous voulons vraiment savoir ce qui est bien ou pas bien dans notre bot. C'est le seul moyen d'améliorer efficacement notre travail :smile:"
+        },
+        "about": {
+            "createdBy": "Créé par",
+            "aboutTitle": "A propos",
+            "about": "Handles (anciennement connu sous le nom de Gus) est un bot Discord multi-fonctions livré avec un ensemble de fonctionnalités et de commandes faites pour vous. Écrit en TypeScript pour Node. js en utilisant de puissantes bibliothèques tel que Discord. js, LowDB et Express, Handles est capable de répondre à tous vos besoins concernant votre communauté Discord.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Site: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles",
+            "message": "Attention. Décodage du message. Analyse du message en cours. Information disponible. Le message est une demande d'information."
         }
     },
     "events": {
         "MessageHandler": {
-            "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o"
+            "levelup": "Bravo {who}, tu as atteint le niveau {level} ! Tu parles beaucoup dis-donc :o",
+            "first_cmdExed": "Félicitations {who} ! C'est votre première commande sur ce serveur :D +100XP",
+            "first_msgSent": "GG {who} ! C'est votre premier message sur ce serveur :D +100XP"
         }
     },
     "errors": {

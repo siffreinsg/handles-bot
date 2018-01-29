@@ -15,6 +15,7 @@ export default class Dice extends Command {
         { name: 'result', type: 'text', required: true, usage: 'result 1->6' }
     ]
     allowDM: boolean = false
+    aliases: String[] = []
 
     execute(context: Context, args: Arguments) {
         let user = context.server.member(context.executor.id),

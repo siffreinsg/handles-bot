@@ -16,6 +16,7 @@ export default class SetLang extends Command {
         { name: 'lang', type: 'text', required: true, usage: 'lang' }
     ]
     allowDM: boolean = false
+    aliases: String[] = ['lang']
 
     execute(context: Context, args: Arguments) {
         let lang = '' + args.get(0)

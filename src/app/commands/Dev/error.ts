@@ -17,6 +17,7 @@ export default class Error extends Command {
         { name: 'desc', type: 'text', required: false, usage: 'desc' }
     ]
     allowDM: boolean = true
+    aliases: String[] = []
 
     execute(context: Context, args: Arguments) {
         context.replyError('' + args.get(0), '' + args.getProp('title'), '' + args.getProp('desc'))

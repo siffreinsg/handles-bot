@@ -13,6 +13,8 @@ export default class Uptime extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
+    aliases: String[] = []
+
     startTime = Date.now()
 
     execute(context: Context, args: Arguments) {

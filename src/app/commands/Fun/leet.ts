@@ -15,6 +15,7 @@ export default class leet extends Command {
         { name: 'message', type: 'text', required: true, usage: 'message' }
     ]
     allowDM: boolean = true
+    aliases: String[] = []
 
     execute(context: Context, args: Arguments) {
         let embed = new RichEmbed()

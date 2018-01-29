@@ -15,6 +15,7 @@ export default class Setactivity extends Command {
         { name: 'activity', type: 'text', required: false, usage: 'activity' }
     ]
     allowDM: boolean = true
+    aliases: String[] = ['activity', 'game', 'setgame']
 
     execute(context: Context, args: Arguments) {
         let activity = args.get(0) ? args.getAll().join(' ') : app.config.activity.replace('{prefix}', app.config.prefix)

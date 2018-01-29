@@ -15,6 +15,7 @@ export default class Calculate extends Command {
         { name: 'equation', type: 'text', required: true, usage: 'equation' }
     ]
     allowDM: boolean = true
+    aliases: String[] = ['math', 'calc']
 
     execute(context: Context, args: Arguments) {
         let equation = args.getAll().join(' ')

@@ -16,6 +16,7 @@ export default class Rank extends Command {
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
     allowDM: boolean = false
+    aliases: String[] = ['xp', 'level']
 
     execute(context: Context, args: Arguments) {
         let firstMention = context.message.mentions.members.first(),

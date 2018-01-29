@@ -14,6 +14,7 @@ export default class Feedback extends Command {
         { name: 'message', type: 'text', required: true, usage: 'feedback' }
     ]
     allowDM: boolean = true
+    aliases: String[] = ['contact']
 
     execute(context: Context, args: Arguments) {
         let message = args.getAll().join(' '),

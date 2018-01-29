@@ -14,6 +14,7 @@ export default class Slot extends Command {
         { name: 'amount', type: 'text', required: true, usage: 'amount' }
     ]
     allowDM: boolean = false
+    aliases: String[] = []
 
     execute(context: Context, args: Arguments) {
         let user = context.server.member(context.executor.id),

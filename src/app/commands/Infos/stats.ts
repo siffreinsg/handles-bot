@@ -12,6 +12,7 @@ export default class Stats extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = false
+    aliases: String[] = ['figures']
 
     execute(context: Context, args: Arguments) {
         let stats = app.db.getStats(context.server.id)

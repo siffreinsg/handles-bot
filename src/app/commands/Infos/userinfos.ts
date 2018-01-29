@@ -15,6 +15,7 @@ export default class Userinfos extends Command {
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
     allowDM: boolean = false
+    aliases: String[] = ['user']
 
     execute(context: Context, args: Arguments) {
         let firstMention = context.message.mentions.members.first(),

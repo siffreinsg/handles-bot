@@ -82,6 +82,12 @@
             "goodDice": "Good choice ! Multiplier x2.5",
             "luckyNumber": "Lucky number: "
         },
+        "about": {
+            "createdBy": "Created by",
+            "aboutTitle": "About",
+            "about": "Handles (formerly known as Gus) is a multi-function Discord bot delivered with a set of features and commands made for you. Written in TypeScript for Node. js using powerful libraries such as Discord. js, LowDB and Express, Handles is able to meet all your needs regarding your Discord community.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Website: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles",
+            "message": "Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information."
+        },
         "feedback": {
             "noChan": "No feedback channel",
             "cantFindChan": "Sorry but we can't find the feedback channel. Contact an administrator for further informations.",
@@ -90,7 +96,9 @@
     },
     "events": {
         "MessageHandler": {
-            "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o"
+            "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o",
+            "first_cmdExed": "Holy cow {who} ! This is your first command in this server :D +100XP",
+            "first_msgSent": "Congrats {who} ! This is your first message in this server :D +100XP"
         }
     },
     "errors": {

@@ -14,6 +14,7 @@ export default class Help extends Command {
         { name: 'command', type: 'text', required: false, usage: 'command name' }
     ]
     allowDM: boolean = true
+    aliases: String[] = ['commands']
 
     execute(context, args) {
         if (args.get(0) !== 'list') {
@@ -22,8 +23,8 @@ export default class Help extends Command {
             let toSend = context.translate('/commands/help/availableCommands')
             app.commands.list.forEach(function (cmd_name) {
                 if (cmd_name !== 'help') {
-                    var cmd = app.commands.cmds[cmd_name]
-                    toSend += '\n    - `' + app.config.prefix + cmd.command + '` -- ' + cmd.desc
+                    let cmd = app.commands.cmds[cmd_name]
+                    if (cmd_name === cmd.command) toSend += '\n    - `' + app.config.prefix + cmd.command + '` -- ' + cmd.desc
                 }
             })
             toSend += '\n\n' + context.translate('/commands/help/fullList')
