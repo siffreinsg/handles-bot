@@ -19,12 +19,12 @@ export default class Help extends Command {
 
     execute(context, args) {
         context.delete()
-        let tmp = app.tmp['commands.interactivehelp']
-        if (!tmp) app.tmp['commands.interactivehelp'] = {}
-        else if (tmp[context.executor.id]) {
-            tmp[context.executor.id].delete().catch(err => { return 666 })
-            delete tmp[context.executor.id]
-        }
+        let tmp = app.tmp,
+            interactive = 'commands.interactivehelp',
+            userid = context.executor.id
+
+        if (!tmp[interactive]) app.tmp['commands.interactivehelp'] = {}
+        else if (tmp[interactive][userid]) tmp[interactive][userid].delete().catch(err => { return 666 })
 
         var appthis = this, page = 0, cmdlength = app.commands.list.length - 3, maxCmdsPerPage = 6, maxPagesForCmds = page + Math.floor(cmdlength / maxCmdsPerPage) + 1
         var help = new RichEmbed()
@@ -36,7 +36,7 @@ export default class Help extends Command {
             .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
 
         context.executor.send(context.translate('/commands/about/message'), help).then((msg: Message) => {
-            if (context.channel.type === 'text') context.reply(context.translate('/help/checkDM'))
+            if (context.channel.type === 'text') context.reply(context.translate('/help/checkDM')).then(msg => msg.delete(5000))
             reactHandler(msg)
         }).catch(err => {
             context.reply(context.translate('/commands/about/message'), help).then((msg: Message) => {
@@ -45,7 +45,7 @@ export default class Help extends Command {
         })
 
         async function reactHandler(msg: Message) {
-            app.tmp['commands.interactivehelp'][context.executor.id] = msg
+            tmp[interactive][userid] = msg
 
             await msg.react('◀')
             await msg.react('ℹ')
@@ -100,7 +100,7 @@ export default class Help extends Command {
             embed = new RichEmbed()
                 .setColor(context.getUserColor(app.client.user.id))
                 .setAuthor(context.translate('/help/commands'))
-                .setDescription(context.translate('/help/returnToMaino'))
+                .setDescription(context.translate('/help/returnToMain'))
                 .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
 
         for (let i = start; (i < start + maxCmd) && (i < cmds.length); i++) {
