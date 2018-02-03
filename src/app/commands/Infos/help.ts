@@ -26,7 +26,7 @@ export default class Help extends Command {
             delete tmp[context.executor.id]
         }
 
-        var appthis = this, page = 0, cmdlength = app.commands.list.length - 3, maxCmdsPerPage = 8, maxPagesForCmds = page + Math.floor(cmdlength / maxCmdsPerPage) + 1
+        var appthis = this, page = 0, cmdlength = app.commands.list.length - 3, maxCmdsPerPage = 6, maxPagesForCmds = page + Math.floor(cmdlength / maxCmdsPerPage) + 1
         var help = new RichEmbed()
             .setColor(context.getUserColor(app.client.user.id))
             .setAuthor(context.translate('/help/interactiveHelp'))
@@ -100,7 +100,7 @@ export default class Help extends Command {
             embed = new RichEmbed()
                 .setColor(context.getUserColor(app.client.user.id))
                 .setAuthor(context.translate('/help/commands'))
-                .setDescription('Return to the main page with the ℹ button')
+                .setDescription(context.translate('/help/returnToMaino'))
                 .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
 
         for (let i = start; (i < start + maxCmd) && (i < cmds.length); i++) {
