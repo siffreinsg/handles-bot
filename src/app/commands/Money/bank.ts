@@ -5,7 +5,7 @@ import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import * as Discord from 'discord.js'
 import * as Levels from 'Handles/Utils/Levels'
-import { fancyTimeFormat } from 'Handles/Utils/Misc'
+import { fancyTimeFormat } from 'Handles/Utils/Converter'
 
 export default class Bank extends Command {
     static activated: boolean = true

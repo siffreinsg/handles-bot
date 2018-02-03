@@ -4,7 +4,7 @@ import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
 import { RichEmbed } from 'discord.js'
-import { fancyTimeFormat } from 'Handles/Utils/Misc'
+import { fancyTimeFormat } from 'Handles/Utils/Converter'
 
 export default class Uptime extends Command {
     static activated: boolean = true

@@ -100,6 +100,14 @@
             "pollBy": "Poll by @{user}",
             "results": "Results",
             "finished": "Poll finished !"
+        },
+        "setwelcome": {
+            "status": "The welcome message is {status} !\nPreview:",
+            "enabled": "enabled",
+            "disabled": "disabled",
+            "toggled": "The welcome message has been {change} !",
+            "titleSet": "The welcome message's title has been changed to ```{title}```",
+            "bodySet": "The welcome message's body has been changed to ```{body}```"
         }
     },
     "events": {

@@ -100,6 +100,14 @@
             "pollBy": "Sondage par @{user}",
             "results": "Resultats",
             "finished": "Sondage terminé !"
+        },
+        "setwelcome": {
+            "status": "Le message de bienvenue est {status} !\nPrévisualisation:",
+            "enabled": "activé",
+            "disabled": "désactivé",
+            "toggled": "Le message de bienvenue a été {change} !",
+            "titleSet": "Le titre du message de bienvenue a été changé: ```{title}```",
+            "bodySet": "Le corps du message de bienvenue a été changé: ```{body}```"
         }
     },
     "events": {
