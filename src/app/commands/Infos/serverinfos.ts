@@ -13,7 +13,8 @@ export default class Serverinfos extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = false
-    aliases: String[] = ['server']
+    aliases: string[] = ['server']
+    usage: string = 'serverinfos'
 
     execute(context: Context, args: Arguments) {
         let server = context.server

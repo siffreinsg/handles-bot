@@ -13,7 +13,8 @@ export default class Balance extends Command {
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
     allowDM: boolean = false
-    aliases: String[] = ['money']
+    aliases: string[] = ['money']
+    usage: string = 'balance [@user]'
 
     execute(context: Context, args: Arguments) {
         let mention = context.message.mentions.members.first(),

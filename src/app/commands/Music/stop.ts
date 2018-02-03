@@ -20,7 +20,8 @@ export default class Stop extends Command {
     ]
     args: Argument[] = []
     allowDM: boolean = false
-    aliases: String[] = ['leave']
+    aliases: string[] = ['leave']
+    usage: string = 'stop'
 
     execute(context: Context, args: Arguments) {
         if (app.music.isPlaying(context.server.id)) {

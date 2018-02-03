@@ -9,11 +9,6 @@
             "error": "No avatar",
             "noAvatar": "This user does not have an avatar."
         },
-        "help": {
-            "availableCommands": "Available commands:",
-            "message": "How to use me? Which commands are availables? What to do with me? All of these questions have an answer here: https://callmegus.xyz/helpme.\n\nOtherwise you can run `{prefix}help list` to get a summmary of the commands.",
-            "fullList": "Get a full list and usages of the commands on https://callmegus.xyz"
-        },
         "langs": {
             "langSet": "Server lang set to `{lang}` with success !",
             "unknown": "Lang \"{lang}\" unknown",
@@ -142,6 +137,23 @@
             "notFound": "Music not found",
             "cannotFindSearch": "I can't find the music using gived keywords"
         }
+    },
+    "help": {
+        "interactiveHelp": "Handles - Interactive Help",
+        "website": "How to use me? Which commands are availables? What to do with me? All those questions have an answer here: https://callmegus.xyz",
+        "howTo": "How to use the interactive help ?",
+        "howToText": "◀ Previous page\nℹ Show this help\n▶ Next page\n🛑 Leave",
+        "navigation": "Navigation",
+        "page index": "Page n°{page}",
+        "commands": "Commands",
+        "returnToMain": "Return to the main page with the ℹ button",
+        "commandsField": "*{desc}*\nUsage: {prefix}{usage}\nDM allowed: {allowDM}",
+        "yes": "Yes",
+        "no": "No",
+        "none": "None",
+        "navigationField": "◀ Previous: {previous}\nℹ Now: **{current}**\n▶ Next: {next}",
+        "help": "Help",
+        "checkDM": "The interactive help has been sent to your DMs"
     },
     "misc": {
         "processing": "Processing",

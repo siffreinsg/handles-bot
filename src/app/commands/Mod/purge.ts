@@ -17,7 +17,8 @@ export default class Purge extends Command {
         { name: 'quantity', type: 'text', required: true, usage: 'quantity' }
     ]
     allowDM: boolean = false
-    aliases: String[] = ['delete']
+    aliases: string[] = ['delete']
+    usage: string = 'purge <quantity>'
 
     execute(context: Context, args: Arguments) {
         let quantity = parseInt('' + args.get(0))

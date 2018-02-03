@@ -20,7 +20,8 @@ export default class Skip extends Command {
     ]
     args: Argument[] = []
     allowDM: boolean = false
-    aliases: String[] = ['change']
+    aliases: string[] = ['change']
+    usage: string = 'skip'
 
     execute(context: Context, args: Arguments) {
         if (app.music.isPlaying(context.server.id)) {

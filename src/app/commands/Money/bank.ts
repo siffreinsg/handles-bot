@@ -16,7 +16,8 @@ export default class Bank extends Command {
         { name: 'action', type: 'text', required: true, usage: 'faucet|give|remove' }
     ]
     allowDM: boolean = false
-    aliases: String[] = []
+    aliases: string[] = []
+    usage: string = 'bank <faucet|give|remove> [quantity] [@user]'
 
     execute(context: Context, args: Arguments) {
         let action = args.get(0),

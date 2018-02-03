@@ -12,7 +12,8 @@ export default class About extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
-    aliases: String[] = ['info', 'infos']
+    aliases: string[] = ['info', 'infos']
+    usage: string = 'about'
 
     execute(context, args) {
         let embed = new Discord.RichEmbed()

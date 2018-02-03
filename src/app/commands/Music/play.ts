@@ -15,7 +15,8 @@ export default class Play extends Command {
         { name: 'url', type: 'text', required: false, usage: 'url yt' }
     ]
     allowDM: boolean = false
-    aliases: String[] = ['add']
+    aliases: string[] = ['add']
+    usage: string = 'play <url>'
 
     execute(context: Context, args: Arguments) {
         context.delete()

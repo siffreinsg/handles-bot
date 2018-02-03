@@ -12,7 +12,8 @@ export default class Face extends Command {
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
-    aliases: String[] = []
+    aliases: string[] = []
+    usage: string = 'face'
 
     execute(context: Context, args: Arguments) {
         context.message.delete().then(m => context.reply(cool()))

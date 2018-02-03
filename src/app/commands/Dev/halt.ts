@@ -13,7 +13,8 @@ export default class Halt extends Command {
     ]
     args: Argument[] = []
     allowDM: boolean = true
-    aliases: String[] = ['shutdown']
+    aliases: string[] = ['shutdown']
+    usage: string = 'halt'
 
     async execute(context: Context, args: Arguments) {
         await context.reply(context.translate('/commands/halt'))

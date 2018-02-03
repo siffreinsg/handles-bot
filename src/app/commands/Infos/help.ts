@@ -1,9 +1,9 @@
-import * as Discord from 'discord.js'
 import Command from 'Handles/Command/CommandHandler'
 import Context from 'Handles/Command/CommandContext'
 import Arguments from 'Handles/Utils/Arguments'
 import Argument = Handles.CommandArgument
 import Permission = Handles.CommandPermission
+import { MessageReaction, User, Message, RichEmbed } from 'discord.js'
 
 export default class Help extends Command {
     static activated: boolean = true
@@ -14,21 +14,110 @@ export default class Help extends Command {
         { name: 'command', type: 'text', required: false, usage: 'command name' }
     ]
     allowDM: boolean = true
-    aliases: String[] = ['commands']
+    aliases: string[] = []
+    usage: string = ''
 
     execute(context, args) {
-        if (args.get(0) !== 'list') {
-            context.reply(context.translate('/commands/help/message'))
-        } else {
-            let toSend = context.translate('/commands/help/availableCommands')
-            app.commands.list.forEach(function (cmd_name) {
-                if (cmd_name !== 'help') {
-                    let cmd = app.commands.cmds[cmd_name]
-                    if (cmd_name === cmd.command) toSend += '\n    - `' + app.config.prefix + cmd.command + '` -- ' + cmd.desc
+        context.delete()
+        let tmp = app.tmp['commands.interactivehelp']
+        if (!tmp) app.tmp['commands.interactivehelp'] = {}
+        else if (tmp[context.executor.id]) {
+            tmp[context.executor.id].delete().catch(err => { return 666 })
+            delete tmp[context.executor.id]
+        }
+
+        var appthis = this, page = 0, cmdlength = app.commands.list.length - 3, maxCmdsPerPage = 8, maxPagesForCmds = page + Math.floor(cmdlength / maxCmdsPerPage) + 1
+        var help = new RichEmbed()
+            .setColor(context.getUserColor(app.client.user.id))
+            .setAuthor(context.translate('/help/interactiveHelp'))
+            .setDescription(context.translate('/help/website'))
+            .addField(context.translate('/help/howTo'), context.translate('/help/howToText'), true)
+            .addField(context.translate('/help/navigation'), this.getNavigation(page, maxPagesForCmds, context), true)
+            .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
+
+        context.executor.send(context.translate('/commands/about/message'), help).then((msg: Message) => {
+            if (context.channel.type === 'text') context.reply(context.translate('/help/checkDM'))
+            reactHandler(msg)
+        }).catch(err => {
+            context.reply(context.translate('/commands/about/message'), help).then((msg: Message) => {
+                reactHandler(msg)
+            })
+        })
+
+        async function reactHandler(msg: Message) {
+            app.tmp['commands.interactivehelp'][context.executor.id] = msg
+
+            await msg.react('◀')
+            await msg.react('ℹ')
+            await msg.react('▶')
+            await msg.react('🛑')
+
+            app.client.on('messageReactionAdd', (reaction: MessageReaction, user: User) => {
+                if (reaction.message.id === msg.id && user.id !== app.client.user.id) {
+                    if (user.id === context.executor.id) {
+                        switch (reaction.emoji.name) {
+                            case '◀':
+                                if (page === 1) {
+                                    page--
+                                    msg.edit(context.translate('/commands/about/message'), help)
+                                } else if (page > 0) {
+                                    page--
+                                    let embed = appthis.genCommandEmbed(context, (page - 1) * maxCmdsPerPage, maxCmdsPerPage)
+                                        .addBlankField()
+                                        .addField(context.translate('/help/navigation'), appthis.getNavigation(page, maxPagesForCmds, context))
+                                    msg.edit('Page n°' + page, { embed: embed })
+                                }
+                                break
+                            case 'ℹ':
+                                if (page !== 0) {
+                                    page = 0
+                                    msg.edit(context.translate('/commands/about/message'), help)
+                                }
+                                break
+                            case '▶':
+                                if (page < maxPagesForCmds) {
+                                    page++
+                                    let embed = appthis.genCommandEmbed(context, (page - 1) * maxCmdsPerPage, maxCmdsPerPage)
+                                        .addBlankField()
+                                        .addField(context.translate('/help/navigation'), appthis.getNavigation(page, maxPagesForCmds, context))
+                                    msg.edit(context.translate('/help/page index', { page }), { embed: embed })
+                                }
+                                break
+                            case '🛑':
+                                if (msg.deletable) msg.delete()
+                                break
+                        }
+                    }
+                    if (msg.channel.type === 'text') reaction.remove(user)
                 }
             })
-            toSend += '\n\n' + context.translate('/commands/help/fullList')
-            context.reply(toSend + '\.', { split: true })
         }
+    }
+
+    genCommandEmbed(context: Context, start: number = 0, maxCmd: number = 24) {
+        let ignore = ['help', 'error', 'halt', 'hello'],
+            cmds = app.commands.list,
+            embed = new RichEmbed()
+                .setColor(context.getUserColor(app.client.user.id))
+                .setAuthor(context.translate('/help/commands'))
+                .setDescription('Return to the main page with the ℹ button')
+                .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
+
+        for (let i = start; (i < start + maxCmd) && (i < cmds.length); i++) {
+            let { command, desc, allowDM, activated, usage } = app.commands.cmds[cmds[i]]
+            if (ignore.indexOf(command) === -1) embed.addField(command, context.translate('/help/commandsField', { desc, usage, allowDM: (allowDM ? context.translate('/help/yes') : context.translate('/help/no')) }))
+        }
+
+        return embed
+    }
+
+    getNavigation(page: number, maxPage: number, context: Context): string {
+        let availables = [context.translate('/help/help')]
+        for (let i = 0; i < maxPage; i++) { availables.push(context.translate('/help/commands')) }
+
+        let previous = availables[page - 1] || context.translate('/help/none'),
+            current = availables[page],
+            next = availables[page + 1] || context.translate('/help/none')
+        return context.translate('/help/navigationField', { previous, current, next })
     }
 }

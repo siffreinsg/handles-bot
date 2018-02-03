@@ -13,7 +13,8 @@ export default class Hello extends Command {
         { name: 'name', type: 'text', required: false, usage: 'Paul' }
     ]
     allowDM: boolean = true
-    aliases: String[] = []
+    aliases: string[] = []
+    usage: string = 'hello [world]'
 
     execute(context: Context, args: Arguments) {
         var who = args.getAll().join(' ') || context.translate('/commands/hello/default')

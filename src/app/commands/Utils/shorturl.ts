@@ -16,7 +16,8 @@ export default class Shorturl extends Command {
         { name: 'url', type: 'text', required: true, usage: 'url' }
     ]
     allowDM: boolean = true
-    aliases: String[] = ['tiny', 'tinyurl']
+    aliases: string[] = ['tiny', 'tinyurl']
+    usage: string = 'shorturl <url>'
 
     execute(context: Context, args: Arguments) {
         context.processing().then((msg: any) => {

@@ -14,7 +14,8 @@ export default class Avatar extends Command {
         { name: 'user', type: 'text', required: false, usage: '@user' }
     ]
     allowDM: boolean = true
-    aliases: String[] = []
+    aliases: string[] = []
+    usage: string = 'avatar [@user]'
 
     execute(context: Context, args: Arguments) {
         let mention = context.message.mentions.users.first(),

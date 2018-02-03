@@ -13,7 +13,8 @@ export default class Cleverbot extends Command {
     args: Argument[] = []
     allowDM: boolean = true
     cleverbot: CleverbotAPI = new CleverbotAPI(app.config.cleverbotAPIkey)
-    aliases: String[] = ['talk']
+    aliases: string[] = ['talk']
+    usage: string = 'cleverbot <message>'
 
     execute(context: Context, args: Arguments) {
         this.cleverbot.getReply({

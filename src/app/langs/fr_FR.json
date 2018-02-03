@@ -9,11 +9,6 @@
             "error": "Aucun avatar",
             "noAvatar": "Cet utilisateur ne possède pas d'avatar."
         },
-        "help": {
-            "availableCommands": "Liste des commandes disponibles:",
-            "message": "Comment m'utiliser ? Quelles commandes sont disponibles ? Que faire de moi ? Toutes ces questions ont une réponse ici : https://callmegus.xyz/helpme.\n\nSinon vous pouvez exécuter `{prefix}help list` pour avoir un résumé des commandes.",
-            "fullList": "Découvrez la liste complète et les usages sur https://callmegus.xyz"
-        },
         "langs": {
             "langSet": "Langue du serveur paramétrée à `{lang}` avec succès !",
             "unknown": "Langue \"{lang}\" inconnue",
@@ -140,6 +135,23 @@
             "notFound": "Musique introuvable",
             "cannotFindSearch": "Aucune musique trouvée en utilisant les mots clés donnés."
         }
+    },
+    "help": {
+        "interactiveHelp": "Handles - Aide interactive",
+        "website": "Comment m'utiliser ? Quelles commandes sont disponibles ? Que faire de moi ? Toutes ces questions ont une réponse ici : https://callmegus.xyz/",
+        "howTo": "Comment utiliser l'aide interactive ?",
+        "howToText": "◀ Page précédente\nℹ Page principale (ici)\n▶ Page suivante\n🛑 Quitter",
+        "navigation": "Navigation",
+        "page index": "Page n°{page}",
+        "commands": "Commandes",
+        "returnToMain": "Retournez à la page principale avec le bouton ℹ",
+        "commandsField": "*{desc}*\nUsage: {prefix}{usage}\nMP: {allowDM}",
+        "yes": "Oui",
+        "no": "Non",
+        "none": "Aucune",
+        "navigationField": "◀ Précédente: {previous}\nℹ Actuelle: **{current}**\n▶ Suivante: {next}",
+        "help": "Aide",
+        "checkDM": "L'aide interactive a été envoyé dans vos messages privées."
     },
     "misc": {
         "requestedBy": "Executé par {user}",
