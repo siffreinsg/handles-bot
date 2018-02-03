@@ -87,6 +87,19 @@
             "noChan": "No feedback channel",
             "cantFindChan": "Sorry but we can't find the feedback channel. Contact an administrator for further informations.",
             "thanksForFeedback": "Thank you for your feedback ! We really want to know what is good or bad about our bot. This is the only good way to improve our work :smile:"
+        },
+        "poll": {
+            "generating": "Generating poll, please wait...",
+            "newPoll": "New poll by @{user} !",
+            "question": "**{question}**",
+            "voteByClick": "Vote by clicking on the reactions below",
+            "params": "Parameters",
+            "paramsField": "{status1} Multiple votes\n{status2} Custom votes",
+            "finalResults": "Final results in {timeout} minutes.",
+            "pleaseIgnore": "Please ignore the first vote, it is only to display the reactions. (Ex: if the first answer shows 4 votes, the actual result is 3)",
+            "pollBy": "Poll by @{user}",
+            "results": "Results",
+            "finished": "Poll finished !"
         }
     },
     "events": {

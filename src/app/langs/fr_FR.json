@@ -87,6 +87,19 @@
             "aboutTitle": "A propos",
             "about": "Handles (anciennement connu sous le nom de Gus) est un bot Discord multi-fonctions livré avec un ensemble de fonctionnalités et de commandes faites pour vous. Écrit en TypeScript pour Node. js en utilisant de puissantes bibliothèques tel que Discord. js, LowDB et Express, Handles est capable de répondre à tous vos besoins concernant votre communauté Discord.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Site: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles",
             "message": "Attention. Décodage du message. Analyse du message en cours. Information disponible. Le message est une demande d'information."
+        },
+        "poll": {
+            "generating": "Création du sondage, veuillez patienter...",
+            "newPoll": "Nouveau sondage par @{user} !",
+            "question": "**{question}**",
+            "voteByClick": "Votez en cliquant sur les réactions",
+            "params": "Paramètres",
+            "paramsField": "{status1} Votes multiple\n{status2} Votes personnalisés",
+            "finalResults": "Résultats définitifs dans {timeout} minutes.",
+            "pleaseIgnore": "Veuillez ignorer le 1er vote, il ne sert qu'à afficher les réactions. (Ex: Si la première réponse affiche 4 votes, le vrai résultat est 3)",
+            "pollBy": "Sondage par @{user}",
+            "results": "Resultats",
+            "finished": "Sondage terminé !"
         }
     },
     "events": {
