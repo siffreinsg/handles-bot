@@ -85,8 +85,7 @@
         "about": {
             "createdBy": "Créé par",
             "aboutTitle": "A propos",
-            "about": "Handles (anciennement connu sous le nom de Gus) est un bot Discord multi-fonctions livré avec un ensemble de fonctionnalités et de commandes faites pour vous. Écrit en TypeScript pour Node. js en utilisant de puissantes bibliothèques tel que Discord. js, LowDB et Express, Handles est capable de répondre à tous vos besoins concernant votre communauté Discord.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Site: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles",
-            "message": "Attention. Décodage du message. Analyse du message en cours. Information disponible. Le message est une demande d'information."
+            "about": "Handles (anciennement connu sous le nom de Gus) est un bot Discord multi-fonctions livré avec un ensemble de fonctionnalités et de commandes faites pour vous. Écrit en TypeScript pour Node. js en utilisant de puissantes bibliothèques tel que Discord. js, LowDB et Express, Handles est capable de répondre à tous vos besoins concernant votre communauté Discord.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Site: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles"
         },
         "poll": {
             "generating": "Création du sondage, veuillez patienter...",
@@ -108,6 +107,51 @@
             "toggled": "Le message de bienvenue a été {change} !",
             "titleSet": "Le titre du message de bienvenue a été changé: ```{title}```",
             "bodySet": "Le corps du message de bienvenue a été changé: ```{body}```"
+        },
+        "roles": {
+            "availableRoles": "Rôles disponibles:",
+            "roleFormat": "   - `{name}` pour le channel {channel}",
+            "noRoles": "Aucun rôles disponibles.",
+            "invalidName": "Nom invalide",
+            "charsOnly": "Seul les caractères suivants peuvent être utilisés: a-Z 0-9 -_ et les espaces",
+            "roleExists": "Association déjà existante",
+            "useOtherName": "Une association avec ce nom existe déjà. Choisissez un nom différent et réessayez.",
+            "created": "Le rôle `{name}` à été associé au channel {channel} avec succès ! Accédez-y avec `{prefix}role join {name}` !",
+            "noRole": "Aucun role",
+            "doesntExists": "Le role n'existe pas. Utilisez `{prefix}roles list` pour obtenir la liste des roles disponibles.",
+            "roleDeleted": "✅ Rôle supprimé !\n",
+            "chanDeleted": "✅ Channel supprimé !\n",
+            "assocDeleted": "✅ Association supprimé !\n",
+            "roleDeleteErr": "❎ Erreur lors de la suppression du rôle !\n",
+            "chanDeleteErr": "❎ Erreur lors de la suppression du channel !\n",
+            "assocDeleteErr": "❎ Erreur lors de la suppression de l'assocation !\n",
+            "privateRole": "Role privé",
+            "cantAccess": "Vous ne pouvez pas rejoindre ce rôle avec cette commande.",
+            "alreadyHave": "Vous avez déjà ce rôle !",
+            "roleGived": "Vous avez rejoint le rôle {name} !",
+            "roleRemoved": "Vous avez quitter le rôle {name} !",
+            "dontHave": "Vous n'avez pas ce rôle",
+            "help": {
+                "title": "Configurer des associations de rôles-channels.",
+                "desc": "Restreindre l'accès à des channels uniquement à un role. Il est également possible d'obtenir le role via une commande (configurable).",
+                "footer": "'Les <> ou [] ne sont pas a inclure ! Ils indiquent un texte dynamique et s'il est obligatoire (<>) ou non ([]).",
+                "add": {
+                    "title": "{prefix}roles add",
+                    "desc": "Syntaxe: `{prefix}roles add <nom> [--accessible OR -a]`\nCréer une nouvelle association de rôle et de channel. (Création automatique du rôle et du channel si non-existant)"
+                },
+                "delete": {
+                    "title": "{prefix}roles delete",
+                    "desc": "Syntaxe: `{prefix}roles delete <nom>`\nSupprime une association."
+                },
+                "list": {
+                    "title": "{prefix}roles list",
+                    "desc": "Syntaxe: `{prefix}roles list`\nAffiche les associations rôle-channel disponibles."
+                },
+                "join": {
+                    "title": "{prefix}roles join",
+                    "desc": "Syntaxe: `{prefix}roles join <nom>`\nRejoindre un role."
+                }
+            }
         }
     },
     "events": {
@@ -118,6 +162,7 @@
         }
     },
     "errors": {
+        "error": "Erreur",
         "noDmError": "Serveur uniquement",
         "noDm": "Vous ne pouvez pas executer cette commande en dehors d'un serveur.",
         "noPermError": "Erreur de permission",
@@ -175,6 +220,7 @@
         "checkDM": "L'aide interactive a été envoyé dans vos messages privées."
     },
     "misc": {
+        "requestOfInfo": "Attention. Décodage du message. Analyse du message en cours. Information disponible. Le message est une demande d'information.",
         "requestedBy": "Executé par {user}",
         "processing": "Traitement des données...",
         "status": {

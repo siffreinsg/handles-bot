@@ -80,8 +80,7 @@
         "about": {
             "createdBy": "Created by",
             "aboutTitle": "About",
-            "about": "Handles (formerly known as Gus) is a multi-function Discord bot delivered with a set of features and commands made for you. Written in TypeScript for Node. js using powerful libraries such as Discord. js, LowDB and Express, Handles is able to meet all your needs regarding your Discord community.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Website: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles",
-            "message": "Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information."
+            "about": "Handles (formerly known as Gus) is a multi-function Discord bot delivered with a set of features and commands made for you. Written in TypeScript for Node. js using powerful libraries such as Discord. js, LowDB and Express, Handles is able to meet all your needs regarding your Discord community.\n\n Learn more:\n    - GitHub: https://git.io/handles\n    - Website: https://callmegus.xyz\n    - Discord: https://bot.discord.io/handles"
         },
         "feedback": {
             "noChan": "No feedback channel",
@@ -108,6 +107,50 @@
             "toggled": "The welcome message has been {change} !",
             "titleSet": "The welcome message's title has been changed to ```{title}```",
             "bodySet": "The welcome message's body has been changed to ```{body}```"
+        },
+        "roles": {
+            "availableRoles": "Available roles:",
+            "roleFormat": "   - `{name}` for channel {channel}",
+            "noRoles": "No roles available.",
+            "invalidName": "Invalid name",
+            "charsOnly": "Only the following characters may be used: a-Z 0-9 -_ and spaces",
+            "roleExists": "Existing link",
+            "useOtherName": "A link with this name already exists. Choose a different name and try again.",
+            "created": "The role `{name}` has been linked to the channel {channel} ! Join it with `{prefix}role join {name}` !",
+            "noRole": "No role",
+            "doesntExists": "The role doesn't exists. Use `{prefix}roles list` to get a list of available roles.",
+            "roleDeleted": "✅ Role deleted !\n",
+            "chanDeleted": "✅ Channel deleted !\n",
+            "assocDeleted": "✅ Link deleted !\n",
+            "roleDeleteErr": "❎ Error while deleting the role !\n",
+            "chanDeleteErr": "❎ Error while deleteing the channel !\n",
+            "privateRole": "Private role",
+            "cantAccess": "You cannot join this role with this command.",
+            "alreadyHave": "You already have this role !",
+            "roleGived": "You joined the role {name} !",
+            "roleRemoved": "You left the role {name} !",
+            "dontHave": "You don't have the role",
+            "help": {
+                "title": "Configure links between a role and a channel.",
+                "desc": "Restrict access to channels to a role. It's also possible to obtain the role via a command (configurable).",
+                "footer": "The characters <> ou [] are for indicative purposes only, don't include them ! They indicate dynamic text and whether it's optional ([]) or not (<>).",
+                "add": {
+                    "title": "{prefix}roles add",
+                    "desc": "Syntax: `{prefix}roles add <nom> [--accessible OR -a]`\nCreate a new link between a role and a channel. (Automatic creation of role and channel if non-existent)"
+                },
+                "delete": {
+                    "title": "{prefix}roles delete",
+                    "desc": "Syntax: `{prefix}roles delete <nom>`\nDelete a link."
+                },
+                "list": {
+                    "title": "{prefix}roles list",
+                    "desc": "Syntax: `{prefix}roles list`\nDisplays available role-channel links."
+                },
+                "join": {
+                    "title": "{prefix}roles join",
+                    "desc": "Syntax: `{prefix}roles join <nom>`\nJoin a role."
+                }
+            }
         }
     },
     "events": {
@@ -118,6 +161,7 @@
         }
     },
     "errors": {
+        "error": "Error",
         "adminOnly": "Admin only",
         "needAdmin": "You need to be an administrator in order to run this command !",
         "noDmError": "Server only",
@@ -177,6 +221,7 @@
         "checkDM": "The interactive help has been sent to your DMs"
     },
     "misc": {
+        "requestOfInfo": "Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information.",
         "processing": "Processing",
         "requestedBy": "Requested by {user}",
         "status": {

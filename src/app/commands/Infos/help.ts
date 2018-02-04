@@ -59,7 +59,7 @@ export default class Help extends Command {
                             case '◀':
                                 if (page === 1) {
                                     page--
-                                    msg.edit(context.translate('/commands/about/message'), help)
+                                    msg.edit(context.translate('/misc/requestOfInfo'), help)
                                 } else if (page > 0) {
                                     page--
                                     let embed = appthis.genCommandEmbed(context, (page - 1) * maxCmdsPerPage, maxCmdsPerPage)

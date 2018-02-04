@@ -22,7 +22,7 @@ export default class About extends Command {
             .addField('NodeJS', '[v8.x](https://nodejs.org)', true)
             .addField('Discord.js', '[v11.3.0](https://discord.js.org)', true)
             .addField(context.translate('/commands/about/aboutTitle'), context.translate('/commands/about/about'))
-        context.reply(context.translate('/commands/about/message'), embed)
+        context.reply(context.translate('/misc/requestOfInfo'), embed)
 
     }
 }
