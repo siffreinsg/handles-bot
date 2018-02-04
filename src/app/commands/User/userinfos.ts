@@ -59,7 +59,7 @@ export default class Userinfos extends Command {
             dateFormat.i18n.dayNames[i] = context.translate('/misc/days/' + dateFormat.i18n.dayNames[i - 7].toLowerCase())
         }
         for (j = 12; j < 24; j++) {
-            dateFormat.i18n.monthNames[j] = context.translate('/misc/months/' + dateFormat.i18n.monthNames[i - 12].toLowerCase())
+            dateFormat.i18n.monthNames[j] = context.translate('/misc/months/' + dateFormat.i18n.monthNames[j - 12].toLowerCase())
         }
     }
 }

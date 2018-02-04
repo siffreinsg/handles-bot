@@ -47,14 +47,6 @@ export default class Sudo extends Command {
                     process.exit(0)
                 })()
                 break
-            case 'error':
-                (async function () {
-                    let data = args.getAll(),
-                        type = data.splice(0, 1)
-                    data = data.join(' ').split('|')
-                    context.replyError('' + type, '' + data[0], '' + data[1])
-                })()
-                break
             case 'setactivity':
                 (async function () {
                     let data = args.getAll()

@@ -26,7 +26,7 @@ export default class Help extends Command {
         if (!tmp[interactive]) app.tmp['commands.interactivehelp'] = {}
         else if (tmp[interactive][userid]) tmp[interactive][userid].delete().catch(err => { return 666 })
 
-        var appthis = this, page = 0, cmdlength = app.commands.list.length - 3, maxCmdsPerPage = 6, maxPagesForCmds = page + Math.floor(cmdlength / maxCmdsPerPage) + 1
+        var appthis = this, page = 0, cmdlength = app.commands.list.length - 3, maxCmdsPerPage = 5, maxPagesForCmds = page + Math.floor(cmdlength / maxCmdsPerPage) + 1
         var help = new RichEmbed()
             .setColor(context.getUserColor(app.client.user.id))
             .setAuthor(context.translate('/help/interactiveHelp'))
@@ -35,11 +35,11 @@ export default class Help extends Command {
             .addField(context.translate('/help/navigation'), this.getNavigation(page, maxPagesForCmds, context), true)
             .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
 
-        context.executor.send(context.translate('/commands/about/message'), help).then((msg: Message) => {
+        context.executor.send(context.translate('/misc/requestOfInfo'), help).then((msg: Message) => {
             if (context.channel.type === 'text') context.reply(context.translate('/help/checkDM')).then(msg => msg.delete(5000))
             reactHandler(msg)
         }).catch(err => {
-            context.reply(context.translate('/commands/about/message'), help).then((msg: Message) => {
+            context.reply(context.translate('/misc/requestOfInfo'), help).then((msg: Message) => {
                 reactHandler(msg)
             })
         })
@@ -71,7 +71,7 @@ export default class Help extends Command {
                             case 'ℹ':
                                 if (page !== 0) {
                                     page = 0
-                                    msg.edit(context.translate('/commands/about/message'), help)
+                                    msg.edit(context.translate('/misc/requestOfInfo'), help)
                                 }
                                 break
                             case '▶':
@@ -104,8 +104,15 @@ export default class Help extends Command {
                 .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
 
         for (let i = start; (i < start + maxCmd) && (i < cmds.length); i++) {
-            let { command, desc, allowDM, activated, usage } = app.commands.cmds[cmds[i]]
-            if (ignore.indexOf(command) === -1) embed.addField(command, context.translate('/help/commandsField', { desc, usage, allowDM: (allowDM ? context.translate('/help/yes') : context.translate('/help/no')) }))
+            let { command, desc, allowDM, activated, usage, permissions } = app.commands.cmds[cmds[i]]
+            if (ignore.indexOf(command) === -1) {
+                let toSend = context.translate('/help/commandsField', { desc, usage, allowDM: (allowDM ? context.translate('/help/yes') : context.translate('/help/no')) })
+                if (permissions.length > 0) {
+                    toSend += '\nPermissions (At least one required):'
+                    permissions.forEach(perm => toSend += '\n   - ' + perm)
+                }
+                embed.addField(command, toSend)
+            }
         }
 
         return embed
