@@ -70,6 +70,7 @@
         "games": {
             "drawn": "Drawn:",
             "threeNums": "Three identicals numbers ! Multiplier x2.5",
+            "twoNums": "Two identicals numbers ! Multiplier x1.5",
             "lucky": "Lucky number ! Multiplier +1.5",
             "seriesOfNums": "Sequence of numbers ! Multiplier x3.5",
             "goodresult": "Starting bet: {amount}\nMultiplier: {multiplier}\nEarnings: {earnings}\nNew balance: {newBalance}",
@@ -158,7 +159,8 @@
             "levelup": "Cheers {who}, you've reached the level {level}! You talk a lot :o",
             "first_cmdExed": "Holy cow {who} ! This is your first command in this server :D +100XP",
             "first_msgSent": "Congrats {who} ! This is your first message in this server :D +100XP"
-        }
+        },
+        "Birthday": "Happy birthday {user} !"
     },
     "errors": {
         "error": "Error",

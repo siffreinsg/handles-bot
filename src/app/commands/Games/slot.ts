@@ -42,6 +42,10 @@ export default class Slot extends Command {
         toSend = ''
         let multiplier = 0
         switch (true) {
+            case ((tirage[4] === tirage[5] || tirage[5] === tirage[6] || tirage[4] === tirage[6]) && !Utils.areEqual(tirage[4], tirage[5], tirage[6])):
+                multiplier = 1.5
+                toSend += context.translate('/commands/games/twoNums') + '\n'
+                break
             case (Utils.areEqual(tirage[4], tirage[5], tirage[6])):
                 multiplier = 2.5
                 toSend += context.translate('/commands/games/threeNums') + '\n'

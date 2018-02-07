@@ -21,7 +21,7 @@ export default class Purge extends Command {
     usage: string = 'purge <quantity>'
 
     execute(context: Context, args: Arguments) {
-        let quantity = parseInt('' + args.get(0))
+        let quantity = parseInt('' + args.get(0)) + 1
         if (quantity >= 2 && quantity <= 500) {
             context.channel.fetchMessages({ limit: quantity })
                 .then(messages => {

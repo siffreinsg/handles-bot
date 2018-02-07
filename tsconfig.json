@@ -4,11 +4,10 @@
         "module": "commonjs",
         "outDir": "./out",
         "rootDir": "./src",
-
         "strict": true,
         "noImplicitAny": false,
-
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "strictPropertyInitialization": false
     },
     "include": [
         "src/**/*",
