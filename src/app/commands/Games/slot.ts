@@ -11,7 +11,7 @@ export default class Slot extends Command {
     desc: string = 'Slot game'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'amount', type: 'text', required: true, usage: 'amount' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = []

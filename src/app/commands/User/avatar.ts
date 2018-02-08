@@ -11,7 +11,7 @@ export default class Avatar extends Command {
     desc: string = 'Get avatars from anyone'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'user', type: 'text', required: false, usage: '@user' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = true
     aliases: string[] = []

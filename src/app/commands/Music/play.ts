@@ -12,7 +12,7 @@ export default class Play extends Command {
     desc: string = 'Play command.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'url', type: 'text', required: false, usage: 'url yt' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['add']

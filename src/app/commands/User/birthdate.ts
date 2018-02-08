@@ -11,9 +11,9 @@ export default class Setbirthdate extends Command {
     desc: string = 'Set your birthdate.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'day', type: 'text', required: false, usage: 'day (two digits)' },
-        { name: 'month', type: 'text', required: false, usage: 'month (two digits)' },
-        { name: 'year', type: 'text', required: false, usage: 'year (four digits)' }
+        { type: 'text', required: false },
+        { type: 'text', required: false },
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['birthdate', 'birth']

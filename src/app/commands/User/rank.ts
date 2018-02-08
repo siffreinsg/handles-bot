@@ -13,7 +13,7 @@ export default class Rank extends Command {
     desc: string = 'Check a user\'s level in the server.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'user', type: 'text', required: false, usage: '@user' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['xp', 'level']

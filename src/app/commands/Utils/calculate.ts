@@ -12,7 +12,7 @@ export default class Calculate extends Command {
     desc: string = 'Let\'s do some maths !'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'equation', type: 'text', required: true, usage: 'equation' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = true
     aliases: string[] = ['math', 'calc']

@@ -11,7 +11,7 @@ export default class Feedback extends Command {
     desc: string = 'Give us feedback using this command.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'message', type: 'text', required: true, usage: 'feedback' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = true
     aliases: string[] = ['contact']

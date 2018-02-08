@@ -12,7 +12,7 @@ export default class leet extends Command {
     desc: string = 'Leet translator.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'message', type: 'text', required: true, usage: 'message' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = true
     aliases: string[] = []

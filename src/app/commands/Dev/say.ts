@@ -12,8 +12,8 @@ export default class Say extends Command {
         'MANAGE_MESSAGES'
     ]
     args: Argument[] = [
-        { name: 'message', type: 'text', required: true, usage: 'text to say' },
-        { name: 'options', type: 'text', required: false, usage: '|options:{}' }
+        { type: 'text', required: true },
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['echo']

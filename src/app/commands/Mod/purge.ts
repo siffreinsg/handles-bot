@@ -14,7 +14,7 @@ export default class Purge extends Command {
         'MANAGE_MESSAGES'
     ]
     args: Argument[] = [
-        { name: 'quantity', type: 'text', required: true, usage: 'quantity' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = ['delete']

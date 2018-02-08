@@ -13,7 +13,7 @@ export default class Sudo extends Command {
         'SUPER_ADMIN'
     ]
     args: Argument[] = [
-        { name: 'action', type: 'text', required: true, usage: 'action' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = true
     aliases: string[] = []

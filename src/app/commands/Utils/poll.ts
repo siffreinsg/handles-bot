@@ -11,7 +11,7 @@ export default class Poll extends Command {
     desc: string = 'Create a poll'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'data', type: 'text', required: true, usage: 'question/answer1/answer2/etc' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = []

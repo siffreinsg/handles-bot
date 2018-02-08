@@ -13,7 +13,7 @@ export default class Bank extends Command {
     desc: string = 'Money power'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'action', type: 'text', required: true, usage: 'faucet|give|remove' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = []

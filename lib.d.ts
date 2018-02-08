@@ -6,10 +6,8 @@ declare global {
 
     namespace Handles {
         interface CommandArgument {
-            name: string
             type: 'text',
             required: boolean,
-            usage: string,
         }
         interface SelectorMap {
             nameField: string,

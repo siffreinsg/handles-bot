@@ -10,7 +10,7 @@ export default class Balance extends Command {
     desc: string = 'View your balance.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'user', type: 'text', required: false, usage: '@user' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['money']

@@ -11,7 +11,7 @@ export default class Help extends Command {
     desc: string = ''
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'command', type: 'text', required: false, usage: 'command name' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = true
     aliases: string[] = []

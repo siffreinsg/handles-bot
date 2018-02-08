@@ -13,7 +13,7 @@ export default class Shorturl extends Command {
     desc: string = 'URL Shortener'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'url', type: 'text', required: true, usage: 'url' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = true
     aliases: string[] = ['tiny', 'tinyurl']

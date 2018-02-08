@@ -14,8 +14,8 @@ export default class Welcome extends Command {
         'MANAGE_CHANNELS'
     ]
     args: Argument[] = [
-        { name: 'action', type: 'text', required: true, usage: 'action' },
-        { name: 'welcome message', type: 'text', required: false, usage: 'welcome message' }
+        { type: 'text', required: true },
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['setwelcome', 'join', 'setjoin']

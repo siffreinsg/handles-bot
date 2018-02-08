@@ -12,7 +12,7 @@ export default class Userinfos extends Command {
     desc: string = 'Get infos on an user.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'user', type: 'text', required: false, usage: '@user' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = false
     aliases: string[] = ['user']

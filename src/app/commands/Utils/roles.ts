@@ -13,7 +13,7 @@ export default class Roles extends Command {
     desc: string = 'Get access to super secrets channels.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'action', type: 'text', required: true, usage: 'join|list|add|del' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = ['role', 'channels']

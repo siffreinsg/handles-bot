@@ -13,7 +13,7 @@ export default class SetLang extends Command {
         'MANAGE_CHANNELS'
     ]
     args: Argument[] = [
-        { name: 'lang', type: 'text', required: true, usage: 'lang' }
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = ['lang']

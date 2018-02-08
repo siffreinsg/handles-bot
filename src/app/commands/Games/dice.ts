@@ -11,8 +11,8 @@ export default class Dice extends Command {
     desc: string = 'Dice game'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'amount', type: 'text', required: true, usage: 'amount' },
-        { name: 'result', type: 'text', required: true, usage: 'result 1->6' }
+        { type: 'text', required: true },
+        { type: 'text', required: true }
     ]
     allowDM: boolean = false
     aliases: string[] = []

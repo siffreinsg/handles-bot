@@ -10,7 +10,7 @@ export default class Hello extends Command {
     desc: string = 'Simple test command.'
     permissions: Permission[] = []
     args: Argument[] = [
-        { name: 'name', type: 'text', required: false, usage: 'Paul' }
+        { type: 'text', required: false }
     ]
     allowDM: boolean = true
     aliases: string[] = []
