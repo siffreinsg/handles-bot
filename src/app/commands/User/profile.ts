@@ -84,7 +84,8 @@ export default class Profile extends Command {
                         name = ('' + args.get(2)).toLowerCase(),
                         inline = args.getProp('inline') || args.getProp('i') || false
 
-                    if (!new RegExp('^[a-zA-Z0-9_-]*$').test(name) || profiles.has(name).value()) return context.replyError('custom', context.translate('/commands/profile/cantAdd'), context.translate('/commands/profile/alreadyExists'))
+                    if (!args.get(2) || !new RegExp('^[a-zA-Z0-9_-]*$').test(name)) return context.replyError('badArgs')
+                    if (profiles.has(name).value()) return context.replyError('custom', context.translate('/commands/profile/cantAdd'), context.translate('/commands/profile/alreadyExists'))
                     if (profiles.size().value() > 23) return context.replyError('custom', context.translate('/commands/profile/cantAdd'), context.translate('/commands/profile/max'))
 
                     data.splice(0, 3)

@@ -173,6 +173,11 @@
                 "view": "Displays your profile or that of another user.",
                 "birthdate": "Configure your birthdate."
             }
+        },
+        "birthdate": {
+            "notAnnounced": "Birthdays will not be announced anymore!",
+            "chanUpdated": "Birthdays will be announced in the channel {channel}!",
+            "birthdateSet": "Birthdate updated !"
         }
     },
     "events": {

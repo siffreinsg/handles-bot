@@ -27,10 +27,10 @@ export default class Setbirthdate extends Command {
                 let channel = context.message.mentions.channels.first()
                 if (!channel || !channel.id) {
                     app.db.getConfig(context.server.id).unset('birthdateChan').write()
-                    return context.reply('Birth dates will not be announced anymore !')
+                    return context.reply(context.translate('/commands/birthdate/notAnnounced'))
                 } else {
                     app.db.getConfig(context.server.id).set('birthdateChan', channel.id).write()
-                    return context.reply('Birth dates will now be announced in the channel ' + channel.toString() + ' !')
+                    return context.reply(context.translate('/commands/birthdate/chanUpdated', { channel: channel.toString() }))
                 }
             } else return context.replyError('notAdmin')
         }
@@ -47,7 +47,7 @@ export default class Setbirthdate extends Command {
 
         let date = new Date(year, month - 1, day)
         user.set('birthdate', date).write()
-        context.reply('Birthate set to ' + dateFormat(date, context.translate('/misc/dateFormat')))
+        context.reply(context.translate('/commands/birthdate/birthdateSet'))
     }
 
     setDateFormat(context) {
