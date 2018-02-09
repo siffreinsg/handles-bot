@@ -39,6 +39,7 @@ export default class Roles extends Command {
                 break
             case 'add':
                 (function () {
+                    if (!context.isAdmin()) return context.replyError('notAdmin')
                     context.processing().then((msg: any) => {
                         let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', [])
                         let name: any = args.getAll(),
@@ -73,6 +74,7 @@ export default class Roles extends Command {
                 break
             case 'delete':
                 (async function () {
+                    if (!context.isAdmin()) return context.replyError('notAdmin')
                     let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', [])
                     let name: any = args.getAll()
                     name.splice(0, 1)
