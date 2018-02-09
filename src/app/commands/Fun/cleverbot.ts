@@ -8,7 +8,7 @@ import * as CleverbotAPI from 'cleverbot-api'
 export default class Cleverbot extends Command {
     static activated: boolean = true
     command: string = 'cleverbot'
-    desc: string = 'Talk with me.'
+    desc: string = 'Talk with the bot.'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true

@@ -8,7 +8,7 @@ import { RichEmbed } from 'discord.js'
 export default class Invite extends Command {
     static activated: boolean = true
     command: string = 'invite'
-    desc: string = 'Invite the bot in your server'
+    desc: string = 'Invite the bot in your server.'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true

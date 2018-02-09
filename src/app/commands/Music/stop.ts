@@ -7,7 +7,7 @@ import Permission = Handles.CommandPermission
 export default class Stop extends Command {
     static activated: boolean = true
     command: string = 'stop'
-    desc: string = 'Stop music player.'
+    desc: string = 'Stop the music player.'
     permissions: Permission[] = [
         'MUTE_MEMBERS',
         'DEAFEN_MEMBERS',

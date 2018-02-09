@@ -9,7 +9,7 @@ import * as dateFormat from 'dateformat'
 export default class Serverinfos extends Command {
     static activated: boolean = true
     command: string = 'serverinfos'
-    desc: string = 'Get infos on the server.'
+    desc: string = 'Get informations on the server.'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = false

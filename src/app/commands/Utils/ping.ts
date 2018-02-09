@@ -8,7 +8,7 @@ import * as Discord from 'discord.js'
 export default class Ping extends Command {
     static activated: boolean = true
     command: string = 'ping'
-    desc: string = 'What time is it ?'
+    desc: string = 'Ping the bot'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true

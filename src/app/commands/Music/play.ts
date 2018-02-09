@@ -9,7 +9,7 @@ import { isUri } from 'valid-url'
 export default class Play extends Command {
     static activated: boolean = true
     command: string = 'play'
-    desc: string = 'Play command.'
+    desc: string = 'Play some music.'
     permissions: Permission[] = []
     args: Argument[] = [
         { type: 'text', required: false }

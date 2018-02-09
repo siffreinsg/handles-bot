@@ -8,7 +8,7 @@ import { RichEmbed } from 'discord.js'
 export default class Feedback extends Command {
     static activated: boolean = true
     command: string = 'feedback'
-    desc: string = 'Give us feedback using this command.'
+    desc: string = 'Give us feedback about the bot.'
     permissions: Permission[] = []
     args: Argument[] = [
         { type: 'text', required: true }

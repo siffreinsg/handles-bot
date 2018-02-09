@@ -235,7 +235,7 @@
         "page index": "Page n°{page}",
         "commands": "Commands",
         "returnToMain": "Return to the main page with the ℹ button",
-        "commandsField": "*{desc}*\nUsage: {prefix}{usage}\nDM allowed: {allowDM}",
+        "commandsField": "*{desc}*\nusage: {prefix}{usage}\nDM allowed: {allowDM}",
         "yes": "Yes",
         "no": "No",
         "none": "None",

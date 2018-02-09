@@ -10,7 +10,7 @@ import { RichEmbed } from 'discord.js'
 export default class Joke extends Command {
     static activated: boolean = true
     command: string = 'joke'
-    desc: string = 'You\'re so funny'
+    desc: string = 'Some funny jokes'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true

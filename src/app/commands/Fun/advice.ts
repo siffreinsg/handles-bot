@@ -10,7 +10,7 @@ import * as deepl from 'node-deepl'
 export default class Advice extends Command {
     static activated: boolean = true
     command: string = 'advice'
-    desc: string = 'Improve your life !'
+    desc: string = 'Give you some advices.'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true

@@ -9,7 +9,7 @@ import { RichEmbed } from 'discord.js'
 export default class Calculate extends Command {
     static activated: boolean = true
     command: string = 'calculate'
-    desc: string = 'Let\'s do some maths !'
+    desc: string = 'Do some maths !'
     permissions: Permission[] = []
     args: Argument[] = [
         { type: 'text', required: true }

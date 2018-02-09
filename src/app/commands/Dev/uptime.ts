@@ -9,7 +9,7 @@ import { fancyTimeFormat } from 'Handles/Utils/Converter'
 export default class Uptime extends Command {
     static activated: boolean = true
     command: string = 'uptime'
-    desc: string = 'Am I on time ?'
+    desc: string = 'Uptime of the bot'
     permissions: Permission[] = []
     args: Argument[] = []
     allowDM: boolean = true
