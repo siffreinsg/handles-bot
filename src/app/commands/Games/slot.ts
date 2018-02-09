@@ -20,7 +20,7 @@ export default class Slot extends Command {
     execute(context: Context, args: Arguments) {
         let user = context.server.member(context.executor.id),
             account = app.db.getUser(user.guild.id, user.id),
-            oldBalance = account.get('balance', 0).value(),
+            oldBalance = app.db.createIfNotExists(account, 'balance', 0).value(),
             amount = parseInt('' + args.get(0))
 
         if (amount < 10) return context.replyError('custom', context.translate('/commands/money/amountError'), context.translate('/commands/money/mustBeAmount'))

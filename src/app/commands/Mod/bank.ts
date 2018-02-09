@@ -28,8 +28,8 @@ export default class Bank extends Command {
         else user = context.server.member(context.executor.id)
 
         let userdb = app.db.getUser(user.guild.id, user.id),
-            currentBalance = userdb.get('balance', 0).value(),
-            timestamps = userdb.get('timestamps', { faucet: 0 }),
+            currentBalance = app.db.createIfNotExists(userdb, 'balance', 0).value(),
+            timestamps = app.db.createIfNotExists(userdb, 'timestamps', { faucet: 0 }),
             timestamp = timestamps.get('faucet', 0).value()
 
         switch (action) {

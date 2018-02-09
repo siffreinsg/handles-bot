@@ -26,7 +26,8 @@ export default class Welcome extends Command {
         let action = args.get(0) + '',
             data = args.getAll()
 
-        let status = app.db.getConfig(context.server.id).get('joinmsg.enabled', false).value()
+        let joinmsg = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'joinmsg', { enabled: false, title: '', body: '' }),
+            status = joinmsg.value().enabled
 
         switch (action) {
             case 'status':
@@ -34,7 +35,7 @@ export default class Welcome extends Command {
                 new JoinHandler(context.server.member(context.executor))
                 break
             case 'toggle':
-                app.db.getConfig(context.server.id).set('joinmsg.enabled', (status ? false : true)).write()
+                joinmsg.set('enabled', (status ? false : true)).write()
                 context.reply(context.translate('/commands/setwelcome/toggled', { change: (status ? context.translate('/commands/setwelcome/disabled') : context.translate('/commands/setwelcome/enabled')) }))
                 break
             case 'title':
@@ -42,7 +43,7 @@ export default class Welcome extends Command {
                 let title = data.join(' ')
                 if (!title) return context.replyError('badArgs')
 
-                app.db.getConfig(context.server.id).set('joinmsg.title', title).write()
+                joinmsg.set('title', title).write()
                 context.reply(context.translate('/commands/setwelcome/titleSet', { title }))
                 break
             case 'body':
@@ -50,7 +51,7 @@ export default class Welcome extends Command {
                 let body = data.join(' ')
                 if (!body) return context.replyError('badArgs')
 
-                app.db.getConfig(context.server.id).set('joinmsg.body', body).write()
+                joinmsg.set('body', body).write()
                 context.reply(context.translate('/commands/setwelcome/bodySet', { body }))
                 break
             default:

@@ -21,7 +21,7 @@ export default class Dice extends Command {
     execute(context: Context, args: Arguments) {
         let user = context.server.member(context.executor.id),
             account = app.db.getUser(user.guild.id, user.id),
-            oldBalance = account.get('balance', 0).value(),
+            oldBalance = app.db.createIfNotExists(account, 'balance', 0).value(),
             amount = parseInt('' + args.get(0)),
             number = parseInt('' + args.get(1))
 

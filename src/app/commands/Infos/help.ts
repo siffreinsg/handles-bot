@@ -101,7 +101,7 @@ export default class Help extends Command {
                 .setColor(context.getUserColor(app.client.user.id))
                 .setAuthor(context.translate('/help/commands'))
                 .setDescription(context.translate('/help/returnToMain'))
-                .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
+                .setFooter(context.translate('/misc/bracketsAndQuotes'))
 
         for (let i = start; (i < start + maxCmd) && (i < cmds.length); i++) {
             let { command, desc, allowDM, activated, usage, permissions } = app.commands.cmds[cmds[i]]

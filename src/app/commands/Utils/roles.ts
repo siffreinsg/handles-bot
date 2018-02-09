@@ -25,7 +25,7 @@ export default class Roles extends Command {
         switch (action) {
             case 'list':
                 (async function () {
-                    let roles = app.db.getConfig(context.server.id).get('roles', []).value(),
+                    let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', []).value(),
                         toSend = ''
                     if (roles.length > 0) {
                         await roles.forEach(role => {
@@ -40,7 +40,7 @@ export default class Roles extends Command {
             case 'add':
                 (function () {
                     context.processing().then((msg: any) => {
-                        let roles = app.db.getConfig(context.server.id).get('roles', [])
+                        let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', [])
                         let name: any = args.getAll(),
                             channel = context.message.mentions.channels.first(),
                             role = context.server.roles.find('name', name),
@@ -73,7 +73,7 @@ export default class Roles extends Command {
                 break
             case 'delete':
                 (async function () {
-                    let roles = app.db.getConfig(context.server.id).get('roles', [])
+                    let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', [])
                     let name: any = args.getAll()
                     name.splice(0, 1)
                     name = name.join(' ')
@@ -117,7 +117,7 @@ export default class Roles extends Command {
                 break
             case 'join':
                 (async function () {
-                    let roles = app.db.getConfig(context.server.id).get('roles', [])
+                    let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', [])
                     let name: any = args.getAll(),
                         member = context.server.member(context.executor)
                     name.splice(0, 1)
@@ -133,7 +133,7 @@ export default class Roles extends Command {
                 break
             case 'leave':
                 (async function () {
-                    let roles = app.db.getConfig(context.server.id).get('roles', [])
+                    let roles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'roles', [])
                     let name: any = args.getAll(),
                         member = context.server.member(context.executor)
                     name.splice(0, 1)
@@ -155,7 +155,7 @@ export default class Roles extends Command {
                     .addField(context.translate('/commands/roles/help/delete/title'), context.translate('/commands/roles/help/delete/desc'))
                     .addField(context.translate('/commands/roles/help/list/title'), context.translate('/commands/roles/help/list/desc'))
                     .addField(context.translate('/commands/roles/help/join/title'), context.translate('/commands/roles/help/join/desc'))
-                    .setFooter(context.translate('/commands/roles/help/footer'))
+                    .setFooter(context.translate('/misc/bracketsAndQuotes'))
                 context.reply(context.translate('/misc/requestOfInfo'), embed)
                 break
             default:

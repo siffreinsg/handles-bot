@@ -135,7 +135,6 @@
             "help": {
                 "title": "Configurer des associations de rôles-channels.",
                 "desc": "Restreindre l'accès à des channels uniquement à un role. Il est également possible d'obtenir le role via une commande (configurable).",
-                "footer": "'Les <> ou [] ne sont pas a inclure ! Ils indiquent un texte dynamique et s'il est obligatoire (<>) ou non ([]).",
                 "add": {
                     "title": "{prefix}roles add",
                     "desc": "Syntaxe: `{prefix}roles add <nom> [--accessible OR -a]`\nCréer une nouvelle association de rôle et de channel. (Création automatique du rôle et du channel si non-existant)"
@@ -152,6 +151,28 @@
                     "title": "{prefix}roles join",
                     "desc": "Syntaxe: `{prefix}roles join <nom>`\nRejoindre un role."
                 }
+            }
+        },
+        "profile": {
+            "saved": "Information enregistrée avec succès !",
+            "deleted": "Information supprimée avec succès !",
+            "profileOf": "Profil de {user}",
+            "birthdate": "Date de naissance",
+            "cantAdd": "Ajout impossible",
+            "alreadyExists": "Une entrée avec le même nom existe déjà !",
+            "max": "Vous avez atteint le maximum d'entrées possible !",
+            "added": "L'entrée a été ajoutée avec succès ! Configurez-la sur votre profil avec la commande `{prefix}profile set {name} <valeur>`.",
+            "cantRemove": "Suppression impossible",
+            "doesntExist": "Aucune entrée avec ce nom trouvée !",
+            "cfgDeleted": "L'entrée a été supprimée avec succès !",
+            "help": {
+                "describeYourself": "Décrivez-vous dans votre magnifique profil !",
+                "config": "Configurer les champs disponibles dans les profils et personnaliser les valeurs autorisées (voir le wiki).",
+                "set": "Configurer une entrée sur votre profil. (max de 2040 caractères)",
+                "availables": "Entrées disponibles: {availables}",
+                "unset": "Supprime une entrée de votre profil.",
+                "view": "Affiche votre profil ou celui d'un autre utilisateur.",
+                "birthdate": "Configurer votre date de naissance."
             }
         }
     },
@@ -222,6 +243,7 @@
         "checkDM": "L'aide interactive a été envoyé dans vos messages privées."
     },
     "misc": {
+        "bracketsAndQuotes": "Les <> ou [] ne sont pas a inclure ! Ils indiquent un texte dynamique et s'il est obligatoire (<>) ou non ([]).",
         "requestOfInfo": "Attention. Décodage du message. Analyse du message en cours. Information disponible. Le message est une demande d'information.",
         "requestedBy": "Executé par {user}",
         "processing": "Traitement des données...",

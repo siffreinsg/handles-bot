@@ -25,4 +25,8 @@ declare global {
         }
     }
 
+    interface String {
+        capitalize(): any
+    }
+
 }

@@ -25,7 +25,9 @@ export default class Rank extends Command {
             user = app.db.getUser(context.server.id, context.executor.id).value(),
             users = app.db.getUsers(askedUser.guild.id).value()
 
-        users.sort((a, b) => { return a.xp - b.xp })
+        if (!user.xp) return context.replyError()
+
+        users.sort((a, b) => { return (a.xp || 0) - (b.xp || 0) })
         users.reverse()
         let position = users.findIndex(x => x.id === askedUser.id)
 

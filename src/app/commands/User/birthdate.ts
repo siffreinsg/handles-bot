@@ -38,7 +38,7 @@ export default class Setbirthdate extends Command {
         if (!args.get(0) || !args.get(1) || !args.get(2)) return context.replyError('badArgs')
 
         let member = context.server.member(context.executor),
-            user = app.db.getUser(member.guild.id, member.id).get('profile', { birthdate: '' }),
+            user = app.db.createIfNotExists(app.db.getUser(member.guild.id, member.id), 'profile', { birthdate: '' }),
             day = parseInt('' + args.get(0)),
             month = parseInt('' + args.get(1)),
             year = parseInt('' + args.get(2))

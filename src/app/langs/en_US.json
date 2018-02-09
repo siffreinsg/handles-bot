@@ -134,7 +134,6 @@
             "help": {
                 "title": "Configure links between a role and a channel.",
                 "desc": "Restrict access to channels to a role. It's also possible to obtain the role via a command (configurable).",
-                "footer": "The characters <> ou [] are for indicative purposes only, don't include them ! They indicate dynamic text and whether it's optional ([]) or not (<>).",
                 "add": {
                     "title": "{prefix}roles add",
                     "desc": "Syntax: `{prefix}roles add <nom> [--accessible OR -a]`\nCreate a new link between a role and a channel. (Automatic creation of role and channel if non-existent)"
@@ -151,6 +150,28 @@
                     "title": "{prefix}roles join",
                     "desc": "Syntax: `{prefix}roles join <nom>`\nJoin a role."
                 }
+            }
+        },
+        "profile": {
+            "saved": "Information saved!",
+            "deleted": "Information deleted!",
+            "profileOf": "Profile of {user}",
+            "birthdate": "Birthdate",
+            "cantAdd": "Cannot add",
+            "alreadyExists": "An input with this name already exists!",
+            "max": "You have reached the maximum number of input possible!",
+            "added": "Input added! Configure it on your profile with `{prefix}profile set {name} <value>`.",
+            "cantRemove": "Cannot delete",
+            "doesntExist": "No input with this name have been found!",
+            "cfgDeleted": "Input deleted!",
+            "help": {
+                "describeYourself": "Describe yourself in your beautiful profile !",
+                "config": "Configure the available inputs in the profiles and customize the allowed values (see wiki).",
+                "set": "Configure an input on your profile. (max. 2040 characters)",
+                "availables": "Available inputs: {availables}",
+                "unset": "Delete an input on your profile.",
+                "view": "Displays your profile or that of another user.",
+                "birthdate": "Configure your birthdate."
             }
         }
     },
@@ -223,6 +244,7 @@
         "checkDM": "The interactive help has been sent to your DMs"
     },
     "misc": {
+        "bracketsAndQuotes": "The characters <> ou [] are for indicative purposes only, don't include them ! They indicate dynamic text and whether it's optional ([]) or not (<>).",
         "requestOfInfo": "Attention. Message decoding. Message analysis proceeding. Information available. The message is a request for information.",
         "processing": "Processing",
         "requestedBy": "Requested by {user}",

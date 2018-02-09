@@ -19,7 +19,7 @@ export default class Balance extends Command {
     execute(context: Context, args: Arguments) {
         let mention = context.message.mentions.members.first(),
             asked = mention ? mention : context.server.member(context.executor.id),
-            balance = app.db.getUser(asked.guild.id, asked.id).get('balance').value()
+            balance = app.db.createIfNotExists(app.db.getUser(asked.guild.id, asked.id), 'balance', 0).value()
 
         context.reply(context.translate('/commands/money/balance', { user: asked.displayName, balance }))
     }
