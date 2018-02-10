@@ -16,6 +16,7 @@ export default class Purge extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['delete']
     usage: string = 'purge <quantity>'

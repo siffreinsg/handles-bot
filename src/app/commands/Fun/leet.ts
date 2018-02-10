@@ -14,6 +14,7 @@ export default class leet extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'leet <text>'

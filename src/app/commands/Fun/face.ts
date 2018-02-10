@@ -11,6 +11,7 @@ export default class Face extends Command {
     desc: string = '¯\\_(ツ)\_/¯'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'face'

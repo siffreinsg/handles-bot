@@ -12,6 +12,7 @@ export default class Uptime extends Command {
     desc: string = 'Uptime of the bot'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'uptime'

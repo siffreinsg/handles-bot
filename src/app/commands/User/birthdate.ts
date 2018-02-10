@@ -15,6 +15,7 @@ export default class Setbirthdate extends Command {
         { type: 'text', required: false },
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['birthdate', 'birth']
     usage: string = 'setbirhtdate DD MM YYYY\nsetbirthdate setchannel #channel'

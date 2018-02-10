@@ -12,6 +12,7 @@ export default class Hello extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'hello [world]'

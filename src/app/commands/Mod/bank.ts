@@ -15,6 +15,7 @@ export default class Bank extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = []
     usage: string = 'bank <faucet|give|remove> [quantity] [@user]'

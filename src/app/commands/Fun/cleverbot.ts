@@ -11,6 +11,7 @@ export default class Cleverbot extends Command {
     desc: string = 'Talk with the bot.'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     cleverbot: CleverbotAPI = new CleverbotAPI(app.config.cleverbotAPIkey)
     aliases: string[] = ['talk']

@@ -1,4 +1,4 @@
-import * as minimist from 'minimist'
+import * as arg from 'arg'
 import * as didYouMean from 'didyoumean2'
 import * as Discord from 'discord.js'
 import * as Command from 'Handles/Utils/Command'
@@ -60,9 +60,23 @@ export default class MessageHandler {
     }
 
     parseCommand(command) {
-        command = command.split(' ')
-        let args = minimist(command.slice(1))
-        command = command[0].substring(1)
+        let data = command.split(' ')
+        command = data[0].substring(1)
+
+
+        let propsOptions = {}
+        if (app.commands.list.indexOf(command) !== -1 || app.commands.aliases[command]) {
+            let alias = app.commands.aliases[command]
+
+            propsOptions = alias ? app.commands.cmds[alias].props : app.commands.cmds[command].props
+        }
+
+        let args = { _: [] }
+        try {
+            args = arg(data.slice(1), propsOptions)
+        } catch (ex) {
+            2 + 2 // = 4
+        }
         return { command, args }
     }
 

@@ -13,6 +13,7 @@ export default class Feedback extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = ['contact']
     usage: string = 'feedback <message>'

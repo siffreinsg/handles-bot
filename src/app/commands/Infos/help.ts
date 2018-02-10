@@ -13,6 +13,9 @@ export default class Help extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {
+        '--no-dm': Boolean
+    }
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = ''
@@ -35,14 +38,22 @@ export default class Help extends Command {
             .addField(context.translate('/help/navigation'), this.getNavigation(page, maxPagesForCmds, context), true)
             .setFooter(context.translate('/misc/requestedBy', { user: context.executor.tag }), context.executor.displayAvatarURL)
 
-        context.executor.send(context.translate('/misc/requestOfInfo'), help).then((msg: Message) => {
-            if (context.channel.type === 'text') context.reply(context.translate('/help/checkDM')).then(msg => msg.delete(5000))
-            reactHandler(msg)
-        }).catch(err => {
+        if (!args.getProp('--no-dm')) {
+            context.executor.send(context.translate('/misc/requestOfInfo'), help).then((msg: Message) => {
+                if (context.channel.type === 'text')
+                    context.reply(context.translate('/help/checkDM'))
+                        .then(msg => msg.delete(5000))
+                reactHandler(msg)
+            }).catch(err => {
+                context.reply(context.translate('/misc/requestOfInfo'), help).then((msg: Message) => {
+                    reactHandler(msg)
+                })
+            })
+        } else {
             context.reply(context.translate('/misc/requestOfInfo'), help).then((msg: Message) => {
                 reactHandler(msg)
             })
-        })
+        }
 
         async function reactHandler(msg: Message) {
             tmp[interactive][userid] = msg

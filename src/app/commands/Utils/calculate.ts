@@ -14,6 +14,7 @@ export default class Calculate extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = ['math', 'calc']
     usage: string = 'calc <some math>'

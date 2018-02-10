@@ -13,6 +13,16 @@ export default class Poll extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {
+        '--alow-multiple': Boolean,
+        '--allow-custom': Boolean,
+        '--timeout': Number,
+        '-m': '--allow-multiple',
+        '-c': '--allow-custom',
+        '-t': '--timeout',
+        '--multiple': '-m',
+        '--custom': '-c',
+    }
     allowDM: boolean = false
     aliases: string[] = []
     usage: string = 'poll question/answer 1/answer 2/etc [--allow-custom OR -c] [--allow-multiple OR -m] [--timeout=NUMBER OR -t=NUMBER]'
@@ -21,9 +31,9 @@ export default class Poll extends Command {
         const reactions = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣', '🔟']
         let toSend = '',
             answers: Array<string> = args.getAll().join(' ').split('/'),
-            allow_multiple = args.getProp('allow-multiple') || args.getProp('m') || undefined,
-            allow_custom = args.getProp('allow-custom') || args.getProp('c') || undefined,
-            timeout = parseInt(args.getProp('timeout') || args.getProp('t') || false),
+            allow_multiple = args.getProp('--allow-multiple') || undefined,
+            allow_custom = args.getProp('--allow-custom') || undefined,
+            timeout = parseInt(args.getProp('--timeout') || false),
             finished = false,
             results: number[]
 

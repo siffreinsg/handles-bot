@@ -14,6 +14,7 @@ export default class Play extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['add']
     usage: string = 'play <url>'

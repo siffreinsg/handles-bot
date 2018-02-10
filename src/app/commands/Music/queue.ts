@@ -11,6 +11,7 @@ export default class Queue extends Command {
     desc: string = 'Get musics listed in server\'s queue.'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['playlist']
     usage: string = 'queue'

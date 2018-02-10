@@ -14,6 +14,7 @@ export default class Userinfos extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['user']
     usage: string = 'userinfos [@user]'

@@ -15,6 +15,7 @@ export default class Shorturl extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = ['tiny', 'tinyurl']
     usage: string = 'shorturl <url>'

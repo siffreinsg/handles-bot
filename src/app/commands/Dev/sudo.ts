@@ -15,6 +15,11 @@ export default class Sudo extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {
+        '--desc': String,
+        '--title': String,
+        '--type': String
+    }
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'sudo weird stuff'
@@ -57,13 +62,20 @@ export default class Sudo extends Command {
                     context.reply(context.translate('/commands/setactivity'))
                 })()
                 break
+            case 'error':
+                let type: any = args.getProp('--type')
+                let title: any = args.getProp('--title')
+                let desc: any = args.getProp('--desc')
+
+                context.replyError(type, title, desc)
+                break
             case 'help':
                 context.executor.send(
                     'You need the SUPER_ADMIN permission to execute this command !\n\n' +
                     '   - `sudo getrolesid`: *Get ids of availables roles in the server.*\n' +
                     '   - `sudo joinrole <role id>`: *Get a role in a server.*\n' +
                     '   - `sudo halt`: *Shutdown the bot.*\n' +
-                    '   - `sudo error [type] [title] | [desc]`: *Generate an error* **(Notice the | separating the title and the description)**.\n' +
+                    '   - `sudo error --type=text --title \'text\' --desc \'text\']`: *Generate an error* **(Notice the | separating the title and the description)**.\n' +
                     '   - `sudo setactivity [new activity]`: *Change or reset the bot\'s activity.*\n' +
                     '   - `sudo help`: *Display this message.*'
                 )

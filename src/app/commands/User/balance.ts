@@ -12,6 +12,7 @@ export default class Balance extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['money']
     usage: string = 'balance [@user]'

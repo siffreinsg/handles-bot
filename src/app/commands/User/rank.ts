@@ -15,6 +15,7 @@ export default class Rank extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['xp', 'level']
     usage: string = 'rank [@user]'

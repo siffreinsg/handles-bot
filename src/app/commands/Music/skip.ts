@@ -19,6 +19,7 @@ export default class Skip extends Command {
         'BAN_MEMBERS'
     ]
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['change']
     usage: string = 'skip'

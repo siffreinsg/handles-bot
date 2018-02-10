@@ -15,6 +15,7 @@ export default class SetLang extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['lang']
     usage: string = 'setlang <lang>'

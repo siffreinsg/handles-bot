@@ -15,6 +15,10 @@ export default class Profile extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {
+        '--inline': Boolean,
+        '-i': '--inline'
+    }
     allowDM: boolean = false
     aliases: string[] = ['profil', 'social']
     usage: string = 'profile help'
@@ -82,7 +86,7 @@ export default class Profile extends Command {
                 if (args.get(1) === 'add') {
                     let profiles = app.db.createIfNotExists(app.db.getConfig(context.server.id), 'profiles', {}),
                         name = ('' + args.get(2)).toLowerCase(),
-                        inline = args.getProp('inline') || args.getProp('i') || false
+                        inline = args.getProp('--inline') || false
 
                     if (!args.get(2) || !new RegExp('^[a-zA-Z0-9_-]*$').test(name)) return context.replyError('badArgs')
                     if (profiles.has(name).value()) return context.replyError('custom', context.translate('/commands/profile/cantAdd'), context.translate('/commands/profile/alreadyExists'))

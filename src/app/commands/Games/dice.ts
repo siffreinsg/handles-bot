@@ -14,6 +14,7 @@ export default class Dice extends Command {
         { type: 'text', required: true },
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = []
     usage: string = 'dice <amount to bet> <result to bet on>'

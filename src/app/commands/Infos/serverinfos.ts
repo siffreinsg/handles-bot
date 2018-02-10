@@ -12,6 +12,7 @@ export default class Serverinfos extends Command {
     desc: string = 'Get informations on the server.'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['server']
     usage: string = 'serverinfos'

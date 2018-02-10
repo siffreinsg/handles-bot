@@ -13,6 +13,7 @@ export default class Welcome extends Command {
         'MANAGE_GUILD',
         'MANAGE_CHANNELS'
     ]
+    props: {} = {}
     args: Argument[] = [
         { type: 'text', required: true },
         { type: 'text', required: false }

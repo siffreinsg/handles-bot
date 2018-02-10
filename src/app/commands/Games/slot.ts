@@ -13,6 +13,7 @@ export default class Slot extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = []
     usage: string = 'slot <amount to bet>'

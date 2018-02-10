@@ -11,6 +11,7 @@ export default class Invite extends Command {
     desc: string = 'Invite the bot in your server.'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'invite'

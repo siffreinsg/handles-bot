@@ -13,6 +13,7 @@ export default class Joke extends Command {
     desc: string = 'Some funny jokes'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'joke'

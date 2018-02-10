@@ -13,6 +13,7 @@ export default class Advice extends Command {
     desc: string = 'Give you some advices.'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'advice'

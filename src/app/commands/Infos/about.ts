@@ -11,6 +11,7 @@ export default class About extends Command {
     desc: string = 'Informations about me'
     permissions: Permission[] = []
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = ['info', 'infos']
     usage: string = 'about'

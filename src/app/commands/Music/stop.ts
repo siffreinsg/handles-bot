@@ -19,6 +19,7 @@ export default class Stop extends Command {
         'BAN_MEMBERS'
     ]
     args: Argument[] = []
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['leave']
     usage: string = 'stop'

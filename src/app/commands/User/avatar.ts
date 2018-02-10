@@ -13,6 +13,7 @@ export default class Avatar extends Command {
     args: Argument[] = [
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = true
     aliases: string[] = []
     usage: string = 'avatar [@user]'

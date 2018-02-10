@@ -15,6 +15,10 @@ export default class Roles extends Command {
     args: Argument[] = [
         { type: 'text', required: true }
     ]
+    props: {} = {
+        '--private': Boolean,
+        '-p': '--private'
+    }
     allowDM: boolean = false
     aliases: string[] = ['role', 'channels']
     usage: string = 'roles help'
@@ -54,7 +58,7 @@ export default class Roles extends Command {
                         if (!name.match(/^[a-zA-Z0-9_ ]*$/)) return context.replyError('custom', context.translate('/commands/roles/invalidName'), context.translate('/commands/roles/charsOnly'))
                         if (roles.find({ name: name }).value()) return context.replyError('custom', context.translate('/commands/roles/roleExists'), context.translate('/commands/roles/useOtherName'))
 
-                        if (args.getProp('p') || args.getProp('private')) isPrivate = true
+                        if (args.getProp('--private')) isPrivate = true
                         if (!role) context.server.createRole({ name: name, color: 'RANDOM', mentionable: false }).then((rol: any) => {
                             if (!channel || channel.type !== 'text') context.server.createChannel(replaceAll(name, ' ', '-'), 'text').then((chan: any) => {
                                 next(rol, chan)

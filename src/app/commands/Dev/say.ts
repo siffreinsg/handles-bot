@@ -15,6 +15,7 @@ export default class Say extends Command {
         { type: 'text', required: true },
         { type: 'text', required: false }
     ]
+    props: {} = {}
     allowDM: boolean = false
     aliases: string[] = ['echo']
     usage: string = 'say <text>'
