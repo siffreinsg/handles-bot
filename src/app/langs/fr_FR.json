@@ -179,6 +179,19 @@
             "notAnnounced": "Les anniversaires ne seront plus annoncés !",
             "chanUpdated": "Les anniversaires seront annoncés dans le salon {channel} !",
             "birthdateSet": "Date de naissance mise à jour !"
+        },
+        "livenotif": {
+            "configured": "Les chaînes suivantes génèrent des notifications lorsqu'elles sont en live:",
+            "listFormat": "\n   > {name} en live sur {url}.",
+            "empty": "Aucune chaîne n'est configurée pour générer des notifications de live.",
+            "cantAdd": "Ajout impossible",
+            "doesntExist": "La chaîne n'existe pas ! Vérifiez le nom ou l'identifiant.",
+            "alreadyExists": "La chaîne est déjà configurée ! Vous pouvez la supprimer avec la commande `{prefix}livenotif delete {channel}.",
+            "added": "Chaîne ajoutée avec succès ! Quand la chaîne sera en live, une notification sera envoyée dans le channel configuré (avec la commande `{prefix}livenotif channel #channel`).",
+            "cantDel": "Suppression impossible",
+            "deleted": "La chaîne a été supprimé avec succès.",
+            "noChan": "Les notifications de live ont été désactivées.",
+            "chanSet": "Les notifications de live seront dorénavant envoyées dans le channel {channel}."
         }
     },
     "events": {
@@ -187,7 +200,8 @@
             "first_cmdExed": "Félicitations {who} ! C'est votre première commande sur ce serveur :D +100XP",
             "first_msgSent": "GG {who} ! C'est votre premier message sur ce serveur :D +100XP"
         },
-        "Birthday": "Joyeux anniversaire {user} !"
+        "Birthday": "Joyeux anniversaire {user} !",
+        "livenotif": ":information_source:  {name} est en live !\n{title}\n\n :fast_forward: {url}\n@everyone"
     },
     "errors": {
         "error": "Erreur",

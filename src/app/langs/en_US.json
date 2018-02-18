@@ -178,6 +178,19 @@
             "notAnnounced": "Birthdays will not be announced anymore!",
             "chanUpdated": "Birthdays will be announced in the channel {channel}!",
             "birthdateSet": "Birthdate updated !"
+        },
+        "livenotif": {
+            "configured": "The following channels generate notifications when they are streaming:",
+            "listFormat": "\n   > {name} is streaming on {url}.",
+            "empty": "No channel is configured to generate streaming notifications.",
+            "cantAdd": "Cannot add",
+            "doesntExist": "The channel doesn't exist ! Check the name or the identifier.",
+            "alreadyExists": "The channel is already configured! You can delete it with the command `{prefix}livenotif delete {channel}.",
+            "added": "Channel successfully added! When the channel will be streaming, a notification will be sent in the configured channel (with the command `{prefix}livenotif channel #channel`).",
+            "cantDel": "Cannot delete",
+            "deleted": "Channel deleted with success.",
+            "noChan": "Stream notifications have been disabled.",
+            "chanSet": "Stream notifications will now be sent in the channel {channel}."
         }
     },
     "events": {
@@ -186,7 +199,8 @@
             "first_cmdExed": "Holy cow {who} ! This is your first command in this server :D +100XP",
             "first_msgSent": "Congrats {who} ! This is your first message in this server :D +100XP"
         },
-        "Birthday": "Happy birthday {user} !"
+        "Birthday": "Happy birthday {user} !",
+        "livenotif": ":information_source:  {name} is streaming !\n{title}\n\n :fast_forward: {url}\n@everyone"
     },
     "errors": {
         "error": "Error",
