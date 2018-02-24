@@ -45,7 +45,7 @@ function announce(stream, channelData, announceChan) {
     let p = channelData.plateform,
         name = p === 'youtube' ? channelData.name : stream.channel.display_name,
         title = p === 'youtube' ? stream.items[0].snippet.title : stream.game,
-        url = p === 'youtube' ? 'https ://youtu.be/' + stream.items[0].id.videoId : 'https://twitch.tv/' + channelData.channel,
+        url = p === 'youtube' ? 'https://youtu.be/' + stream.items[0].id.videoId : 'https://twitch.tv/' + channelData.channel,
         lang = app.translator.getServerLang(announceChan.guild.id)
 
     announceChan.send(app.translator.translate('/events/livenotif', lang, { name, title, url }))
