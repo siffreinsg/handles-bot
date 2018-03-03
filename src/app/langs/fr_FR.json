@@ -204,6 +204,8 @@
         "livenotif": ":information_source:  {name} est en live !\n{title}\n\n :fast_forward: {url}\n@everyone"
     },
     "errors": {
+        "adminOnly": "Administrateurs uniquement",
+        "needAdmin": "Vous devez être un administrateur pour executer cette commande !",
         "error": "Erreur",
         "noDmError": "Serveur uniquement",
         "noDm": "Vous ne pouvez pas executer cette commande en dehors d'un serveur.",
