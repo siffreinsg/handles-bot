@@ -139,7 +139,7 @@
                 "desc": "Restrict access to channels to a role. It's also possible to obtain the role via a command (configurable).",
                 "add": {
                     "title": "{prefix}roles add",
-                    "desc": "Syntax: `{prefix}roles add <nom> [--accessible OR -a]`\nCreate a new link between a role and a channel. (Automatic creation of role and channel if non-existent)"
+                    "desc": "Syntax: `{prefix}roles add <nom> [--private OR -p][--restrict OR --nsfw OR --r]`\nCreate a new link between a role and a channel. (Automatic creation of role and channel if non-existent)"
                 },
                 "delete": {
                     "title": "{prefix}roles delete",

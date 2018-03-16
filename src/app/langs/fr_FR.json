@@ -140,7 +140,7 @@
                 "desc": "Restreindre l'accès à des channels uniquement à un role. Il est également possible d'obtenir le role via une commande (configurable).",
                 "add": {
                     "title": "{prefix}roles add",
-                    "desc": "Syntaxe: `{prefix}roles add <nom> [--accessible OR -a]`\nCréer une nouvelle association de rôle et de channel. (Création automatique du rôle et du channel si non-existant)"
+                    "desc": "Syntaxe: `{prefix}roles add <nom> [--private OR -p][--restrict OR --nsfw OR --r]`\nCréer une nouvelle association de rôle et de channel. (Création automatique du rôle et du channel si non-existant)"
                 },
                 "delete": {
                     "title": "{prefix}roles delete",
