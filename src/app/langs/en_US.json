@@ -111,8 +111,11 @@
         },
         "roles": {
             "availableRoles": "Available roles:",
-            "roleFormat": "   - `{name}` for channel {channel}",
+            "roleFormat": "   - `{name}` for channel {channel} {restricted}",
+            "roleRestricted": "(+18 only)",
             "noRoles": "No roles available.",
+            "restricted": "Access restricted",
+            "invalidAge": "You must have at least 18 years old to access this role !",
             "invalidName": "Invalid name",
             "charsOnly": "Only the following characters may be used: a-Z 0-9 -_ and spaces",
             "roleExists": "Existing link",
